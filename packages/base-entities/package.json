@@ -1,0 +1,22 @@
+{
+   "name": "backend-base-entities",
+   "version": "0.1.0",
+   "description": "A set of basic entities for use in our backend code",
+   "main": "dist/index.js",
+   "typings": "dist/index.d.ts",
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "ts-node src/index.ts",
+      "build": "tsc -p tsconfig.json"
+   },
+   "author": "FLYACTS GmbH",
+   "license": "SEE LICENSE IN LICENSE",
+   "devDependencies": {
+      "@types/node": "^8.0.29",
+      "reflect-metadata": "^0.1.12",
+      "sqlite3": "4.0.0",
+      "ts-node": "3.3.0",
+      "typeorm": "0.2.6",
+      "typescript": "2.8.4"
+   }
+}
