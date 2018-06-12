@@ -17,18 +17,24 @@
     },
     "author": "FLYACTS GmbH",
     "license": "SEE LICENSE IN LICENSE",
+    "repository": {
+        "type": "git",
+        "url": "https://code.flyacts.com/backend/core-entities"
+    },
+    "dependencies": {
+        "reflect-metadata": "0.1.12",
+        "typeorm": "0.2.7"
+    },
     "devDependencies": {
-        "@commitlint/cli": "^7.0.0",
-        "@commitlint/config-conventional": "^7.0.1",
+        "@commitlint/cli": "7.0.0",
+        "@commitlint/config-conventional": "7.0.1",
         "@flyacts/tslint-config": "1.0.0",
-        "@types/node": "^10.3.2",
+        "@types/node": "10.3.2",
         "husky": "0.14.3",
-        "reflect-metadata": "^0.1.12",
         "sqlite3": "4.0.0",
         "ts-node": "6.1.1",
         "tslint-language-service": "0.9.9",
         "tslint": "5.10.0",
-        "typeorm": "0.2.7",
         "typescript": "2.9.1"
     }
 }
