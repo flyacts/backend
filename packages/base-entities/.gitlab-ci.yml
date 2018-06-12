@@ -1,9 +1,5 @@
 image: node:10.4
 
-cache:
-  key: "PIPELINE-$CI_PIPELINE_ID"
-  untracked: true
-
 stages:
   - lint
   - build
