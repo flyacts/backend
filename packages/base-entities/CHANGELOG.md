@@ -1,3 +1,13 @@
+### 0.3.0 (2018-06-12)
+
+##### Build System / Dependencies
+
+*  rename the package ([1756ce08](https://code.flyacts.com/backend/core-entities/commit/1756ce0820365f06ff97dd3a8403ae1e5fbb4a5c))
+
+##### Continuous Integration
+
+*  remove non working cache ([e30811ba](https://code.flyacts.com/backend/core-entities/commit/e30811bae2822c61efcacc25005cd8dc114fa7ba))
+
 ### 0.2.0 (2018-06-12)
 
 ##### Build System / Dependencies
