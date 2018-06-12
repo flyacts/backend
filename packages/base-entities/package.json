@@ -1,5 +1,5 @@
 {
-    "name": "backend-base-entities",
+    "name": "@flyacts/backend-base-entities",
     "version": "0.1.0",
     "description": "A set of basic entities for use in our backend code",
     "main": "dist/index.js",
