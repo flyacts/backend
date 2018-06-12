@@ -1,0 +1,32 @@
+image: node:10.4
+
+cache:
+  key: "PIPELINE-$CI_PIPELINE_ID"
+  untracked: true
+
+stages:
+  - lint
+  - build
+  - publish
+  - documentation
+
+before_script:
+  - echo $NPMJS_AUTH_TOKEN >> .npmrc
+  - npm ci
+
+Lint sources:
+  stage: lint
+  script:
+    - npm run lint
+
+Build SDK:
+  stage: build
+  script:
+    - npm run build
+
+Publish SDK:
+  stage: publish
+  only: ['tags']
+  script:
+    - npm run build
+    - npm publish
