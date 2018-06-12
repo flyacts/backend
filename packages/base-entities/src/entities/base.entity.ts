@@ -12,7 +12,6 @@ import {
  * Basemodel for all other entities
  */
 export abstract class BaseEntity {
-
     /**
      * Id of the entity
      */
@@ -28,6 +27,8 @@ export abstract class BaseEntity {
     /**
      * When the last time the entity was updated
      */
-    @UpdateDateColumn()
+    @UpdateDateColumn({
+        nullable: true,
+    })
     public updatedAt?: Date;
 }

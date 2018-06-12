@@ -3,19 +3,25 @@
  */
 
 import {
-    Column,
     Entity,
+    Column,
+    JoinTable,
+    ManyToMany,
+    OneToMany,
 } from 'typeorm';
 
 import {
     BaseEntity,
+    RoleEntity,
+    TokenEntity,
 } from '../entities';
 
 /**
  * Basic user entity
  */
-@Entity()
+@Entity('users')
 export class UserEntity extends BaseEntity {
+    
     /**
      * The username of the user
      */
@@ -47,6 +53,37 @@ export class UserEntity extends BaseEntity {
     /**
      * Indicator if the user has verified his e-mail
      */
-    @Column()
+    @Column({
+        name: 'email_verified',
+        default: false,
+    })
     public emailVerified: boolean = false;
+
+    @ManyToMany(
+        _ => RoleEntity, {
+            cascade: ['insert'],
+            eager: true,
+        },
+    )
+    @JoinTable({
+        name: 'user_roles',
+        joinColumn: {
+            name: 'users',
+            referencedColumnName: 'id',
+        },
+        inverseJoinColumn: {
+            name: 'roles',
+            referencedColumnName: 'id',
+        },
+    })
+    public roles: RoleEntity[] = [];
+
+    @OneToMany(
+        _ => TokenEntity,
+        (token: TokenEntity) => token.user,
+        {
+            cascade: ['remove'],
+        },
+    )
+    public tokens: TokenEntity[] = [];
 }
