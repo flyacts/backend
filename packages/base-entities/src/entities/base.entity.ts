@@ -11,7 +11,7 @@ import {
 /**
  * Basemodel for all other entities
  */
-export abstract class BaseModel {
+export abstract class BaseEntity {
 
     /**
      * Id of the entity

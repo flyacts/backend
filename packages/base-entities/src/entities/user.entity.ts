@@ -7,13 +7,15 @@ import {
     Entity,
 } from 'typeorm';
 
-import { BaseModel } from '../models';
+import {
+    BaseEntity,
+} from '../entities';
 
 /**
  * Basic user entity
  */
 @Entity()
-export class UserEntity extends BaseModel {
+export class UserEntity extends BaseEntity {
     /**
      * The username of the user
      */

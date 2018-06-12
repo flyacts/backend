@@ -5,6 +5,6 @@
 import 'reflect-metadata';
 
 export {
-    BaseModel,
+    BaseEntity,
     UserEntity,
-} from './models';
+} from './entities';
