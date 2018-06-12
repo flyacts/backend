@@ -1,13 +1,33 @@
-import {Entity, PrimaryGeneratedColumn, Column, IsNull, CreateDateColumn, UpdateDateColumn} from "typeorm";
+/**
+ * @copyright FLYACTS GmbH 2018
+ */
 
+import {
+    CreateDateColumn,
+    PrimaryGeneratedColumn,
+    UpdateDateColumn,
+} from 'typeorm';
+
+/**
+ * Basemodel for all other entities
+ */
 export abstract class BaseModel {
 
+    /**
+     * Id of the entity
+     */
     @PrimaryGeneratedColumn()
-    public id: number;
+    public id!: number;
 
+    /**
+     * When the entity was created
+     */
     @CreateDateColumn()
-    public createdAt: Date;
+    public createdAt!: Date;
 
+    /**
+     * When the last time the entity was updated
+     */
     @UpdateDateColumn()
     public updatedAt?: Date;
 }

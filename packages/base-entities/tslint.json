@@ -1,0 +1,23 @@
+{
+  "extends": "@flyacts/tslint-config",
+  "rules": {
+    "no-any": false,
+    "no-console": [
+      true
+    ],
+    "completed-docs": [
+      true,
+      {
+        "classes":    {"visibilities": ["exported"]},
+        "enums":      {"visibilities": ["exported"]},
+        "functions":  {"visibilities": ["exported"]},
+        "interfaces": {"visibilities": ["exported"]},
+        "namespaces": {"visibilities": ["exported"]},
+        "types":      {"visibilities": ["exported"]},
+        "variables":  {"visibilities": ["exported"]},
+        "methods":    {"locations": ["all"], "privacies": ["all"]},
+        "properties": {"locations": ["all"], "privacies": ["all"]}
+      }
+    ]
+  }
+}

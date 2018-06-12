@@ -1,6 +1,10 @@
-import "reflect-metadata";
+/**
+ * @copyright FLYACTS GmbH 2018
+ */
+
+import 'reflect-metadata';
 
 export {
     BaseModel,
-    UserModel,
+    UserEntity,
 } from './models';
