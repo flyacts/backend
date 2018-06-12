@@ -30,6 +30,7 @@
         "@commitlint/config-conventional": "7.0.1",
         "@flyacts/tslint-config": "1.0.0",
         "@types/node": "10.3.2",
+        "generate-changelog": "1.7.1",
         "husky": "0.14.3",
         "sqlite3": "4.0.0",
         "ts-node": "6.1.1",
