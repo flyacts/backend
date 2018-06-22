@@ -1,3 +1,13 @@
+#### 0.4.1 (2018-06-22)
+
+##### Chores
+
+*  update lockfile ([1a9d6ebb](https://code.flyacts.com/backend/core-entities/commit/1a9d6ebbe5c64000d0217500d2362e0827abfc34))
+
+##### Bug Fixes
+
+*  add src to include ([c20bc365](https://code.flyacts.com/backend/core-entities/commit/c20bc3651aa315306bab0f69a29e004c63107636))
+
 ### 0.4.0 (2018-06-22)
 
 ##### Chores
