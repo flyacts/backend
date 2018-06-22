@@ -35,7 +35,7 @@ afterEach(async () => {
 
 describe('RoleEntity', async () => {
     test('It should create and save a single role', async () => {
-        const role = await manager.create<RoleEntity>(RoleEntity, {
+        const role = manager.create<RoleEntity>(RoleEntity, {
             name: 'admin',
         });
         await manager.save(role);

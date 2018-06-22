@@ -9,6 +9,9 @@ import {
 
 import { BaseEntity } from './base.entity';
 
+/**
+ * An entity representing a user´s roles
+ */
 @Entity('roles')
 export class RoleEntity extends BaseEntity {
 

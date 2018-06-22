@@ -36,12 +36,12 @@ afterEach(async () => {
 describe('TokenEntity', async () => {
     test('It should create a token associated with a user', async () => {
 
-        const user = await manager.create<UserEntity>(UserEntity, {
+        const user = manager.create<UserEntity>(UserEntity, {
             email: 'test@test.test',
             password: '123456',
         });
 
-        const token = await manager.create<TokenEntity>(TokenEntity, {
+        const token = manager.create<TokenEntity>(TokenEntity, {
             value: 'test"(§")(§)"§(")(§"§',
             scopes: ['*'],
             user,

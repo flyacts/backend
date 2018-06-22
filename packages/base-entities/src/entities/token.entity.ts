@@ -11,6 +11,9 @@ import {
 import { BaseEntity } from './base.entity';
 import { UserEntity } from './user.entity';
 
+/**
+ * An entity representing a user`s tokens
+ */
 @Entity('tokens')
 export class TokenEntity extends BaseEntity {
 
