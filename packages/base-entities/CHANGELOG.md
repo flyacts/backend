@@ -1,3 +1,18 @@
+### 0.4.0 (2018-06-22)
+
+##### Chores
+
+* **cleanup:**  fix linting, clean up tests ([bf534fe3](https://code.flyacts.com/backend/core-entities/commit/bf534fe3ca02d36cb83388c444eade011a995d57))
+
+##### New Features
+
+* **tests:**  add initial tests and test setup ([8e64ad6a](https://code.flyacts.com/backend/core-entities/commit/8e64ad6aab15591712de8e109b9c2c409b790189))
+
+##### Bug Fixes
+
+* **packages:**  add ts-jest as a dev dependency ([5750342f](https://code.flyacts.com/backend/core-entities/commit/5750342fbe3540bebf424fb8df4d27a3f5d5ba8d))
+* **linting:**  fix linter errors ([b32ea65f](https://code.flyacts.com/backend/core-entities/commit/b32ea65fb109a9c00ffeae894e2ab4e05e4ccbbf))
+
 #### 0.3.1 (2018-06-12)
 
 ### 0.3.0 (2018-06-12)
