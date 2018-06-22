@@ -1,6 +1,6 @@
 module.exports = {
     "roots": [
-        "<rootDir>/test/unit",
+        "<rootDir>/test",
         "<rootDir>/src"
     ],
     "transform": {
@@ -14,4 +14,8 @@ module.exports = {
         "node"
     ],
     "bail": true,
+    "collectCoverageFrom": [
+        "src/**/*.ts",
+        "!src/**/index.ts",
+    ]
 }

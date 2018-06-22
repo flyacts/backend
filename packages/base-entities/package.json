@@ -5,15 +5,14 @@
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "ts-node src/index.ts",
         "build": "tsc -p tsconfig.json",
         "lint": "tslint -p tsconfig.json",
-        "prepush": "npm run lint && npm run build",
+        "prepush": "npm run lint && npm test && npm run build",
         "commitmsg": "commitlint -e $GIT_PARAMS",
         "release:major": "npm run prepush && changelog -M && git add CHANGELOG.md && git commit --no-verify -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
         "release:minor": "npm run prepush && changelog -m && git add CHANGELOG.md && git commit --no-verify -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
-        "release:patch": "npm run prepush && changelog -p && git add CHANGELOG.md && git commit --no-verify -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags"
+        "release:patch": "npm run prepush && changelog -p && git add CHANGELOG.md && git commit --no-verify -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags",
+        "test": "jest --coverage --runInBand"
     },
     "author": "FLYACTS GmbH",
     "license": "SEE LICENSE IN LICENSE",
@@ -32,7 +31,8 @@
         "@types/node": "10.3.2",
         "generate-changelog": "1.7.1",
         "husky": "0.14.3",
-      "jest": "23.0.0",
+        "@types/jest": "23.0.2",
+        "jest": "23.0.0",
         "sqlite3": "4.0.0",
         "ts-node": "6.1.1",
         "tslint-language-service": "0.9.9",

@@ -5,3 +5,5 @@ dist/
 tmp/
 temp/
 dist/
+test/unit/data/*
+coverage

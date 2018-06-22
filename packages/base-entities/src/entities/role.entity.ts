@@ -11,6 +11,10 @@ import { BaseEntity } from './base.entity';
 
 @Entity('roles')
 export class RoleEntity extends BaseEntity {
+
+    /**
+     * The name of the role.
+     */
     @Column()
     public name!: string;
 }

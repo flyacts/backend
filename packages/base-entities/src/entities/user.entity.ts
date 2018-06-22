@@ -3,8 +3,8 @@
  */
 
 import {
-    Entity,
     Column,
+    Entity,
     JoinTable,
     ManyToMany,
     OneToMany,
@@ -21,7 +21,7 @@ import {
  */
 @Entity('users')
 export class UserEntity extends BaseEntity {
-    
+
     /**
      * The username of the user
      */
@@ -41,6 +41,7 @@ export class UserEntity extends BaseEntity {
      */
     @Column({
         nullable: true,
+        length: 20,
     })
     public realm?: string;
 
@@ -59,31 +60,30 @@ export class UserEntity extends BaseEntity {
     })
     public emailVerified: boolean = false;
 
+    /**
+     * The roles of a user.
+     */
     @ManyToMany(
-        _ => RoleEntity, {
-            cascade: ['insert'],
+        _ => RoleEntity,
+        {
             eager: true,
+            nullable: false,
         },
     )
     @JoinTable({
         name: 'user_roles',
-        joinColumn: {
-            name: 'users',
-            referencedColumnName: 'id',
-        },
-        inverseJoinColumn: {
-            name: 'roles',
-            referencedColumnName: 'id',
-        },
     })
-    public roles: RoleEntity[] = [];
+    public roles!: RoleEntity[];
 
+    /** The access tokens of a user */
     @OneToMany(
         _ => TokenEntity,
         (token: TokenEntity) => token.user,
         {
-            cascade: ['remove'],
+            cascade: [
+                'remove',
+            ],
         },
     )
-    public tokens: TokenEntity[] = [];
+    public tokens!: TokenEntity[];
 }

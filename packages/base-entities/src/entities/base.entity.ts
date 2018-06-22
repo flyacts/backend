@@ -9,7 +9,7 @@ import {
 } from 'typeorm';
 
 /**
- * Basemodel for all other entities
+ * Base entity that all other entities extend
  */
 export abstract class BaseEntity {
     /**

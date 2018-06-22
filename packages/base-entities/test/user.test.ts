@@ -1,8 +1,9 @@
 /**
  * @copyright FLYACTS GmbH 2018
  */
-// tslint:disable:newline-per-chained-call
 // tslint:disable:no-hardcoded-credentials
+// tslint:disable:newline-per-chained-call
+
 
 import {
     Connection,
@@ -12,7 +13,7 @@ import {
 import {
     RoleEntity,
     UserEntity,
-} from '../../src/entities';
+} from '../src/entities';
 
 import { TestHandler } from './util';
 
@@ -28,24 +29,25 @@ let connection: Connection;
 let userRepository: Repository<UserEntity>;
 let roleRepository: Repository<RoleEntity>;
 
-beforeAll(async () => {
-    testHandler = new TestHandler('user_test');
+beforeAll(() => {
+    testHandler = new TestHandler();
 });
 
 beforeEach(async () => {
     await testHandler.init();
-    connection = await testHandler.connection;
+    connection = testHandler.connection;
     userRepository = connection.getRepository(UserEntity);
     roleRepository = connection.getRepository(RoleEntity);
 });
 
 afterEach(async () => {
-    await connection.close();
+    await testHandler.finish();
 });
 
 describe('User', async () => {
 
     describe('CREATE', async () => {
+
         test('It should create a single user', async () => {
             const user = userRepository.create(userData);
             const createdUser = await userRepository.save(user);
@@ -54,26 +56,29 @@ describe('User', async () => {
 
             expect(foundUser).toHaveProperty('email', 'test@test.test');
         });
+
     });
 
     describe('User with Roles', async () => {
-        describe('CREATE', async () => {
-            test('It should create a user with roles', async () => {
-                const role = roleRepository.create({
-                    name: 'usertest',
-                });
-                await roleRepository.save(role);
-                const user = userRepository.create({
-                    ...userData,
-                    roles: [role],
-                });
-                const createdUser = await userRepository.save(user);
 
-                const { roles: foundRoles } = await userRepository.findOne({ id: createdUser.id });
+        test('It should create a user with multiple roles', async () => {
+            const role1Data = roleRepository.create({ name: 'role1' });
+            const role2Data = roleRepository.create({ name: 'role2' });
 
-                expect(foundRoles[0]).toHaveProperty('name', 'admin');
+            const role1 = await roleRepository.save(role1Data);
+            const role2 = await roleRepository.save(role2Data);
+
+            const user = userRepository.create({
+                ...userData,
+                roles: [role1, role2],
             });
+            const { id } = await userRepository.save(user);
+
+            const { roles: foundRoles } = await userRepository.findOne({ id }) as UserEntity;
+
+            expect(foundRoles[0]).toHaveProperty('name', role1.name);
         });
+
     });
 
 });

@@ -2,6 +2,7 @@ image: node:10.4
 
 stages:
   - lint
+  - test
   - build
   - publish
   - documentation
@@ -14,6 +15,11 @@ Lint sources:
   stage: lint
   script:
     - npm run lint
+
+Run tests:
+  stage: test
+  script:
+    - npm test
 
 Build SDK:
   stage: build
