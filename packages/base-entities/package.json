@@ -33,6 +33,7 @@
         "husky": "0.14.3",
         "@types/jest": "23.0.2",
         "jest": "23.0.0",
+        "ts-jest": "22.4.6",
         "sqlite3": "4.0.0",
         "ts-node": "6.1.1",
         "tslint-language-service": "0.9.9",
