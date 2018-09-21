@@ -16,7 +16,7 @@ Lint sources:
   script:
     - npm run lint
 
-.Run tests:
+Run tests:
   stage: test
   script:
     - npm test

@@ -4,6 +4,7 @@
 
 import {
     Column,
+    Entity,
     JoinTable,
     ManyToMany,
     OneToMany,
@@ -18,7 +19,8 @@ import {
 /**
  * Basic user entity
  */
-export abstract class UserEntity extends BaseEntity {
+@Entity('users')
+export class UserEntity extends BaseEntity {
 
     /**
      * The username of the user
