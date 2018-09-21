@@ -1,3 +1,9 @@
+### 0.7.0 (2018-09-21)
+
+##### Reverts
+
+*  dont make the user abstract ([32dcb14a](https://code.flyacts.com/backend/core-entities/commit/32dcb14ac556be668a66a7356c4ccfa58e78f2c6))
+
 ### 0.6.0 (2018-09-21)
 
 ##### Bug Fixes
