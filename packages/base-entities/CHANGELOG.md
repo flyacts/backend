@@ -1,3 +1,9 @@
+### 0.8.0 (2018-09-21)
+
+##### New Features
+
+*  add password hashing capabilities ([23ac10ca](https://code.flyacts.com/backend/core-entities/commit/23ac10ca654ade792f292656fe6368c822164234))
+
 ### 0.7.0 (2018-09-21)
 
 ##### Reverts
