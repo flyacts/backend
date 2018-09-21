@@ -1,3 +1,9 @@
+### 0.6.0 (2018-09-21)
+
+##### Bug Fixes
+
+*  remove the entity anotation to hide it from the db ([b56fc94f](https://code.flyacts.com/backend/core-entities/commit/b56fc94fccf59510a5325eaae555af6f0ab7bf8e))
+
 ### 0.5.0 (2018-09-21)
 
 ##### New Features
