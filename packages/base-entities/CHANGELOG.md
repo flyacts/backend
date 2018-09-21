@@ -1,3 +1,9 @@
+### 0.5.0 (2018-09-21)
+
+##### New Features
+
+*  make the user class abstract to hide it from the schema ([84a06559](https://code.flyacts.com/backend/core-entities/commit/84a065597c7aba7291be2b40651bfd0217709423))
+
 #### 0.4.1 (2018-06-22)
 
 ##### Chores
