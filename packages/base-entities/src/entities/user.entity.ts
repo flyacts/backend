@@ -20,7 +20,7 @@ import {
  * Basic user entity
  */
 @Entity('users')
-export class UserEntity extends BaseEntity {
+export abstract class UserEntity extends BaseEntity {
 
     /**
      * The username of the user
@@ -61,10 +61,16 @@ export class UserEntity extends BaseEntity {
     public emailVerified: boolean = false;
 
     /**
+     * Indiate if the user is disabled
+     */
+    @Column()
+    public disabled: boolean = false;
+
+    /**
      * The roles of a user.
      */
     @ManyToMany(
-        _ => RoleEntity,
+        () => RoleEntity,
         {
             eager: true,
             nullable: false,
@@ -77,7 +83,7 @@ export class UserEntity extends BaseEntity {
 
     /** The access tokens of a user */
     @OneToMany(
-        _ => TokenEntity,
+        () => TokenEntity,
         (token: TokenEntity) => token.user,
         {
             cascade: [

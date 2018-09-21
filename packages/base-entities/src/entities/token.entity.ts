@@ -36,11 +36,12 @@ export class TokenEntity extends BaseEntity {
      * The user the access token belongs to.
      */
     @ManyToOne(
-        _ => UserEntity,
+        () => UserEntity,
         (user: UserEntity) => user.tokens,
         {
             nullable: false,
             cascade: ['insert'],
+            eager: true,
         },
     )
     public user!: UserEntity;
