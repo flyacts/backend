@@ -10,6 +10,8 @@ import {
     OneToMany,
 } from 'typeorm';
 
+import * as argon2 from 'argon2';
+
 import {
     BaseEntity,
     RoleEntity,
@@ -92,4 +94,20 @@ export class UserEntity extends BaseEntity {
         },
     )
     public tokens!: TokenEntity[];
+
+    /**
+     * Securly store the password with the argon2 algorithm
+     *
+     * https://en.wikipedia.org/wiki/Argon2
+     */
+    public async setPassword(plainPassword: string) {
+        this.password = await argon2.hash(plainPassword);
+    }
+
+    /**
+     * Verify the given plain password with the stored password
+     */
+    public async verifyPassword(plainPassword: string) {
+        return argon2.verify(this.password, plainPassword);
+    }
 }

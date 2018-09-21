@@ -21,6 +21,7 @@
         "url": "https://code.flyacts.com/backend/core-entities"
     },
     "dependencies": {
+        "argon2": "0.19.3",
         "reflect-metadata": "0.1.12",
         "typeorm": "0.2.7"
     },
