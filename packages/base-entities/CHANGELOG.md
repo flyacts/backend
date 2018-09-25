@@ -1,3 +1,9 @@
+#### 0.9.2 (2018-09-25)
+
+##### Bug Fixes
+
+*  use unix timestamp for migrations ([75e95e9f](https://code.flyacts.com/backend/core-entities/commit/75e95e9f478d7b092756f683e31d9c0cd045338f))
+
 #### 0.9.1 (2018-09-25)
 
 ##### Bug Fixes
