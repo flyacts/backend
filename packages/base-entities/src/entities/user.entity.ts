@@ -80,6 +80,14 @@ export class UserEntity extends BaseEntity {
     )
     @JoinTable({
         name: 'user_roles',
+        joinColumn: {
+            name: 'users_id',
+            referencedColumnName: 'id',
+        },
+        inverseJoinColumn: {
+            name: 'roles_id',
+            referencedColumnName: 'id',
+        },
     })
     public roles!: RoleEntity[];
 

@@ -6,6 +6,7 @@ import {
     Column,
     Entity,
     ManyToOne,
+    JoinColumn,
 } from 'typeorm';
 
 import { BaseEntity } from './base.entity';
@@ -37,12 +38,14 @@ export class TokenEntity extends BaseEntity {
      */
     @ManyToOne(
         () => UserEntity,
-        (user: UserEntity) => user.tokens,
         {
             nullable: false,
             cascade: ['insert'],
             eager: true,
         },
     )
+    @JoinColumn({
+        name: 'users_id',
+    })
     public user!: UserEntity;
 }
