@@ -57,6 +57,16 @@ describe('User', async () => {
             expect(foundUser).toHaveProperty('email', 'test@test.test');
         });
 
+        test('it should verify the password', async () => {
+            const user = userRepository.create(userData);
+            await user.setPassword('foobar');
+            const createdUser = await userRepository.save(user);
+
+            const foundUser = await userRepository.findOne({ id: createdUser.id });
+
+            expect(await foundUser.verifyPassword('foobar')).toBe(true);
+        })
+
     });
 
     describe('User with Roles', async () => {
