@@ -9,7 +9,7 @@ import { TableColumnOptions } from 'typeorm/schema-builder/options/TableColumnOp
 /**
  * The initial migrations
  */
-export class Init201809251555 implements MigrationInterface {
+export class Init1537883700000 implements MigrationInterface {
     public async up(queryRunner: QueryRunner) {
         const baseEntitySchema: TableColumnOptions[] = [
             {
