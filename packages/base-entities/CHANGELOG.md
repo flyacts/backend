@@ -1,3 +1,17 @@
+### 0.9.0 (2018-09-25)
+
+##### New Features
+
+*  initial migrations ([7a3014bc](https://code.flyacts.com/backend/core-entities/commit/7a3014bcf1c319a504a7b11faebfaa5053a9716d))
+
+##### Bug Fixes
+
+*  linting issues ([7b365851](https://code.flyacts.com/backend/core-entities/commit/7b3658512a43344dcd3cc4815644f87b17e037a3))
+
+##### Tests
+
+*  add tests for the password hashing ([817147a3](https://code.flyacts.com/backend/core-entities/commit/817147a32031a97a8ced45968ce0c9414836072d))
+
 ### 0.8.0 (2018-09-21)
 
 ##### New Features
