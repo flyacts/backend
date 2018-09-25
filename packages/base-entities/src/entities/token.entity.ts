@@ -5,8 +5,8 @@
 import {
     Column,
     Entity,
-    ManyToOne,
     JoinColumn,
+    ManyToOne,
 } from 'typeorm';
 
 import { BaseEntity } from './base.entity';
