@@ -1,3 +1,10 @@
-# FLYACTS Base Entities
+# FLYACTS Backend Core Entities
 
-This repo has some basic entities for all the Backends in use
+This repository provides entities for  starting a new backend using our [stack](https://github.com/flyacts/backend).
+
+The following entities are provided:
+
+* Base (Abstract)
+* User
+* Role
+* AccessToken
