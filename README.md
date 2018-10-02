@@ -1,5 +1,7 @@
 # FLYACTS backend
 
+**Please note**: This project is still work in progress and not yet production ready.
+
 ## what
 
 Welcome to the introduction page of our backend technology.
@@ -20,6 +22,8 @@ The backend is contained in these packages:
 A backend using our stack can be found here:
 
 https://github.com/flyacts/speakers-list-backend
+
+
 
 ## why
 
