@@ -18,7 +18,7 @@
     "license": "SEE LICENSE IN LICENSE",
     "repository": {
         "type": "git",
-        "url": "https://code.flyacts.com/backend/core-entities"
+        "url": "https://github.com/flyacts/backend-core-entities"
     },
     "dependencies": {
         "argon2": "0.19.3",
