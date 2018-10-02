@@ -4,6 +4,7 @@
     "description": "A set of basic entities for use in our backend code",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
+    "private": false,
     "scripts": {
         "build": "tsc -p tsconfig.json",
         "lint": "tslint -p tsconfig.json",
