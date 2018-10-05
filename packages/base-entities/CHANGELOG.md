@@ -1,3 +1,16 @@
+### 0.10.0 (2018-10-05)
+
+##### Chores
+
+*  set private to false ([805f3742](https://github.com/flyacts/backend-core-entities/commit/805f3742a68d078adf27d8df689dc73378e63877))
+*  update git url ([41aeaeff](https://github.com/flyacts/backend-core-entities/commit/41aeaeff8cf9f704a1abcaff2b8e48565eb08fb4))
+*  add license ([447229a8](https://github.com/flyacts/backend-core-entities/commit/447229a8a08f09e13e8471f8084a84e1644bf180))
+*  update readme ([87402b6d](https://github.com/flyacts/backend-core-entities/commit/87402b6d4f21a36e4bba75734412816322a3e69a))
+
+##### New Features
+
+*  refactor user entities into a module ([3fb8ce1a](https://github.com/flyacts/backend-core-entities/commit/3fb8ce1a16725a60aee22d2a1c72b76647665a1c))
+
 #### 0.9.2 (2018-09-25)
 
 ##### Bug Fixes
