@@ -23,15 +23,22 @@ https://github.com/flyacts/speakers-list-backend
 
 ## why
 
+At FLYACTS we are building mostly mobile applications and some of
+these apps need a backend to provide a datastore or perform
+computations. As these backends are tightly coupled to the
+applications we choose to implement REST-Backends. As the number of
+backends we build each year is greater than 1, we need a flexible
+infrastructure and building blocks that we can tie into our code.
+
 We previously used [loopback
-3](https://github.com/strongloop/loopback) to produce a REST-Interface
+3](https://github.com/strongloop/loopback) to build a REST-Interface
 and we were not very happy with it. The ORM was very primitive, ACLs
-where pretty hard to understand and even though the automatic
+where pretty hard to debug and even though the automatic
 generation of endpoints was one of the criteria why we choose loopback
 in the end it was a hindrance because there where just too many
-endpoints.
+endpoints, which confused the frontend developers.
 
-As the next we coined some key criteria:
+As the next step we coined some key criteria:
 
 * Everything should be TypeScript
 * ORM and HTTP Handling should be seperated projects, to replace one
@@ -50,7 +57,12 @@ At the HTTP-Layer there where three suitors:
 * [Routing
   Controllers](https://github.com/typestack/routing-controllers/)
 
-We decided against loopback and nest because they were too complicated
-and too abstract. Routing controllers hits a sweet spot in giving you
-a very nice way to speak to express via typescripts
-annotations.
+Everyone of these frameworks uses express under the hood and we
+think that the wrapping arround express should be thin and in a
+typescript centric way. We looked at loopback and nest and found a
+very complex framework that certainly makes sense, if you are building
+a large scale of applications, but most of our backends don't reach
+that level and the key is to getting things done in a timely
+fashion. In the end we discovered routing controllers which provides
+an extensive typescript wrapper arround express and is exactly what we
+need.
