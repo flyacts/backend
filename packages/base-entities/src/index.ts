@@ -6,7 +6,4 @@ import 'reflect-metadata';
 
 export {
     BaseEntity,
-    UserEntity,
-    RoleEntity,
-    TokenEntity,
 } from './entities';

@@ -1,45 +1,49 @@
 {
-    "name": "@flyacts/backend-core-entities",
-    "version": "0.9.2",
-    "description": "A set of basic entities for use in our backend code",
-    "main": "dist/index.js",
-    "typings": "dist/index.d.ts",
-    "private": false,
-    "scripts": {
-        "build": "tsc -p tsconfig.json",
-        "lint": "tslint -p tsconfig.json",
-        "prepush": "npm run lint && npm test && npm run build",
-        "commitmsg": "commitlint -e $GIT_PARAMS",
-        "release:major": "npm run prepush && changelog -M && git add CHANGELOG.md && git commit --no-verify -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
-        "release:minor": "npm run prepush && changelog -m && git add CHANGELOG.md && git commit --no-verify -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
-        "release:patch": "npm run prepush && changelog -p && git add CHANGELOG.md && git commit --no-verify -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags",
-        "test": "jest --coverage --runInBand"
-    },
-    "author": "FLYACTS GmbH",
-    "license": "SEE LICENSE IN LICENSE",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/flyacts/backend-core-entities"
-    },
-    "dependencies": {
-        "argon2": "0.19.3",
-        "reflect-metadata": "0.1.12",
-        "typeorm": "0.2.7"
-    },
-    "devDependencies": {
-        "@commitlint/cli": "7.0.0",
-        "@commitlint/config-conventional": "7.0.1",
-        "@flyacts/tslint-config": "1.0.0",
-        "@types/node": "10.3.2",
-        "generate-changelog": "1.7.1",
-        "husky": "0.14.3",
-        "@types/jest": "23.0.2",
-        "jest": "23.0.0",
-        "ts-jest": "22.4.6",
-        "sqlite3": "4.0.0",
-        "ts-node": "6.1.1",
-        "tslint-language-service": "0.9.9",
-        "tslint": "5.10.0",
-        "typescript": "2.9.1"
+  "name": "@flyacts/backend-core-entities",
+  "version": "0.9.2",
+  "description": "A set of basic entities for use in our backend code",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "private": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "tslint -p tsconfig.json",
+    "prepush": "npm run lint && npm run build",
+    "release:major": "npm run prepush && changelog -M && git add CHANGELOG.md && git commit --no-verify -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
+    "release:minor": "npm run prepush && changelog -m && git add CHANGELOG.md && git commit --no-verify -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
+    "release:patch": "npm run prepush && changelog -p && git add CHANGELOG.md && git commit --no-verify -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags",
+    "test": "jest --coverage --runInBand"
+  },
+  "author": "FLYACTS GmbH",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flyacts/backend-core-entities"
+  },
+  "dependencies": {
+    "reflect-metadata": "0.1.12",
+    "typeorm": "0.2.7"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "7.2.0",
+    "@commitlint/config-conventional": "7.1.2",
+    "@flyacts/tslint-config": "1.0.0",
+    "@types/node": "10.11.4",
+    "generate-changelog": "1.7.1",
+    "husky": "1.1.1",
+    "@types/jest": "23.3.3",
+    "jest": "23.6.0",
+    "ts-jest": "23.10.3",
+    "sqlite3": "4.0.2",
+    "ts-node": "7.0.1",
+    "tslint-language-service": "0.9.9",
+    "tslint": "5.11.0",
+    "typescript": "3.1.1"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
+      "pre-push": "npm run prepush"
     }
+  }
 }
