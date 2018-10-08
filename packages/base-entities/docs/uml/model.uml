@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_8nqs8Mr-Eei0T779drFM_A" name="Core Entities">
+  <packagedElement xmi:type="uml:Package" xmi:id="_EjBZ8Mr_Eei0T779drFM_A" name="Core">
+    <packagedElement xmi:type="uml:Class" xmi:id="_IPEN4Mr_Eei0T779drFM_A" name="BaseEntity" visibility="public" isAbstract="true">
+      <ownedAttribute xmi:id="_KDn7wMr_Eei0T779drFM_A" name="id" type="_N1E0IMr_Eei0T779drFM_A" isID="true"/>
+      <ownedAttribute xmi:id="_KHzRIMr_Eei0T779drFM_A" name="createdAt" type="_a11UsMr_Eei0T779drFM_A"/>
+      <ownedAttribute xmi:id="_KJONcMr_Eei0T779drFM_A" name="updatedAt" type="_a11UsMr_Eei0T779drFM_A">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kDq9QMr_Eei0T779drFM_A"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N1E0IMr_Eei0T779drFM_A" name="number"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_P68UcMr_Eei0T779drFM_A" name="string"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_SGJAsMr_Eei0T779drFM_A" name="any"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_TrhDEMr_Eei0T779drFM_A" name="unknown"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_VKPq4Mr_Eei0T779drFM_A" name="boolean"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_W0m68Mr_Eei0T779drFM_A" name="object"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_a11UsMr_Eei0T779drFM_A" name="Date"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_d9heYMr_Eei0T779drFM_A" name="number [1] {id}"/>
+  </packagedElement>
+</uml:Model>

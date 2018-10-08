@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis xmi:id="_8ftq0Mr-Eei0T779drFM_A" selectedViews="_8laDIMr-Eei0T779drFM_A _8qfXcMr-Eei0T779drFM_A _8qpvgMr-Eei0T779drFM_A _8q0uoMr-Eei0T779drFM_A _8q5AEMr-Eei0T779drFM_A _8rCxEMr-Eei0T779drFM_A" version="12.1.0.201708031200">
+    <semanticResources>model.uml</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_8laDIMr-Eei0T779drFM_A">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.obeonetwork.dsl.uml2.core.design/description/uml2core.odesign#//@ownedViewpoints[name='Reused']"/>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_8qfXcMr-Eei0T779drFM_A">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Reused']"/>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_8qpvgMr-Eei0T779drFM_A">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Capture']"/>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_8q0uoMr-Eei0T779drFM_A">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_B8yXgMr_Eei0T779drFM_A" name="Core Entities Class Diagram" repPath="#_B8TPUMr_Eei0T779drFM_A">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']"/>
+        <target xmi:type="uml:Model" href="model.uml#_8nqs8Mr-Eei0T779drFM_A"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_8q5AEMr-Eei0T779drFM_A">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']"/>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_8rCxEMr-Eei0T779drFM_A">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Extend']"/>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram xmi:id="_B8utIMr_Eei0T779drFM_A" name="Core Entities Class Diagram" uid="_B8TPUMr_Eei0T779drFM_A">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_B8utIcr_Eei0T779drFM_A" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_B8utIsr_Eei0T779drFM_A">
+        <computedStyleDescriptions xmi:type="style:FlatContainerStyleDescription" xmi:id="_JkskEMr_Eei0T779drFM_A" arcWidth="5" arcHeight="5" borderSizeComputationExpression="1" labelSize="9" labelExpression="service:computeUmlLabel" tooltipExpression="service:computeTooltip" roundedCorner="true" widthComputationExpression="service:defaultWidth" heightComputationExpression="service:defaultHeight" backgroundStyle="Liquid">
+          <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+          <labelFormat>bold</labelFormat>
+          <labelFormat>italic</labelFormat>
+          <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <backgroundColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          <foregroundColor xmi:type="description:UserFixedColor" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@userColorsPalettes[name='UMLPalette']/@entries[name='lighter%20blue']"/>
+        </computedStyleDescriptions>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_B9BBAMr_Eei0T779drFM_A" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_B9BBAcr_Eei0T779drFM_A" type="Sirius" element="_B8utIMr_Eei0T779drFM_A" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_FCOecMr_Eei0T779drFM_A" type="2002" element="_FB-m0Mr_Eei0T779drFM_A">
+          <children xmi:type="notation:Node" xmi:id="_FCPskMr_Eei0T779drFM_A" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_FCPskcr_Eei0T779drFM_A" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_Jk5_cMr_Eei0T779drFM_A" type="3009" element="_Jkr9AMr_Eei0T779drFM_A">
+              <children xmi:type="notation:Node" xmi:id="_Jk6mgMr_Eei0T779drFM_A" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_Jk7NkMr_Eei0T779drFM_A" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_KDzh8Mr_Eei0T779drFM_A" type="3010" element="_KDvQgMr_Eei0T779drFM_A">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_KDzh8cr_Eei0T779drFM_A" fontName="Noto Sans" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_KDzh8sr_Eei0T779drFM_A"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_KH70AMr_Eei0T779drFM_A" type="3010" element="_KH3ikMr_Eei0T779drFM_A">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_KH70Acr_Eei0T779drFM_A" fontName="Noto Sans" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_KH70Asr_Eei0T779drFM_A"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_KJcP4Mr_Eei0T779drFM_A" type="3010" element="_KJViMMr_Eei0T779drFM_A">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_KJcP4cr_Eei0T779drFM_A" fontName="Noto Sans" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_KJcP4sr_Eei0T779drFM_A"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_Jk7Nkcr_Eei0T779drFM_A"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_Jk7Nksr_Eei0T779drFM_A"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_Jk5_ccr_Eei0T779drFM_A" fontName="Noto Sans" bold="true" italic="true"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Jk5_csr_Eei0T779drFM_A" x="25" y="39" width="163" height="103"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_FCPsksr_Eei0T779drFM_A"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_FCPsk8r_Eei0T779drFM_A"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_FCOeccr_Eei0T779drFM_A" fontName="Noto Sans" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FCOecsr_Eei0T779drFM_A" x="25" y="30" width="253" height="208"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_B9BBAsr_Eei0T779drFM_A"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_FB-m0Mr_Eei0T779drFM_A" name="Core" tooltipText="Core Entities::Core" width="12" height="10">
+      <target xmi:type="uml:Package" href="model.uml#_EjBZ8Mr_Eei0T779drFM_A"/>
+      <semanticElements xmi:type="uml:Package" href="model.uml#_EjBZ8Mr_Eei0T779drFM_A"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_FCAcAMr_Eei0T779drFM_A" labelSize="9" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundStyle="GradientTopToBottom" foregroundColor="229,241,236">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Package']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Package']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_Jkr9AMr_Eei0T779drFM_A" name="BaseEntity" tooltipText="Core Entities::Core::BaseEntity" width="12" height="10">
+        <target xmi:type="uml:Class" href="model.uml#_IPEN4Mr_Eei0T779drFM_A"/>
+        <semanticElements xmi:type="uml:Class" href="model.uml#_IPEN4Mr_Eei0T779drFM_A"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_JkskEcr_Eei0T779drFM_A" labelSize="9" description="_JkskEMr_Eei0T779drFM_A" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundStyle="Liquid" foregroundColor="232,239,247">
+          <labelFormat>italic</labelFormat>
+          <labelFormat>bold</labelFormat>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_KDvQgMr_Eei0T779drFM_A" name="id : number [1]{id}">
+          <target xmi:type="uml:Property" href="model.uml#_KDn7wMr_Eei0T779drFM_A"/>
+          <semanticElements xmi:type="uml:Property" href="model.uml#_KDn7wMr_Eei0T779drFM_A"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_KDv3kMr_Eei0T779drFM_A" labelAlignment="LEFT">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_ReusedMappingForFeatures']/@subNodeMappings[name='CD_Property']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_ReusedMappingForFeatures']/@subNodeMappings[name='CD_Property']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_KH3ikMr_Eei0T779drFM_A" name="createdAt : Date [1]">
+          <target xmi:type="uml:Property" href="model.uml#_KHzRIMr_Eei0T779drFM_A"/>
+          <semanticElements xmi:type="uml:Property" href="model.uml#_KHzRIMr_Eei0T779drFM_A"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_KH4JoMr_Eei0T779drFM_A" labelAlignment="LEFT">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_ReusedMappingForFeatures']/@subNodeMappings[name='CD_Property']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_ReusedMappingForFeatures']/@subNodeMappings[name='CD_Property']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_KJViMMr_Eei0T779drFM_A" name="updatedAt : Date [0..1]">
+          <target xmi:type="uml:Property" href="model.uml#_KJONcMr_Eei0T779drFM_A"/>
+          <semanticElements xmi:type="uml:Property" href="model.uml#_KJONcMr_Eei0T779drFM_A"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_KJWJQMr_Eei0T779drFM_A" labelAlignment="LEFT">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_ReusedMappingForFeatures']/@subNodeMappings[name='CD_Property']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_ReusedMappingForFeatures']/@subNodeMappings[name='CD_Property']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_B8utJsr_Eei0T779drFM_A"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer"/>
+    <target xmi:type="uml:Model" href="model.uml#_8nqs8Mr-Eei0T779drFM_A"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>
