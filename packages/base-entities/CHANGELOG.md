@@ -1,3 +1,9 @@
+### 0.11.0 (2018-10-08)
+
+##### Documentation Changes
+
+*  add uml class diagram ([6526891d](https://github.com/flyacts/backend-core-entities/commit/6526891d7fd6087f724c6ef0761ddb953bc7f3f6))
+
 ### 0.10.0 (2018-10-05)
 
 ##### Chores
