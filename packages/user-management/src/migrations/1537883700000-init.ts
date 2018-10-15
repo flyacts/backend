@@ -119,7 +119,7 @@ export class Init1537883700000 implements MigrationInterface {
             columns: [
                 ...baseEntitySchema,
                 {
-                    name: 'value',
+                    name: 'token',
                     type: 'string',
                     length: '32',
                 },
