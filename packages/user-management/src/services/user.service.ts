@@ -43,7 +43,7 @@ export class UserService extends CrudService {
         const token = new TokenEntity();
 
         token.user = user;
-        token.value = await uidgen.generate();
+        token.token = await uidgen.generate();
         token.scopes = [];
 
         await this.connection.manager.save(token);
@@ -57,7 +57,7 @@ export class UserService extends CrudService {
     public async logout(token: string) {
         const tokenEntity = await this.connection.manager.findOne(TokenEntity, {
             where: {
-                value: token,
+                token: token,
             },
         });
 

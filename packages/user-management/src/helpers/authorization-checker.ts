@@ -22,7 +22,7 @@ export function createAuthorizationCheck(connection: Connection) {
 
         const tokenTentity = await connection.manager.findOne(TokenEntity, {
             where: {
-                value: token,
+                token: token,
             },
         });
 

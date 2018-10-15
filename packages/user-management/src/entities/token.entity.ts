@@ -23,7 +23,7 @@ export class TokenEntity extends BaseEntity {
      * The access token itself.
      */
     @Column()
-    public value!: string;
+    public token!: string;
 
     /**
      * The scopes of the token.
