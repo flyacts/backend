@@ -6,7 +6,7 @@
 
 Welcome to the introduction page of our backend technology.
 
-Our stack consists of these parts
+Our stack consists of these parts:
 
 * [Node](https://nodejs.org/en/)
 * [TypeScript](https://www.typescriptlang.org/)
@@ -19,7 +19,7 @@ The backend is contained in these packages:
 * [`@flyacts/backend-core-entities`](https://github.com/flyacts/backend-core-entities)
 * [`@flyacts/backend-crud-services`](https://github.com/flyacts/backend-crud-services)
 
-A backend using our stack can be found here:
+A demo backend using our stack can be found here:
 
 https://github.com/flyacts/speakers-list-backend
 
@@ -27,46 +27,34 @@ https://github.com/flyacts/speakers-list-backend
 
 ## why
 
-At FLYACTS we are building mostly mobile applications and some of
+At FLYACTS we are building mostly mobile applications. Some of
 these apps need a backend to provide a datastore or perform
-computations. As these backends are tightly coupled to the
-applications we choose to implement REST-Backends. As the number of
-backends we build each year is greater than 1, we need a flexible
-infrastructure and building blocks that we can tie into our code.
+computation. As these backends are tightly coupled to the
+applications, we choose to implement them as REST-APIs. Since we implement multiple custom solutions each year, we need a flexible
+infrastructure and building blocks.
 
 We previously used [loopback
-3](https://github.com/strongloop/loopback) to build a REST-Interface
-and we were not very happy with it. The ORM was very primitive, ACLs
-where pretty hard to debug and even though the automatic
-generation of endpoints was one of the criteria why we choose loopback
-in the end it was a hindrance because there where just too many
-endpoints, which confused the frontend developers.
+3](https://github.com/strongloop/loopback) to build REST-Interfaces,
+but we were not very happy with it. The ORM is very primitive and ACLs
+are hard to debug. Even though the automatic
+generation of endpoints was one of our main reasons to use loopback in the first place, the sheer amount of unused ones outweigh the benefits for us.
 
 As the next step we coined some key criteria:
 
 * Everything should be TypeScript
-* ORM and HTTP Handling should be seperated projects, to replace one
-  or another.
-* ORM should have migrations included (Loopback ORM has no
-  migrations!)
+* ORM and HTTP handling should be seperate projects, which can be replaced individually
+* ORM should have migrations included (Loopback ORM does not!)
 * [The Zen of Python](https://www.python.org/dev/peps/pep-0020/)
 
-As for the ORM Layer there is only one contender and that is TypeORM
-and that is fine, because it is very complete and proven enough.
+As for the ORM layer, there is only one contender, TypeORM.
+That is fine, since the project is pretty solid.
 
-At the HTTP-Layer there where three suitors:
+At the HTTP-Layer, there where three suitors:
 
 * [Loopback 4](http://v4.loopback.io/)
 * [nest](https://nestjs.com/)
 * [Routing
   Controllers](https://github.com/typestack/routing-controllers/)
 
-Everyone of these frameworks uses express under the hood and we
-think that the wrapping arround express should be thin and in a
-typescript centric way. We looked at loopback and nest and found a
-very complex framework that certainly makes sense, if you are building
-a large scale of applications, but most of our backends don't reach
-that level and the key is to getting things done in a timely
-fashion. In the end we discovered routing controllers which provides
-an extensive typescript wrapper arround express and is exactly what we
-need.
+Express is used in all of them, but we thought the wrapping should be lightweight and written in TypeScript.
+Loopback and nest are very complex frameworks, offering a lot of functionality. That's great if you try to build large scale applications. Most our use cases aren't that complex and we need to get things done in a timely fashion. We decided to go with routing-controlers, since although it provides an extensive typescript wrapper, it does not overcomplicate things.
