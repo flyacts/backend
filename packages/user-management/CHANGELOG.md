@@ -1,3 +1,9 @@
+#### 0.3.1 (2018-10-15)
+
+##### Bug Fixes
+
+*  repair migrations ([e7eb5fb9](https://github.com/flyacts/backend-user-management/commit/e7eb5fb90bfdcdc9cb05bf77c9f2ed8e855c9d2a))
+
 ### 0.3.0 (2018-10-15)
 
 ##### Bug Fixes
