@@ -4,6 +4,7 @@
 
 import { BaseEntity } from '@flyacts/backend-core-entities';
 import * as argon2 from 'argon2';
+import { Exclude } from 'class-transformer';
 import {
     Column,
     Entity,
@@ -34,6 +35,7 @@ export class UserEntity extends BaseEntity {
      * Hashed password of the user
      */
     @Column()
+    @Exclude()
     public password!: string;
 
     /**
