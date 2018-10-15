@@ -1,3 +1,14 @@
+### 0.3.0 (2018-10-15)
+
+##### Bug Fixes
+
+* **user:**  exclude the password from transformation ([cfeecd5a](https://github.com/flyacts/backend-user-management/commit/cfeecd5adf1c208ef3a16be6d0afbac047e4a62e))
+*  migrate the external links from rawgit to jsdelivr ([f26f86dd](https://github.com/flyacts/backend-user-management/commit/f26f86dd31303535cede1eba2fa17e3b7492b750))
+
+##### Other Changes
+
+*  rename the token field to token ([53512a00](https://github.com/flyacts/backend-user-management/commit/53512a008f292a177b88f4197c35de7dc886e1b9))
+
 ### 0.2.0 (2018-10-08)
 
 ##### Documentation Changes
