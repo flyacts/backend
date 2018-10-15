@@ -39,7 +39,7 @@ but we were not very happy with it. The ORM is very primitive and ACLs
 are hard to debug. Even though the automatic
 generation of endpoints was one of our main reasons to use loopback in the first place, the sheer amount of unused ones outweigh the benefits for us.
 
-As the next step we coined some key criteria:
+As the next step we defined some key criteria:
 
 * Everything should be TypeScript
 * ORM and HTTP handling should be seperate projects, which can be replaced individually
@@ -49,7 +49,7 @@ As the next step we coined some key criteria:
 As for the ORM layer, there is only one contender, TypeORM.
 That is fine, since the project is pretty solid.
 
-At the HTTP-Layer, there where three suitors:
+At the HTTP-Layer, there where three contestants:
 
 * [Loopback 4](http://v4.loopback.io/)
 * [nest](https://nestjs.com/)
