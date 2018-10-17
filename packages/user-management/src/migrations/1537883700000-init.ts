@@ -121,7 +121,7 @@ export class Init1537883700000 implements MigrationInterface {
                 {
                     name: 'token',
                     type: 'varchar',
-                    length: '32',
+                    length: '128',
                 },
                 {
                     name: 'scopes',
