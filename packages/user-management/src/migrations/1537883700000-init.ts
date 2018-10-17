@@ -37,23 +37,23 @@ export class Init1537883700000 implements MigrationInterface {
                 ...baseEntitySchema,
                 {
                     name: 'username',
-                    type: 'string',
+                    type: 'varchar',
                     length: '255',
                     isNullable: true,
                 },
                 {
                     name: 'password',
-                    type: 'string',
+                    type: 'varchar',
                     length: '255',
                 },
                 {
                     name: 'realm',
-                    type: 'string',
+                    type: 'varchar',
                     length: '40',
                 },
                 {
                     name: 'email',
-                    type: 'string',
+                    type: 'varchar',
                     length: '255',
                 },
                 {
@@ -76,7 +76,7 @@ export class Init1537883700000 implements MigrationInterface {
                 ...baseEntitySchema,
                 {
                     name: 'name',
-                    type: 'string',
+                    type: 'varchar',
                     length: '255',
                 },
             ],
@@ -120,12 +120,12 @@ export class Init1537883700000 implements MigrationInterface {
                 ...baseEntitySchema,
                 {
                     name: 'token',
-                    type: 'string',
+                    type: 'varchar',
                     length: '32',
                 },
                 {
                     name: 'scopes',
-                    type: 'string',
+                    type: 'varchar',
                 },
                 {
                     name: 'users_id',
