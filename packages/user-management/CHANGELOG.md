@@ -1,3 +1,9 @@
+#### 0.3.3 (2018-10-17)
+
+##### Bug Fixes
+
+*  use cross platform timestamp type ([70bff160](https://github.com/flyacts/backend-user-management/commit/70bff1605c5cfcb6b36c06797edb587690d24d02))
+
 #### 0.3.2 (2018-10-17)
 
 ##### Bug Fixes
