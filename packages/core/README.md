@@ -17,7 +17,8 @@ Our stack consists of these parts:
 The backend is contained in these packages:
 
 * [`@flyacts/backend-core-entities`](https://github.com/flyacts/backend-core-entities)
-* [`@flyacts/backend-crud-services`](https://github.com/flyacts/backend-crud-services)
+* [`@flyacts/backend-crud-service`](https://github.com/flyacts/backend-crud-service)
+* [`@flyacts/backend-user-management`](https://github.com/flyacts/backend-user-management)
 
 A demo backend using our stack can be found here:
 
