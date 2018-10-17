@@ -22,12 +22,12 @@ export class Init1537883700000 implements MigrationInterface {
             {
                 name: 'createdAt',
                 type: 'datetime',
-                default: 'datetime(\'now\')',
+                default: 'CURRENT_TIMESTAMP',
             },
             {
                 name: 'updatedAt',
                 type: 'datetime',
-                default: 'datetime(\'now\')',
+                default: 'CURRENT_TIMESTAMP',
             },
         ];
 
