@@ -1,3 +1,9 @@
+#### 0.3.4 (2018-10-17)
+
+##### Bug Fixes
+
+*  replace string-type by varchar to be cross db ([6eec48b3](https://github.com/flyacts/backend-user-management/commit/6eec48b30438c720fc804e82b5b0bf17f6543b84))
+
 #### 0.3.3 (2018-10-17)
 
 ##### Bug Fixes
