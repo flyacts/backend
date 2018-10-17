@@ -1,3 +1,9 @@
+#### 0.3.2 (2018-10-17)
+
+##### Bug Fixes
+
+*  use cross platform default values ([656b85ca](https://github.com/flyacts/backend-user-management/commit/656b85ca8d549fc8029ce2c939d0a3c86023764a))
+
 #### 0.3.1 (2018-10-15)
 
 ##### Bug Fixes
