@@ -1,3 +1,9 @@
+#### 0.3.5 (2018-10-17)
+
+##### Bug Fixes
+
+*  enlargen the field of the token ([01e082bd](https://github.com/flyacts/backend-user-management/commit/01e082bd3d1bdaa8fc40940fcc8bab9b2f2ee4bd))
+
 #### 0.3.4 (2018-10-17)
 
 ##### Bug Fixes
