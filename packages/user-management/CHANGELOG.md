@@ -1,3 +1,9 @@
+### 0.5.0 (2018-10-25)
+
+##### Bug Fixes
+
+* **provider:**   disable login for disabled users ([158ff9e9](https://github.com/flyacts/backend-user-management/commit/158ff9e905852f4303d853c751a4353217197c07))
+
 ### 0.4.0 (2018-10-25)
 
 ##### Bug Fixes
