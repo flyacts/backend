@@ -28,6 +28,7 @@ export class UserService extends CrudService {
             where: {
                 username: username,
                 realm: realm,
+                disabled: false,
             },
         });
 
