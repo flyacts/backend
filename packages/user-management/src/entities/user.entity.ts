@@ -5,6 +5,7 @@
 import { BaseEntity } from '@flyacts/backend-core-entities';
 import * as argon2 from 'argon2';
 import { Exclude } from 'class-transformer';
+import { Length } from 'class-validator';
 import {
     Column,
     Entity,
@@ -15,7 +16,6 @@ import {
 
 import { RoleEntity } from './role.entity';
 import { TokenEntity } from './token.entity';
-
 
 /**
  * Basic user entity
@@ -28,7 +28,9 @@ export class UserEntity extends BaseEntity {
      */
     @Column({
         nullable: true,
+        length: 60,
     })
+    @Length(0, 60)
     public username?: string;
 
     /**
@@ -51,6 +53,7 @@ export class UserEntity extends BaseEntity {
      * e-mail of the user
      */
     @Column()
+    @Length(0, 60)
     public email!: string;
 
     /**

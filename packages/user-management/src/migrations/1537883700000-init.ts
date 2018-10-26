@@ -38,7 +38,7 @@ export class Init1537883700000 implements MigrationInterface {
                 {
                     name: 'username',
                     type: 'varchar',
-                    length: '255',
+                    length: '60',
                     isNullable: true,
                 },
                 {
@@ -54,7 +54,7 @@ export class Init1537883700000 implements MigrationInterface {
                 {
                     name: 'email',
                     type: 'varchar',
-                    length: '255',
+                    length: '60',
                 },
                 {
                     name: 'email_verified',
