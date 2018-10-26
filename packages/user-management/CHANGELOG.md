@@ -1,3 +1,9 @@
+#### 0.6.2 (2018-10-26)
+
+##### Bug Fixes
+
+*  apply the unique constraint int the migrations ([e8535f50](https://github.com/flyacts/backend-user-management/commit/e8535f50b2a415da570832121e1bf036ec84a2d0))
+
 #### 0.6.1 (2018-10-26)
 
 ##### New Features
