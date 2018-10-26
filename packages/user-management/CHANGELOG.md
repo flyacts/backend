@@ -1,3 +1,9 @@
+#### 0.7.1 (2018-10-26)
+
+##### Bug Fixes
+
+*  disable empty strings for username and email ([b05fc3cc](https://github.com/flyacts/backend-user-management/commit/b05fc3ccc2825de46346967ebafb391263867f41))
+
 ### 0.7.0 (2018-10-26)
 
 ##### New Features
