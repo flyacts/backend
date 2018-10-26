@@ -1,3 +1,9 @@
+### 0.6.0 (2018-10-26)
+
+##### Chores
+
+*  limit length to 60 characters ([b4201073](https://github.com/flyacts/backend-user-management/commit/b4201073ae3cf57d8ae2c20dac20a6940a24caa1))
+
 #### 0.5.1 (2018-10-26)
 
 ##### Bug Fixes
