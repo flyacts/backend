@@ -33,6 +33,14 @@ export class Init1537883700000 implements MigrationInterface {
 
         const users = new Table({
             name: 'users',
+            uniques: [
+                {
+                    columnNames: ['username'],
+                },
+                {
+                    columnNames: ['email'],
+                },
+            ],
             columns: [
                 ...baseEntitySchema,
                 {
