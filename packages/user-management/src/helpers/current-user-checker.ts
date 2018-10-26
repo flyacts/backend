@@ -2,7 +2,10 @@
  * @copyright FLYACTS GmbH 2018
  */
 
-import { Action, InternalServerError, UnauthorizedError } from 'routing-controllers';
+import {
+    Action,
+    InternalServerError,
+} from 'routing-controllers';
 import { Connection } from 'typeorm';
 
 import { TokenEntity } from '../entities/token.entity';
@@ -25,7 +28,7 @@ export function createCurrentUserChecker<T>(
         const token = action.request.headers['authorization'];
 
         if (typeof token !== 'string') {
-            throw new UnauthorizedError();
+            return undefined;
         }
 
         const tokenTentity = await connection.manager.findOne(TokenEntity, {
@@ -35,7 +38,7 @@ export function createCurrentUserChecker<T>(
         });
 
         if (!(tokenTentity instanceof TokenEntity)) {
-            throw new UnauthorizedError();
+            return undefined;
         }
 
         const user = await connection.manager.findOne(UserEntity);
