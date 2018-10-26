@@ -1,3 +1,9 @@
+#### 0.6.1 (2018-10-26)
+
+##### New Features
+
+*  add more validation ([afa89427](https://github.com/flyacts/backend-user-management/commit/afa8942795dba0f71c0b7305df0d3884f5e8ed22))
+
 ### 0.6.0 (2018-10-26)
 
 ##### Chores
