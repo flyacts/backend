@@ -5,13 +5,18 @@
 import { BaseEntity } from '@flyacts/backend-core-entities';
 import * as argon2 from 'argon2';
 import { Exclude } from 'class-transformer';
-import { Length } from 'class-validator';
+import {
+    IsBoolean,
+    IsString,
+    Length,
+} from 'class-validator';
 import {
     Column,
     Entity,
     JoinTable,
     ManyToMany,
     OneToMany,
+    Unique,
 } from 'typeorm';
 
 import { RoleEntity } from './role.entity';
@@ -21,6 +26,8 @@ import { TokenEntity } from './token.entity';
  * Basic user entity
  */
 @Entity('users')
+@Unique(['username'])
+@Unique(['email'])
 export class UserEntity extends BaseEntity {
 
     /**
@@ -31,6 +38,7 @@ export class UserEntity extends BaseEntity {
         length: 60,
     })
     @Length(0, 60)
+    @IsString()
     public username?: string;
 
     /**
@@ -47,6 +55,7 @@ export class UserEntity extends BaseEntity {
         nullable: true,
         length: 20,
     })
+    @Exclude()
     public realm?: string;
 
     /**
@@ -54,6 +63,7 @@ export class UserEntity extends BaseEntity {
      */
     @Column()
     @Length(0, 60)
+    @IsString()
     public email!: string;
 
     /**
@@ -63,12 +73,14 @@ export class UserEntity extends BaseEntity {
         name: 'email_verified',
         default: false,
     })
+    @IsBoolean()
     public emailVerified: boolean = false;
 
     /**
      * Indiate if the user is disabled
      */
     @Column()
+    @IsBoolean()
     public disabled: boolean = false;
 
     /**
