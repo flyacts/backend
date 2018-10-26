@@ -44,7 +44,10 @@ export class UserEntity extends BaseEntity {
     /**
      * Hashed password of the user
      */
-    @Column()
+    @Column({
+        nullable: true,
+        length: 255,
+    })
     @Exclude()
     public password!: string;
 

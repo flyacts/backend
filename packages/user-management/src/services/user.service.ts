@@ -7,6 +7,10 @@ import { UnauthorizedError } from 'routing-controllers';
 import {
     Service,
 } from 'typedi';
+import {
+    IsNull,
+    Not,
+} from 'typeorm';
 
 import { TokenEntity } from '../entities/token.entity';
 import { UserEntity } from '../entities/user.entity';
@@ -29,6 +33,7 @@ export class UserService extends CrudService {
                 username: username,
                 realm: realm,
                 disabled: false,
+                password: Not(IsNull()),
             },
         });
 

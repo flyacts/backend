@@ -53,6 +53,7 @@ export class Init1537883700000 implements MigrationInterface {
                     name: 'password',
                     type: 'varchar',
                     length: '255',
+                    isNullable: true,
                 },
                 {
                     name: 'realm',
