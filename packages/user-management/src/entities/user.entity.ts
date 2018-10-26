@@ -37,7 +37,7 @@ export class UserEntity extends BaseEntity {
         nullable: true,
         length: 60,
     })
-    @Length(0, 60)
+    @Length(1, 60)
     @IsString()
     public username?: string;
 
@@ -65,7 +65,7 @@ export class UserEntity extends BaseEntity {
      * e-mail of the user
      */
     @Column()
-    @Length(0, 60)
+    @Length(1, 60)
     @IsString()
     public email!: string;
 
