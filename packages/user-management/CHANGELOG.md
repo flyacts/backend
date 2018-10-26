@@ -1,3 +1,9 @@
+### 0.7.0 (2018-10-26)
+
+##### New Features
+
+*  allow the password to be `NULL` ([c205265d](https://github.com/flyacts/backend-user-management/commit/c205265da8cd66430f56c2c16bbb6aa24863d80e))
+
 #### 0.6.2 (2018-10-26)
 
 ##### Bug Fixes
