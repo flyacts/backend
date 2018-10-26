@@ -1,3 +1,9 @@
+#### 0.5.1 (2018-10-26)
+
+##### Bug Fixes
+
+* **current user:**  don't throw exceptions on failure ([4d0cb57f](https://github.com/flyacts/backend-user-management/commit/4d0cb57f0154601fe479f6d1e1993ce6067f6cca))
+
 ### 0.5.0 (2018-10-25)
 
 ##### Bug Fixes
