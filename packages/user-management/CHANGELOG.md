@@ -1,3 +1,9 @@
+#### 0.7.3 (2018-10-29)
+
+##### Bug Fixes
+
+*  the password is not required ([a94bf115](https://github.com/flyacts/backend-user-management/commit/a94bf11517d55078d460c6c8dd3d7dc17fa732c3))
+
 #### 0.7.2 (2018-10-29)
 
 ##### Bug Fixes
