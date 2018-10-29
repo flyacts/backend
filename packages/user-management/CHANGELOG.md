@@ -1,3 +1,9 @@
+#### 0.7.8 (2018-10-29)
+
+##### New Features
+
+* **user:**  add `hasRole` method to user entity ([84c0ef2c](https://github.com/flyacts/backend-user-management/commit/84c0ef2cefcdec7f55db35d43036ecdc818dc5a0))
+
 #### 0.7.7 (2018-10-29)
 
 ##### Bug Fixes
