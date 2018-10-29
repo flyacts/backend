@@ -45,7 +45,7 @@ export class UserEntity extends BaseEntity {
      * Hashed password of the user
      */
     @Column({
-        type: 'character varying',
+        type: 'varchar',
         nullable: true,
         length: 255,
     })
