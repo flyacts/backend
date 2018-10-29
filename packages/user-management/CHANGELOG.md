@@ -1,3 +1,9 @@
+#### 0.7.7 (2018-10-29)
+
+##### Bug Fixes
+
+*  use cross platform varchar ([d9ef2314](https://github.com/flyacts/backend-user-management/commit/d9ef2314d720be44e2b8787ffbc2fe448e3f4de6))
+
 #### 0.7.6 (2018-10-29)
 
 ##### Bug Fixes
