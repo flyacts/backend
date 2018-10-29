@@ -49,7 +49,7 @@ export class UserEntity extends BaseEntity {
         length: 255,
     })
     @Exclude()
-    public password!: string;
+    public password?: string;
 
     /**
      * Optional realm of the user (f.e. backoffice or frontend)
@@ -134,6 +134,10 @@ export class UserEntity extends BaseEntity {
      * Verify the given plain password with the stored password
      */
     public async verifyPassword(plainPassword: string) {
-        return argon2.verify(this.password, plainPassword);
+        if (typeof this.password === 'string') {
+            return argon2.verify(this.password, plainPassword);
+        } else {
+            return false;
+        }
     }
 }
