@@ -1,3 +1,9 @@
+#### 0.7.2 (2018-10-29)
+
+##### Bug Fixes
+
+*  give the uniqe constraints names so a user can match them ([14a70bb1](https://github.com/flyacts/backend-user-management/commit/14a70bb10bf086a84fa6e2a48bede94bac877e7f))
+
 #### 0.7.1 (2018-10-26)
 
 ##### Bug Fixes
