@@ -1,3 +1,9 @@
+#### 0.7.6 (2018-10-29)
+
+##### Bug Fixes
+
+*  override type for password ([d9953f5e](https://github.com/flyacts/backend-user-management/commit/d9953f5e879d9ba0bef937c5d0f93b9f7490cf90))
+
 #### 0.7.5 (2018-10-29)
 
 ##### Bug Fixes
