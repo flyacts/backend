@@ -35,9 +35,12 @@ export class Init1537883700000 implements MigrationInterface {
             name: 'users',
             uniques: [
                 {
+                    name: 'uq___users___username',
                     columnNames: ['username'],
+
                 },
                 {
+                    name: 'uq___users___email',
                     columnNames: ['email'],
                 },
             ],
