@@ -141,4 +141,18 @@ export class UserEntity extends BaseEntity {
             return false;
         }
     }
+
+    /**
+     * Indicates if the user has a role
+     */
+    public hasRole(role: string): boolean {
+        if (this.roles.length === 0) {
+            return false;
+        }
+
+        return this
+            .roles
+            .map(item => item.name)
+            .includes(role);
+    }
 }
