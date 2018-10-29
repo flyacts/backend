@@ -1,3 +1,9 @@
+#### 0.7.5 (2018-10-29)
+
+##### Bug Fixes
+
+*  make password nullable ([93dd76bc](https://github.com/flyacts/backend-user-management/commit/93dd76bc832fae4160196df46c95b62bd7ea8b5d))
+
 #### 0.7.4 (2018-10-29)
 
 ##### Documentation Changes
