@@ -1,3 +1,9 @@
+#### 0.7.4 (2018-10-29)
+
+##### Documentation Changes
+
+*  update uml diagrams ([07da371d](https://github.com/flyacts/backend-user-management/commit/07da371d60e779a69017a0d54b3528d49f6ec203))
+
 #### 0.7.3 (2018-10-29)
 
 ##### Bug Fixes
