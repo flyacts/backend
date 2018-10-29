@@ -49,7 +49,7 @@ export class UserEntity extends BaseEntity {
         length: 255,
     })
     @Exclude()
-    public password?: string;
+    public password?: string | null;
 
     /**
      * Optional realm of the user (f.e. backoffice or frontend)
