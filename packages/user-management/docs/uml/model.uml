@@ -5,6 +5,9 @@
       <generalization xmi:id="_rG3dwMsAEei0T779drFM_A">
         <general xmi:type="uml:Class" href="https://cdn.jsdelivr.net/npm/@flyacts/backend-core-entities@0.11.0/docs/uml/model.uml#_IPEN4Mr_Eei0T779drFM_A"/>
       </generalization>
+      <generalization xmi:id="_eWNx0Nt_EeiTd6wku4wlzQ">
+        <general xmi:type="uml:Class" href="https://cdn.rawgit.com/flyacts/backend-core-entities/v0.11.0/docs/uml/model.uml#_IPEN4Mr_Eei0T779drFM_A"/>
+      </generalization>
       <ownedAttribute xmi:id="_n-hMwMsAEei0T779drFM_A" name="username">
         <type xmi:type="uml:PrimitiveType" href="https://cdn.jsdelivr.net/npm/@flyacts/backend-core-entities@0.11.0/docs/uml/model.uml#_P68UcMr_Eei0T779drFM_A"/>
       </ownedAttribute>
@@ -29,11 +32,20 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_i0oFUMsBEei0T779drFM_A"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_i9qFgMsBEei0T779drFM_A" value="*"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_LrR8sNt_EeiTd6wku4wlzQ" name="disabled">
+        <type xmi:type="uml:PrimitiveType" href="https://cdn.rawgit.com/flyacts/backend-core-entities/v0.11.0/docs/uml/model.uml#_VKPq4Mr_Eei0T779drFM_A"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_O7kBsNt_EeiTd6wku4wlzQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_O7kBsdt_EeiTd6wku4wlzQ" value="1"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_RRG8wNt_EeiTd6wku4wlzQ"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_yD_n8MsAEei0T779drFM_A" name="string[]"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_BUCDgMsBEei0T779drFM_A" name="RoleEntity" visibility="public">
       <generalization xmi:id="_VKi68MsBEei0T779drFM_A">
         <general xmi:type="uml:Class" href="https://cdn.jsdelivr.net/npm/@flyacts/backend-core-entities@0.11.0/docs/uml/model.uml#_IPEN4Mr_Eei0T779drFM_A"/>
+      </generalization>
+      <generalization xmi:id="_fctf0Nt_EeiTd6wku4wlzQ">
+        <general xmi:type="uml:Class" href="https://cdn.rawgit.com/flyacts/backend-core-entities/v0.11.0/docs/uml/model.uml#_IPEN4Mr_Eei0T779drFM_A"/>
       </generalization>
       <ownedAttribute xmi:id="_Ce3e8MsBEei0T779drFM_A" name="name">
         <type xmi:type="uml:PrimitiveType" href="https://cdn.jsdelivr.net/npm/@flyacts/backend-core-entities@0.11.0/docs/uml/model.uml#_P68UcMr_Eei0T779drFM_A"/>
@@ -46,6 +58,9 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_HRIUEMsBEei0T779drFM_A" name="TokenEntity" visibility="public">
       <generalization xmi:id="_WG2LIMsBEei0T779drFM_A">
         <general xmi:type="uml:Class" href="https://cdn.jsdelivr.net/npm/@flyacts/backend-core-entities@0.11.0/docs/uml/model.uml#_IPEN4Mr_Eei0T779drFM_A"/>
+      </generalization>
+      <generalization xmi:id="_gK1xINt_EeiTd6wku4wlzQ">
+        <general xmi:type="uml:Class" href="https://cdn.rawgit.com/flyacts/backend-core-entities/v0.11.0/docs/uml/model.uml#_IPEN4Mr_Eei0T779drFM_A"/>
       </generalization>
       <ownedAttribute xmi:id="_O0ohwMsBEei0T779drFM_A" name="token">
         <type xmi:type="uml:PrimitiveType" href="https://cdn.jsdelivr.net/npm/@flyacts/backend-core-entities@0.11.0/docs/uml/model.uml#_P68UcMr_Eei0T779drFM_A"/>
