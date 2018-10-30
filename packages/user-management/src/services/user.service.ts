@@ -50,7 +50,7 @@ export class UserService extends CrudService {
 
         token.user = user;
         token.token = await uidgen.generate();
-        token.scopes = [];
+        token.scopes = ['authorization'];
 
         await this.connection.manager.save(token);
 
