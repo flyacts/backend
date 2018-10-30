@@ -1,3 +1,13 @@
+### 0.8.0 (2018-10-30)
+
+##### Chores
+
+*  update dependencies ([7b761149](https://github.com/flyacts/backend-user-management/commit/7b76114974637f8efce3ebd3eda77e005c7ee618))
+
+##### New Features
+
+* **tokens:**  add a check for the token scopes ([449ca640](https://github.com/flyacts/backend-user-management/commit/449ca640d0144b5fc814a060cda2b96ddbee0679))
+
 #### 0.7.8 (2018-10-29)
 
 ##### New Features
