@@ -1,3 +1,9 @@
+#### 0.8.1 (2018-11-01)
+
+##### Bug Fixes
+
+*  allow other containers to be imported ([fd9154e6](https://github.com/flyacts/backend-user-management/commit/fd9154e6c47c18f3bdeb5618f1191315ef3cf0f4))
+
 ### 0.8.0 (2018-10-30)
 
 ##### Chores
