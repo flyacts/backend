@@ -31,17 +31,17 @@ export function createCurrentUserChecker<T>(
             return undefined;
         }
 
-        const tokenTentity = await connection.manager.findOne(TokenEntity, {
+        const tokenEntity = await connection.manager.findOne(TokenEntity, {
             where: {
                 token: token,
             },
         });
 
-        if (!(tokenTentity instanceof TokenEntity)) {
+        if (!(tokenEntity instanceof TokenEntity)) {
             return undefined;
         }
 
-        const user = await connection.manager.findOne(UserEntity);
+        const user = await connection.manager.findOne(UserEntity, tokenEntity.user.id);
 
         if (!(user instanceof UserEntity)) {
             throw new InternalServerError('Internal Server Error');
