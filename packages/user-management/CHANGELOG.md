@@ -1,3 +1,9 @@
+#### 0.8.3 (2018-11-01)
+
+##### Bug Fixes
+
+*  repair the currentUserChecker ([d7d5d10e](https://github.com/flyacts/backend-user-management/commit/d7d5d10ec25f6f284d0130a5999f92d727d9ede5))
+
 #### 0.8.2 (2018-11-01)
 
 ##### Bug Fixes
