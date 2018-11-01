@@ -1,3 +1,9 @@
+#### 0.8.2 (2018-11-01)
+
+##### Bug Fixes
+
+*  only add a service if it is not known ([21dd7641](https://github.com/flyacts/backend-user-management/commit/21dd76416c6443c6ce2a98be0ff14ea8d6f26dcf))
+
 #### 0.8.1 (2018-11-01)
 
 ##### Bug Fixes
