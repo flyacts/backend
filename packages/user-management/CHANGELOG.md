@@ -4,6 +4,12 @@
 
 *  use correct variable ([f428b24b](https://github.com/flyacts/backend-user-management/commit/f428b24b2e31b1deec37ee6a712a27ae6bc7c869))
 
+#### 0.8.4 (2018-11-01)
+
+##### Bug Fixes
+
+*  use correct variable ([f428b24b](https://github.com/flyacts/backend-user-management/commit/f428b24b2e31b1deec37ee6a712a27ae6bc7c869))
+
 #### 0.8.3 (2018-11-01)
 
 ##### Bug Fixes
