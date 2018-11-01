@@ -52,7 +52,7 @@ export function createAuthorizationCheck(connection: Connection) {
                 .map(scope =>
                     tokenTentity
                         .scopes
-                        .map(_scope => `@SCOPE/${scope}`)
+                        .map(_scope => `@SCOPE/${_scope}`)
                         .includes(scope),
                 )
                 .filter(item => item === true)
