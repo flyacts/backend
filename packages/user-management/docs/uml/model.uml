@@ -77,5 +77,18 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_qFxXsMsBEei0T779drFM_A" name="user" type="_cT_fUMsAEei0T779drFM_A"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_oxr3MOZsEeiFdM6PxlFCBw" name="Ownable" visibility="public" isAbstract="true">
+      <ownedComment xmi:id="_0LkUAOaBEeiFdM6PxlFCBw" annotatedElement="_oxr3MOZsEeiFdM6PxlFCBw">
+        <body>This should be a mixin/trait, need to better figure out, how to do this with UML</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_6Y5MMOZxEeiFdM6PxlFCBw" name="createdBy" type="_cT_fUMsAEei0T779drFM_A">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DVwZgOZyEeiFdM6PxlFCBw" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DVwZgeZyEeiFdM6PxlFCBw" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_6Z8VEOZxEeiFdM6PxlFCBw" name="updatedBy" type="_cT_fUMsAEei0T779drFM_A">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JuFNgOZyEeiFdM6PxlFCBw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JuF0kOZyEeiFdM6PxlFCBw" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
   </packagedElement>
 </uml:Model>
