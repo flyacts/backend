@@ -138,6 +138,13 @@ export class Init1537883700000 implements MigrationInterface {
                 {
                     name: 'scopes',
                     type: 'varchar',
+                    length: '1024',
+                },
+                {
+                    name: 'payload',
+                    type: 'varchar',
+                    length: '1024',
+                    isNullable: true,
                 },
                 {
                     name: 'users_id',

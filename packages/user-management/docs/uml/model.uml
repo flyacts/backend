@@ -70,6 +70,11 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TV2DIMsBEei0T779drFM_A"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TjPl8MsBEei0T779drFM_A" value="*"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="__GZosOZnEeiFdM6PxlFCBw" name="payload">
+        <type xmi:type="uml:PrimitiveType" href="https://cdn.rawgit.com/flyacts/backend-core-entities/v0.11.0/docs/uml/model.uml#_P68UcMr_Eei0T779drFM_A"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ae9XEOZoEeiFdM6PxlFCBw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ae9XEeZoEeiFdM6PxlFCBw" value="1"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_qFxXsMsBEei0T779drFM_A" name="user" type="_cT_fUMsAEei0T779drFM_A"/>
     </packagedElement>
   </packagedElement>

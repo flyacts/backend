@@ -34,6 +34,15 @@ export class TokenEntity extends BaseEntity {
     })
     public scopes!: string[];
 
+
+    /**
+     * Optional payload, to add data to the token
+     */
+    @Column({
+        nullable: true,
+    })
+    public payload?: string;
+
     /**
      * The user the access token belongs to.
      */
