@@ -4,10 +4,6 @@
 
 *  add a payload attribute to the tokenentity ([2ceadd47](https://github.com/flyacts/backend-user-management/commit/2ceadd47ab7d9f8021d035c19acc1d74dffc7257))
 
-##### Bug Fixes
-
-*  use correct variable ([c4c2ed70](https://github.com/flyacts/backend-user-management/commit/c4c2ed70523a7fc8bf121c2bfe2d979f0ca51131))
-
 #### 0.8.4 (2018-11-01)
 
 ##### Bug Fixes
