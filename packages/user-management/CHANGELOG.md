@@ -1,3 +1,9 @@
+#### 0.9.2 (2018-11-12)
+
+##### New Features
+
+*  add `Ownable`-mixin ([66046f5c](https://github.com/flyacts/backend-user-management/commit/66046f5c37eca593c3cdb219dfb998119b153ea2))
+
 #### 0.9.1 (2018-11-12)
 
 ##### Bug Fixes
