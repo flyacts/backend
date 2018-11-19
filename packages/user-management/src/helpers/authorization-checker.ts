@@ -14,10 +14,6 @@ import { TokenEntity } from '../entities/token.entity';
  */
 export function createAuthorizationCheck(connection: Connection) {
     return async (action: Action, roles: string[]) => {
-        if (roles.filter(role => role.startsWith('@SCOPE')).length === 0) {
-            roles.push('@SCOPE/authorization');
-        }
-
         const token = action.request.headers['authorization'];
 
         if (typeof token !== 'string') {
