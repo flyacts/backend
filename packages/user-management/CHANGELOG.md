@@ -1,3 +1,9 @@
+#### 0.9.3 (2018-11-19)
+
+##### Bug Fixes
+
+*  don't assume a default scope ([8bf03b43](https://github.com/flyacts/backend-user-management/commit/8bf03b432b21f10d284d735d410488e64c5cead3))
+
 #### 0.9.2 (2018-11-12)
 
 ##### New Features
