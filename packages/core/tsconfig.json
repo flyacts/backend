@@ -17,7 +17,7 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "sourceMap": true,
-        "jsx": "react",
+        "declaration": true,
         "plugins": [
             {
                 "name": "tslint-language-service"
