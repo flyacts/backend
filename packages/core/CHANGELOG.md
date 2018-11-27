@@ -1,3 +1,9 @@
+#### 0.2.1 (2018-11-27)
+
+##### Continuous Integration
+
+*  specify deployment targets (34ef8019)
+
 ### 0.2.0 (2018-11-27)
 
 ##### Chores
