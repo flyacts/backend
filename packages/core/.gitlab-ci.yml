@@ -30,4 +30,4 @@ Publish Package:
   only: ['tags']
   script:
     - npm run build
-    - npm publish
+    - npm publish --access public
