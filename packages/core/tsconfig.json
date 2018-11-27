@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "lib": [
+            "es2017",
+            "dom"
+        ],
+        "target": "es2017",
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "outDir": "./dist",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "sourceMap": true,
+        "jsx": "react",
+        "plugins": [
+            {
+                "name": "tslint-language-service"
+            }
+        ]
+    },
+    "include": [
+        "src"
+    ]
+}
