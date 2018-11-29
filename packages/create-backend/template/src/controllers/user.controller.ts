@@ -92,7 +92,6 @@ export class UserController {
         const query = repo
             .createQueryBuilder('ue')
             .leftJoinAndSelect('ue.user', 'user')
-            .leftJoinAndSelect('ue.owner', 'o')
             .leftJoinAndSelect('user.roles', 'roles')
             .skip(skip)
             .take(itemsPerPage);
