@@ -2,7 +2,7 @@
     "name": "@flyacts/create-backend",
     "description": "description",
     "version": "0.2.2",
-    "main": "dist/index.js",
+    "main": "dist/create-backend.js",
     "author": "FLYACTS Development Team <hallo@flyacts.com>",
     "license": "MIT",
     "scripts": {
