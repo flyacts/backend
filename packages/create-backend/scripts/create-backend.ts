@@ -39,10 +39,10 @@ import logger from './logger';
         child_process.execFileSync('npm', ['init'], {stdio: 'inherit'});
         logger.debug('Installing dependencies');
         const packages = [
-            '@flyacts/backend',
-            '@flyacts/backend-core-entities',
-            '@flyacts/backend-crud-service',
-            '@flyacts/backend-user-management',
+            '@flyacts/backend@0.2.1',
+            '@flyacts/backend-core-entities@0.11.0',
+            '@flyacts/backend-crud-service@0.5.2',
+            '@flyacts/backend-user-management@0.9.3',
             'body-parser',
             'class-transformer',
             'class-validator',
@@ -58,12 +58,12 @@ import logger from './logger';
             'routing-controllers',
             'sqlite3',
             'typedi',
-            'typeorm',
+            'typeorm@0.2.8',
             'uid-generator',
             'winston',
             'zxcvbn',
         ];
-        shelljs.exec(`npm install --silent --save ${packages.join(' ')}`);
+        shelljs.exec(`npm install --silent --save-exact --save ${packages.join(' ')}`);
         logger.debug('Installing dev dependencies');
         const devDependencies = [
             '@commitlint/cli',
@@ -101,7 +101,7 @@ import logger from './logger';
             'tslint-language-service',
             'typescript',
         ];
-        shelljs.exec(`npm install --silent --save-dev ${devDependencies.join(' ')}`);
+        shelljs.exec(`npm install --silent --save-exact --save-dev ${devDependencies.join(' ')}`);
         logger.info('write .gitignore');
         await fs.writeFile('.gitignore', ['node_modules', 'dist', 'database.db'].join('\n'));
         logger.info('Crafting initial commit');
