@@ -1,3 +1,7 @@
+/*!
+ * @copyright FLYACTS GmbH 2018
+ */
+
 import * as chalk from 'chalk';
 import { TransformableInfo } from 'logform';
 import * as moment from 'moment';
@@ -42,9 +46,10 @@ const logger = winston.createLogger({
             level: 'debug',
     transports: [
         new winston.transports.Console({
-            format: winston.format.printf(info => format(info)),
+            format: winston.format.printf(format),
         }),
     ],
 });
 
+// tslint:disable-next-line
 export default logger;

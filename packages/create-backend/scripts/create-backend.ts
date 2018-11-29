@@ -1,17 +1,23 @@
-import logger from './logger';
-import * as shelljs from 'shelljs';
-import * as fs from 'fs-extra';
-import * as path from 'path';
-import * as child_process from 'child_process';
-import * as nodeEmoji from 'node-emoji';
+/*!
+ * @copyright FLYACTS GmbH 2018
+ */
 
+import * as child_process from 'child_process';
+import * as fs from 'fs-extra';
+import * as nodeEmoji from 'node-emoji';
+import * as path from 'path';
+import * as shelljs from 'shelljs';
+
+import logger from './logger';
+
+// tslint:disable-next-line
 (async function() {
     try {
         const currentPath = shelljs.pwd().stdout;
         logger.debug('Generating FLYACTS Backend');
         const templateDirectory = path.resolve(
             path.dirname(
-                await fs.realpath(process.argv[1])
+                await fs.realpath(process.argv[1]),
             ),
             '..',
             'template',
@@ -101,9 +107,9 @@ import * as nodeEmoji from 'node-emoji';
         shelljs.exec('git commit --message="chore: initial comimt"');
         logger.info(`Successfully scaffolded your backend! ${nodeEmoji.get('rocket')} ${nodeEmoji.get('tada')}`);
         process.exit(0);
-    } catch(error) {
-        console.error('Failed to execute command.')
-        console.error(error);
+    } catch (error) {
+        logger.error('Failed to execute command.');
+        logger.error(error);
         process.exit(-1);
     }
-})()
+})();
