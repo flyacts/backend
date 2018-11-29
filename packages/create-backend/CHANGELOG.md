@@ -1,3 +1,9 @@
+### 0.3.0 (2018-11-29)
+
+##### New Features
+
+*  add a user controller to the template (27ad5660)
+
 #### 0.2.4 (2018-11-29)
 
 ##### Bug Fixes
