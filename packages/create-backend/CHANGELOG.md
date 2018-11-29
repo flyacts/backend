@@ -1,3 +1,9 @@
+#### 0.3.1 (2018-11-29)
+
+##### Bug Fixes
+
+*  linting issues (73e89c59)
+
 ### 0.3.0 (2018-11-29)
 
 ##### New Features
