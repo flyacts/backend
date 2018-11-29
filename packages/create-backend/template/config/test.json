@@ -1,0 +1,10 @@
+{
+    "database": {
+        "type": "sqlite",
+        "logging": false,
+        "database": ":memory:"
+    },
+    "logger": {
+        "level": "error"
+    }
+}

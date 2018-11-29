@@ -1,0 +1,13 @@
+image: node:10.9
+
+stages:
+    - code-check
+
+Check source code:
+    stage: code-check
+    script:
+        - npm ci
+        - npm run lint
+        - npm run build
+        - rm -R dist
+        - npm run test

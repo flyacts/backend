@@ -1,0 +1,12 @@
+{
+    "extends": "@flyacts/tslint-config",
+    "rules": {
+        "file-header": [
+            true,
+            "@copyright FLYACTS GmbH \\d{4}",
+            "@copyright FLYACTS GmbH 2018"
+        ],
+        "newline-per-chained-call": false,
+        "no-submodule-imports": [true, "react-dom"]
+    }
+}

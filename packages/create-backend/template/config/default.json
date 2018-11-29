@@ -1,0 +1,17 @@
+{
+    "database": {
+        "type": "sqlite",
+        "database": "database.db",
+        "logging": false
+    },
+    "media": {
+        "directory": "./media"
+    },
+    "explorer": {
+        "enabled": false
+    },
+    "logger": {
+        "level": "debug"
+    },
+    "itemsPerPage": 25
+}

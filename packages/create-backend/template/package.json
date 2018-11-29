@@ -1,0 +1,28 @@
+{
+    "main": "dist/server.js",
+    "version": "0.1.0",
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "build": "tsc -p tsconfig.json",
+        "lint": "tslint -p tsconfig.json",
+        "migrations": "node dist/migrate",
+        "start:dev": "nodemon -r ts-node/register -w src -e ts -e tsx src/server",
+        "start:prod": "node dist/server",
+        "start": "ts-node src/server",
+        "debug": "node --inspect -r ts-node/register src/server",
+        "test": "jest --bail --no-cache --runInBand",
+        "typeorm": "node -r ts-node/register node_modules/typeorm/cli.js",
+        "notify-slack": "ts-node ci/notify-slack",
+        "generate-compose-file": "ts-node ci/generate-compose-file",
+        "democontent": "rm database.db && ts-node src/democontent",
+        "democontent:prod": "node dist/democontent"
+    },
+    "husky": {
+        "hooks": {
+            "pre-push": "npm run lint && npm run build && rm -R dist && npm run test",
+            "pre-commit": "npm run lint",
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    }
+}
