@@ -1,3 +1,13 @@
+### 0.4.0 (2018-11-29)
+
+##### New Features
+
+*  add some integration tests (03edf9f7)
+
+##### Bug Fixes
+
+*  remove reference to the owner (f601ed94)
+
 #### 0.3.3 (2018-11-29)
 
 ##### Chores
