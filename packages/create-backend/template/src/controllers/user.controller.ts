@@ -49,7 +49,7 @@ import {
 import {
     UserExtensionEntity,
 } from '../entities/user-extension.entity';
-import { UserRoles } from '../enums/user-roles.enum'
+import { UserRoles } from '../enums/user-roles.enum';
 
 /**
  * Controller for /user
@@ -405,7 +405,7 @@ export class UserController {
             },
         });
 
-        if (!extension instanceof UserExtensionEntity) {
+        if (!(extension instanceof UserExtensionEntity)) {
             return;
         }
 
