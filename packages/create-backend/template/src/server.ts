@@ -8,8 +8,8 @@ import 'reflect-metadata';
 import { Backend } from '@flyacts/backend';
 import * as config from 'config';
 
-import { UserController } from './controllers/user.controller';
 import { HealthController } from './controllers/health.controller';
+import { UserController } from './controllers/user.controller';
 import { UserExtensionEntity } from './entities/user-extension.entity';
 
 const controllers = [
