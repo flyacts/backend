@@ -102,6 +102,8 @@ import logger from './logger';
             'typescript',
         ];
         shelljs.exec(`npm install --silent --save-dev ${devDependencies.join(' ')}`);
+        logger.info('write .gitignore');
+        await fs.writeFile('.gitignore', ['node_modules', 'dist', 'database.db'].join('\n'));
         logger.info('Crafting initial commit');
         shelljs.exec('git add -A');
         shelljs.exec('git commit --message="chore: initial comimt"');
