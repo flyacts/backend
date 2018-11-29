@@ -1,3 +1,10 @@
+#### 0.3.2 (2018-11-29)
+
+##### Bug Fixes
+
+*  create a git ignore since this is not included in the npm package (53f17318)
+*  linting issues (24903fc1)
+
 #### 0.3.1 (2018-11-29)
 
 ##### Bug Fixes
