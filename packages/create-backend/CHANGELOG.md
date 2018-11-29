@@ -1,3 +1,9 @@
+#### 0.3.3 (2018-11-29)
+
+##### Chores
+
+*  pin version of dependencies (61cfd3f0)
+
 #### 0.3.2 (2018-11-29)
 
 ##### Bug Fixes
