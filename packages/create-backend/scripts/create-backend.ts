@@ -106,7 +106,7 @@ import logger from './logger';
         await fs.writeFile('.gitignore', ['node_modules', 'dist', 'database.db'].join('\n'));
         logger.info('Crafting initial commit');
         shelljs.exec('git add -A');
-        shelljs.exec('git commit --message="chore: initial comimt"');
+        shelljs.exec('git commit --message="chore: initial commit"');
         logger.info(`Successfully scaffolded your backend! ${nodeEmoji.get('rocket')} ${nodeEmoji.get('tada')}`);
         process.exit(0);
     } catch (error) {
