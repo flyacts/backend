@@ -116,6 +116,7 @@ export class Backend {
     public static async create<T>(
         typeOrmConfig: ConnectionOptions,
         controllers: Function[],
+        middlewares: Function[],
         versionInformation: VersionInformation,
         userExtension: UserExtensionConstructor<T> | undefined,
     ) {
@@ -133,6 +134,7 @@ export class Backend {
             authorizationChecker: createAuthorizationCheck(be.connection),
             currentUserChecker: createCurrentUserChecker(be.connection, userExtension),
             controllers,
+            middlewares,
             defaultErrorHandler: true,
             development: true,
         });
