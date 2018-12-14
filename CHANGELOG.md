@@ -1,3 +1,9 @@
+### 0.3.0 (2018-12-14)
+
+##### New Features
+
+*  add support for middlewares (ea495527)
+
 #### 0.2.1 (2018-11-27)
 
 ##### Continuous Integration
