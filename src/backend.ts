@@ -38,10 +38,6 @@ import { Logger } from './providers/logger.provider';
 
 const swaggerUi = require('swagger-ui-express');
 
-interface UserExtensionConstructor<T> {
-    new(): T;
-}
-
 /**
  * A generic initializer of our backend
  */
@@ -119,12 +115,11 @@ export class Backend {
     /**
      * Create a new backend instance and configure it
      */
-    public static async create<T>(
+    public static async create(
         typeOrmConfig: ConnectionOptions,
         controllers: Function[],
         middlewares: Function[],
         versionInformation: VersionInformation,
-        userExtension: UserExtensionConstructor<T> | undefined,
     ) {
         return session.runPromise(async () => {
             session.set(RequestContext.name, new RequestContext());
@@ -140,7 +135,7 @@ export class Backend {
 
             be.express = createExpressServer({
                 authorizationChecker: createAuthorizationCheck(be.connection),
-                currentUserChecker: createCurrentUserChecker(be.connection, userExtension),
+                currentUserChecker: createCurrentUserChecker(be.connection),
                 controllers,
                 middlewares,
                 defaultErrorHandler: true,
