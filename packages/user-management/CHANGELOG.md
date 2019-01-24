@@ -1,3 +1,9 @@
+#### 0.10.2 (2019-01-24)
+
+##### Bug Fixes
+
+*  create new session if none is active ([c62f787a](https://github.com/flyacts/backend-user-management/commit/c62f787a44e6361f257c570c2c3e5d02ede5b052))
+
 #### 0.10.1 (2019-01-24)
 
 ##### Bug Fixes
