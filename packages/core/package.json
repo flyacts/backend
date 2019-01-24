@@ -1,7 +1,7 @@
 {
     "name": "@flyacts/backend",
     "description": "Core backend package for the flyacts backend",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
     "author": "FLYACTS Development Team <hallo@flyacts.com>",
