@@ -1,3 +1,13 @@
+### 0.4.0 (2019-01-24)
+
+##### Chores
+
+*  add a commitlint config (9e7e0c24)
+
+##### New Features
+
+*  integrate cls-hooked for RequestContext (6c85e5ac)
+
 ### 0.3.0 (2018-12-14)
 
 ##### New Features
