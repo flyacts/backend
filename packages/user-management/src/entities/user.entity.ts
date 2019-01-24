@@ -1,5 +1,5 @@
-/**
- * @copyright FLYACTS GmbH 2018
+/*!
+ * @copyright FLYACTS GmbH 2019
  */
 
 import { BaseEntity } from '@flyacts/backend-core-entities';

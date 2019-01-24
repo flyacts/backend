@@ -1,15 +1,14 @@
-/**
- * @copyright FLYACTS GmbH 2018
+/*!
+ * @copyright FLYACTS GmbH 2019
  */
 
+import { BaseEntity } from '@flyacts/backend-core-entities';
 import {
     Column,
     Entity,
     JoinColumn,
     ManyToOne,
 } from 'typeorm';
-
-import { BaseEntity } from '@flyacts/backend-core-entities';
 
 import { UserEntity } from './user.entity';
 
