@@ -2,6 +2,12 @@
  * @copyright FLYACTS GmbH 2018
  */
 
+import * as cls from 'cls-hooked';
+// tslint:disable-next-line
+import { RequestContext } from './helpers/request-context';
+const session = cls.createNamespace(RequestContext.nsid);
+
+// tslint:disable-next-line
 import {
     createAuthorizationCheck,
     createCurrentUserChecker,
@@ -120,25 +126,28 @@ export class Backend {
         versionInformation: VersionInformation,
         userExtension: UserExtensionConstructor<T> | undefined,
     ) {
-        const be = new Backend(versionInformation);
-        be.connection = await createConnection(typeOrmConfig);
+        return session.runPromise(async () => {
+            session.set(RequestContext.name, new RequestContext());
+            const be = new Backend(versionInformation);
+            be.connection = await createConnection(typeOrmConfig);
 
-        Container.set(Connection, be.connection);
-        Container.set('connection', be.connection);
-        be.logger = Container.get(Logger);
+            Container.set(Connection, be.connection);
+            Container.set('connection', be.connection);
+            be.logger = Container.get(Logger);
 
-        rcUseContainer(Container);
-        ormUseContainer(Container);
+            rcUseContainer(Container);
+            ormUseContainer(Container);
 
-        be.express = createExpressServer({
-            authorizationChecker: createAuthorizationCheck(be.connection),
-            currentUserChecker: createCurrentUserChecker(be.connection, userExtension),
-            controllers,
-            middlewares,
-            defaultErrorHandler: true,
-            development: true,
+            be.express = createExpressServer({
+                authorizationChecker: createAuthorizationCheck(be.connection),
+                currentUserChecker: createCurrentUserChecker(be.connection, userExtension),
+                controllers,
+                middlewares,
+                defaultErrorHandler: true,
+                development: true,
+            });
+
+            return be;
         });
-
-        return be;
     }
 }
