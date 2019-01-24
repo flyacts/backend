@@ -3,10 +3,6 @@
  */
 
 import { Logger, RequestContext } from '@flyacts/backend';
-import {
-    TokenEntity,
-    UserEntity,
-} from '@flyacts/backend-user-management';
 import * as cls from 'cls-hooked';
 import {
     Request,
@@ -20,6 +16,8 @@ import {
 import { Container } from 'typedi';
 import { Connection } from 'typeorm';
 
+import { TokenEntity } from '../entities/token.entity';
+import { UserEntity } from '../entities/user.entity';
 import { UserManagementMetadata } from '../helpers/user-management-medata';
 
 /**
