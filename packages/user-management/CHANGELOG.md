@@ -1,3 +1,9 @@
+#### 0.10.1 (2019-01-24)
+
+##### Bug Fixes
+
+*  use local import ([52ef3406](https://github.com/flyacts/backend-user-management/commit/52ef340658258b72eed60218f5631b92a91d0c47))
+
 ### 0.10.0 (2019-01-24)
 
 ##### Chores
