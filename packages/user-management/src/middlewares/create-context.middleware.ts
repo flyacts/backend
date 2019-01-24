@@ -28,7 +28,13 @@ export class CreateContextMiddleware implements ExpressMiddlewareInterface {
     public async use(request: Request, _response: Response, next: (err?: unknown) => void) {
         // tslint:disable-next-line
         let session = cls.getNamespace(RequestContext.nsid);
-        const requestContext = session.get(RequestContext.name);
+        let requestContext: RequestContext;
+        if (session.active === null) {
+            session = cls.createNamespace(RequestContext.nsid);
+            requestContext = new RequestContext();
+        } else {
+            requestContext = session.get(RequestContext.name);
+        }
         const token = request.get('authorization');
         const connection = Container.get<Connection>('connection');
         const logger = Container.get<Logger>(Logger);
