@@ -1,3 +1,14 @@
+### 0.10.0 (2019-01-24)
+
+##### Chores
+
+*  fix linting issues ([7a12b673](https://github.com/flyacts/backend-user-management/commit/7a12b6732114e16e57576ec1a9abfdfb91821a6f))
+*  update dependencies ([6dd30599](https://github.com/flyacts/backend-user-management/commit/6dd30599da3e1f663959fd3f2d0cc2f9b3368011))
+
+##### New Features
+
+*  integrate ownable content ([c276d5e9](https://github.com/flyacts/backend-user-management/commit/c276d5e9a2dd0874ca28bde2c81dac9da0d4d7ff))
+
 #### 0.9.3 (2018-11-19)
 
 ##### Bug Fixes
