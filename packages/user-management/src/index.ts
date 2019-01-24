@@ -1,5 +1,5 @@
-/**
- * @copyright FLYACTS GmbH 2018
+/*!
+ * @copyright FLYACTS GmbH 2019
  */
 
 import 'reflect-metadata';
@@ -11,3 +11,6 @@ export { UserService } from './services/user.service';
 export { createAuthorizationCheck } from './helpers/authorization-checker';
 export { createCurrentUserChecker } from './helpers/current-user-checker';
 export { useContainer } from './container';
+export { UserManagementMetadata } from './helpers/user-management-medata';
+export { CreateContextMiddleware } from './middlewares/create-context.middleware';
+export { OwnableEntity } from './decorators/ownable.decorator';
