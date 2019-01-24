@@ -1,3 +1,9 @@
+#### 0.5.1 (2019-01-24)
+
+##### Chores
+
+*  update user management (337a8eb1)
+
 ### 0.5.0 (2019-01-24)
 
 ##### Chores
