@@ -1,3 +1,9 @@
+### 0.6.0 (2019-01-31)
+
+##### Bug Fixes
+
+*  move the request-context to extra package (f0d3e00c)
+
 #### 0.5.2 (2019-01-24)
 
 ##### Bug Fixes
