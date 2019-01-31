@@ -1,3 +1,9 @@
+#### 0.11.2 (2019-01-31)
+
+##### Bug Fixes
+
+*  dont write the context on context.data 🤦 ([aacad0c7](https://github.com/flyacts/backend-user-management/commit/aacad0c72e3f07ab707383d0cf130588cb6fd9d9))
+
 #### 0.11.1 (2019-01-31)
 
 ##### Bug Fixes
