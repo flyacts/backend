@@ -4,7 +4,7 @@
 
 import * as cls from 'cls-hooked';
 // tslint:disable-next-line
-import { RequestContext } from './helpers/request-context';
+import { RequestContext } from '@flyacts/request-context';
 const session = cls.createNamespace(RequestContext.nsid);
 
 // tslint:disable-next-line
