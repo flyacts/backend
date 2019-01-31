@@ -1,3 +1,9 @@
+#### 0.6.1 (2019-01-31)
+
+##### Chores
+
+*  update user management dep (b4f9482d)
+
 ### 0.6.0 (2019-01-31)
 
 ##### Bug Fixes
