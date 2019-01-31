@@ -2,7 +2,7 @@
  * @copyright FLYACTS GmbH 2019
  */
 
-import { RequestContext } from '@flyacts/backend';
+import { RequestContext } from '@flyacts/request-context';
 import { EntityOptions, getMetadataArgsStorage } from 'typeorm';
 
 import { UserManagementMetadata } from '../helpers/user-management-medata';
@@ -90,11 +90,13 @@ export function OwnableEntity(nameOrOptions?: string | EntityOptions, maybeOptio
         });
 
         target.prototype.addCreatedBy = function(this: Ownable) {
-            this.createdBy = RequestContext.currentUser();
+            // tslint:disable-next-line:no-any
+            this.createdBy = (RequestContext.currentRequestContext().data as any).user;
         };
 
         target.prototype.addUpdatedBy = function(this: Ownable) {
-            this.updatedBy = RequestContext.currentUser();
+            // tslint:disable-next-line:no-any
+            this.updatedBy = (RequestContext.currentRequestContext().data as any).user;
         };
 
         metaData.entityListeners.push({

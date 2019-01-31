@@ -2,7 +2,7 @@
  * @copyright FLYACTS GmbH 2019
  */
 
-import { Logger, RequestContext } from '@flyacts/backend';
+import { RequestContext } from '@flyacts/request-context';
 import * as cls from 'cls-hooked';
 import {
     Request,
@@ -37,8 +37,6 @@ export class CreateContextMiddleware implements ExpressMiddlewareInterface {
         }
         const token = request.get('authorization');
         const connection = Container.get<Connection>('connection');
-        const logger = Container.get<Logger>(Logger);
-        logger.debug(`Injecting user for token ${token} into requestContext`);
         session.run(async () => {
             session.set(RequestContext.name, requestContext);
             if (typeof token !== 'string') {
@@ -64,7 +62,7 @@ export class CreateContextMiddleware implements ExpressMiddlewareInterface {
             }
 
             if (UserManagementMetadata.instance.userClass === UserEntity) {
-                requestContext.user = user;
+                this.setUserOnContext(requestContext, user);
                 next();
                 return;
             }
@@ -77,13 +75,23 @@ export class CreateContextMiddleware implements ExpressMiddlewareInterface {
 
             if (!(currentUser instanceof UserManagementMetadata.instance.userClass)) {
                 next(new InternalServerError('Internal Server Error'));
-            } else {
-                logger.debug(`Found user ${currentUser.id} with identity ${currentUser.toString()}`);
             }
-
-            requestContext.user = currentUser;
+            this.setUserOnContext(requestContext, currentUser);
 
             next();
         });
+    }
+
+    /**
+     * Write the user cont the request context
+     */
+    private setUserOnContext(context: RequestContext, user: unknown) {
+        // tslint:disable-next-line:no-any
+        let contextData = context.data as any;
+        if (typeof contextData === 'undefined' || contextData === null) {
+                contextData = {};
+            }
+            contextData.user = user;
+            context.data = context;
     }
 }

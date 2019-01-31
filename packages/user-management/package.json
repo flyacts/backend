@@ -19,9 +19,9 @@
         "url": "https://github.com/flyacts/backend-user-management"
     },
     "dependencies": {
-        "@flyacts/backend": "0.4.0",
         "@flyacts/backend-core-entities": "0.11.0",
         "@flyacts/backend-crud-service": "0.5.2",
+        "@flyacts/request-context": "0.1.0",
         "argon2": "0.20.0",
         "reflect-metadata": "0.1.13",
         "routing-controllers": "0.7.7",
