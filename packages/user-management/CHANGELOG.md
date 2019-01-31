@@ -1,3 +1,9 @@
+### 0.11.0 (2019-01-31)
+
+##### New Features
+
+*  remove dependency from the core backend ([df3505a4](https://github.com/flyacts/backend-user-management/commit/df3505a450bd2ab0483ee037baf203776026785d))
+
 #### 0.10.3 (2019-01-24)
 
 #### 0.10.2 (2019-01-24)
