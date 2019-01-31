@@ -1,3 +1,9 @@
+#### 0.11.1 (2019-01-31)
+
+##### Bug Fixes
+
+*  add @types/cls-hooked ([276cad4b](https://github.com/flyacts/backend-user-management/commit/276cad4bf6d0459f6c0bd12ac5e09e901a071c05))
+
 ### 0.11.0 (2019-01-31)
 
 ##### New Features
