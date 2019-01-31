@@ -92,6 +92,6 @@ export class CreateContextMiddleware implements ExpressMiddlewareInterface {
                 contextData = {};
             }
             contextData.user = user;
-            context.data = context;
+            context.data = contextData;
     }
 }
