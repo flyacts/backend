@@ -12,7 +12,7 @@ import { ReadableStreamBuffer } from 'stream-buffers';
 import {
     Service,
 } from 'typedi';
-import { Connection } from 'typeorm';
+import { Connection, EntityManager } from 'typeorm';
 
 import { MediaConfiguration } from '../configuration/media.configuration';
 import { FileEntity } from '../entities/file.entity';
@@ -44,12 +44,25 @@ export class FileUploadProvider {
         entity: BaseEntity,
         file: Stream | Buffer | unknown,
         name?: string,
+        transactionManager?: EntityManager,
     ): Promise<MediaEntity> {
         if (!(entity instanceof BaseEntity)) {
             throw new Error('Not an instance of base entity');
         }
 
-        return this.connection.transaction(async (entityManager) => {
+        let entityManager: EntityManager;
+        let existingTransaction = false;
+        const queryRunner = this.connection.createQueryRunner();
+
+        if (transactionManager instanceof EntityManager) {
+            entityManager = transactionManager;
+            existingTransaction = true;
+        } else {
+            await queryRunner.startTransaction();
+            entityManager = queryRunner.manager;
+        }
+
+        try {
             const media = new MediaEntity();
             media.collection = collection;
             media.model = entity.constructor.name;
@@ -112,7 +125,16 @@ export class FileUploadProvider {
 
             await entityManager.save(fileEntity);
 
+            if (!existingTransaction) {
+                await queryRunner.commitTransaction();
+            }
+
             return media;
-        });
+        } catch (error) {
+            if (!existingTransaction) {
+                await queryRunner.rollbackTransaction();
+            }
+            throw error;
+        }
     }
 }
