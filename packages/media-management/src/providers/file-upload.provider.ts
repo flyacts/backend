@@ -7,8 +7,10 @@ import {
     Magic,
     MAGIC_MIME_TYPE,
 } from 'mmmagic';
-import { Stream } from 'stream';
-import { ReadableStreamBuffer } from 'stream-buffers';
+import {
+    Readable,
+    Stream,
+} from 'stream';
 import {
     Service,
 } from 'typedi';
@@ -75,17 +77,19 @@ export class FileUploadProvider {
             if (file instanceof Stream) {
                 fileStream = file;
             } else if (file instanceof Buffer) {
-                fileStream = new ReadableStreamBuffer({
-                    frequency: 10,
-                    chunkSize: 2048,
+                fileStream = new Readable({
+                    read() {
+                        this.push(file);
+                        this.push(null);
+                    },
                 });
-                (fileStream as ReadableStreamBuffer).put(file);
             } else if (typeof file === 'string') {
-                fileStream = new ReadableStreamBuffer({
-                    frequency: 10,
-                    chunkSize: 2048,
+                fileStream = new Readable({
+                    read() {
+                        this.push(Buffer.from(file, 'base64'));
+                        this.push(null);
+                    },
                 });
-                (fileStream as ReadableStreamBuffer).put(Buffer.from(file, 'base64'));
             } else {
                 throw new Error('Input not supported');
             }
@@ -95,11 +99,11 @@ export class FileUploadProvider {
             fileStream.pipe(writeStream);
 
             const hash = await (new Promise<string>((resolve, reject) => {
-                fileStream.on('error', (err) => {
+                writeStream.on('error', (err: unknown) => {
                     reject(err);
                 });
 
-                fileStream.on('finish', () => {
+                writeStream.on('finish', () => {
                     resolve(writeStream.key);
                 });
             }));
