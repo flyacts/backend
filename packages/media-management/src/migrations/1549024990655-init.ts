@@ -60,7 +60,7 @@ export class Init1549024990655 implements MigrationInterface {
                 },
                 {
                     name: 'collection',
-                    type: 'string',
+                    type: 'varchar',
                     length: '255',
                 },
                 {
