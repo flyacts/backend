@@ -2,6 +2,7 @@
  * @copyright FLYACTS GmbH 2019
  */
 
+import { BaseEntity } from '@flyacts/backend-core-entities';
 import { OwnableEntity } from '@flyacts/backend-user-management';
 import { Type } from 'class-transformer';
 import {
@@ -22,7 +23,7 @@ import { MediaEntity } from './media.entity';
  * Represents a file of a a variant of a media
  */
 @OwnableEntity('files')
-export class FileEntity {
+export class FileEntity extends BaseEntity {
     /**
      * The linked media of the file
      */
