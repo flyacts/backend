@@ -89,7 +89,7 @@ export class Init1549024990655 implements MigrationInterface {
                 },
                 {
                     name: 'content_type',
-                    type: 'string',
+                    type: 'varchar',
                     length: '255',
                 },
                 {
