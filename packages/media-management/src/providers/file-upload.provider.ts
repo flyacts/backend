@@ -27,6 +27,11 @@ import { BlobStore } from '../helpers/blob-store-wrapper';
 @Service()
 export class FileUploadProvider {
     /**
+     * The variant that contains the original file
+     */
+    public static readonly rawVariant = 'raw';
+
+    /**
      * The internal file storage
      */
     private storage: BlobStore;
@@ -114,7 +119,7 @@ export class FileUploadProvider {
 
             fileEntity.media = media;
             fileEntity.hash = hash;
-            fileEntity.variant = 'original';
+            fileEntity.variant = FileUploadProvider.rawVariant;
             fileEntity.size = filePath.stat.size;
             fileEntity.contentType = await (new Promise((resolve, reject) => {
                 magic.detectFile(filePath.path, (err, result) => {
@@ -140,5 +145,26 @@ export class FileUploadProvider {
             }
             throw error;
         }
+    }
+
+    /**
+     * Create a readstream from a media and variant
+     */
+    public async getFilestream(media: MediaEntity, variant?: string) {
+        if (!Array.isArray(media.files)) {
+            throw new Error();
+        }
+
+        if (typeof variant === 'undefined') {
+            variant = FileUploadProvider.rawVariant;
+        }
+
+        const file = media.files.filter(item => item.variant === variant).pop();
+
+        if (typeof file === 'undefined') {
+            throw new Error();
+        }
+
+        return this.storage.createReadStream({ key: file.hash });
     }
 }
