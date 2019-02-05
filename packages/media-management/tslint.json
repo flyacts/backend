@@ -1,6 +1,7 @@
 {
   "extends": "@flyacts/tslint-config",
   "rules": {
+    "newline-per-chained-call": false,
     "completed-docs": [
       true,
       {
