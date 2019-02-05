@@ -1,3 +1,9 @@
+#### 0.2.1 (2019-02-05)
+
+##### Chores
+
+*  add missing express dep ([811addf8](https://github.com/flyacts/backend-media-management/commit/811addf8d7e313266237a787de72b7e0ff5219a1))
+
 ### 0.2.0 (2019-02-05)
 
 ##### Chores
