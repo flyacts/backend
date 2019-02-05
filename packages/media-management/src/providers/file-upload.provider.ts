@@ -150,7 +150,7 @@ export class FileUploadProvider {
     /**
      * Create a readstream from a media and variant
      */
-    public async getFilestream(media: MediaEntity, variant?: string) {
+    public getFilestream(media: MediaEntity, variant?: string) {
         if (!Array.isArray(media.files)) {
             throw new Error();
         }
