@@ -5,6 +5,10 @@
     "main": "dist/create-backend.js",
     "author": "FLYACTS Development Team <hallo@flyacts.com>",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/flyacts/create-backend"
+    },
     "scripts": {
         "build": "ts-node scripts/build",
         "lint": "tslint -p tsconfig.json",
