@@ -11,20 +11,29 @@ Our stack consists of these parts:
 * [Node](https://nodejs.org/en/)
 * [TypeScript](https://www.typescriptlang.org/)
 * [Express](https://expressjs.com/) with [Routing Controllers](https://github.com/typestack/routing-controllers/)
-* [TypeORM](http://typeorm.io) with [PostgreSQL](https://www.postgresql.org/) or [SQLite](https://www.sqlite.org/)
+* [TypeORM](http://typeorm.io) with [PostgreSQL](https://www.postgresql.org/),
+  [SQLite](https://www.sqlite.org/) or whatever you prefer and TypeORM supports. 
 
 
 The backend is contained in these packages:
 
 * [`@flyacts/backend-core-entities`](https://github.com/flyacts/backend-core-entities)
-* [`@flyacts/backend-crud-service`](https://github.com/flyacts/backend-crud-service)
 * [`@flyacts/backend-user-management`](https://github.com/flyacts/backend-user-management)
+* [`@flyacts/backend-media-management`](https://github.com/flyacts/backend-media-management)
+* [`@flyacts/create-backend`](https://github.com/flyacts/create-backend)
 
-A demo backend using our stack can be found here:
+## getting started
 
-https://github.com/flyacts/speakers-list-backend
+You can start a new project with npm:
 
+``` shell
+$ npm init @flyacts/backend
+```
 
+It will ask some questions and then you'll have a ready made backend.
+
+Controllers go into `src/controlers` and entities to `src/entities`. When you
+add a new controller make sure you register it in `src/server.ts`.
 
 ## why
 
