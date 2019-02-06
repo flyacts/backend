@@ -1,3 +1,10 @@
+### 0.5.0 (2019-02-06)
+
+##### Chores
+
+*  add some documentation ([219c0bdd](https://github.com/flyacts/create-backend/commit/219c0bddf9350f45302df74992534b64c8ed7627))
+*  update dependencies ([a6bd337f](https://github.com/flyacts/create-backend/commit/a6bd337f60d3e8142b9fd416f992dfb820f94d6a))
+
 #### 0.4.1 (2018-11-30)
 
 ##### Bug Fixes
