@@ -39,10 +39,11 @@ import logger from './logger';
         child_process.execFileSync('npm', ['init'], {stdio: 'inherit'});
         logger.debug('Installing dependencies');
         const packages = [
-            '@flyacts/backend@0.2.1',
+            '@flyacts/backend@0.6.1',
             '@flyacts/backend-core-entities@0.11.0',
             '@flyacts/backend-crud-service@0.5.2',
-            '@flyacts/backend-user-management@0.9.3',
+            '@flyacts/backend-user-management@0.11.2',
+            '@flyacts/backend-media-management@0.2.2',
             'body-parser',
             'class-transformer',
             'class-validator',
