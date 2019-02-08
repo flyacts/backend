@@ -69,6 +69,10 @@ export class Init1549024990655 implements MigrationInterface {
                     length: '255',
                     isNullable: true,
                 },
+                {
+                    'name': 'sort_order',
+                    type: 'integer',
+                },
             ],
         });
         await queryRunner.createTable(media, true);

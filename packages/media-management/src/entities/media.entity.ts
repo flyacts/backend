@@ -5,8 +5,10 @@
 import { BaseEntity } from '@flyacts/backend-core-entities';
 import { OwnableEntity } from '@flyacts/backend-user-management';
 import {
+    IsInt,
     IsNumber,
     IsOptional,
+    IsPositive,
     IsString,
     MaxLength,
     MinLength,
@@ -71,5 +73,13 @@ export class MediaEntity extends BaseEntity {
         },
     )
     public files!: FileEntity[];
+
+    /**
+     * The sort order of the media inside the collection
+     */
+    @Column()
+    @IsInt()
+    @IsPositive()
+    public sortOrder!: number;
 
 }
