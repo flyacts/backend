@@ -66,7 +66,10 @@ export class MediaEntity extends BaseEntity {
     @OneToMany(
         () => FileEntity,
         (file: FileEntity) => file.media,
+        {
+            eager: true,
+        },
     )
-    public files?: FileEntity[];
+    public files!: FileEntity[];
 
 }

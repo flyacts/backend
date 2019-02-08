@@ -167,4 +167,32 @@ export class FileUploadProvider {
 
         return this.storage.createReadStream({ key: file.hash });
     }
+
+    /**
+     * Remove the media from the database and check if we can unlink the file
+     */
+    public async removeMedia(media: MediaEntity) {
+        const queryRunner = this.connection.createQueryRunner();
+        await queryRunner.startTransaction();
+        try {
+            const entityManager = queryRunner.manager;
+
+            for (const file of media.files) {
+                await entityManager.remove(file);
+
+                const isUsed = (await entityManager.find(FileEntity, { where: { hash: file.hash } })).length > 0;
+
+                if (!isUsed) {
+                    await this.storage.delete({ key: file.hash });
+                }
+            }
+
+            await entityManager.remove(media);
+
+            await queryRunner.commitTransaction();
+        } catch (error) {
+            await queryRunner.rollbackTransaction();
+            throw new Error('Deleting media entity failed');
+        }
+    }
 }
