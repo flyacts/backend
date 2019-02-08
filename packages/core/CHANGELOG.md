@@ -1,3 +1,10 @@
+#### 0.6.2 (2019-02-08)
+
+##### Chores
+
+*  update user management (8a987866)
+*  update documentation (600d9241)
+
 #### 0.6.1 (2019-01-31)
 
 ##### Chores
