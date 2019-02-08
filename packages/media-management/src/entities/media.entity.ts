@@ -19,6 +19,8 @@ import {
     OneToMany,
 } from 'typeorm';
 
+import { FileUploadProvider } from '../providers/file-upload.provider';
+
 import { FileEntity } from './file.entity';
 
 /**
@@ -92,7 +94,7 @@ export class MediaEntity extends BaseEntity {
     @Expose()
     public get rawFile() {
         for (const file of this.files) {
-            if (file.variant === 'raw') {
+            if (file.variant === FileUploadProvider.rawVariant) {
                 return file;
             }
         }
