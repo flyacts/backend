@@ -1,3 +1,9 @@
+#### 0.3.2 (2019-02-08)
+
+##### New Features
+
+*  add a getter for the raw file ([b176ea3b](https://github.com/flyacts/backend-media-management/commit/b176ea3bcc89e7943754f094b44561b0c1f59c96))
+
 #### 0.3.1 (2019-02-08)
 
 ##### Bug Fixes
