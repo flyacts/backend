@@ -23,6 +23,11 @@ export class UserManagementMetadata {
     public userClass: UserConstructor;
 
     /**
+     * Indicate if the ownable content should actualy be enforced
+     */
+    public enforceOwnableContent: boolean = false;
+
+    /**
      * Single instance of this class
      */
     public static instance: UserManagementMetadata = new UserManagementMetadata();

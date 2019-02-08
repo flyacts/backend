@@ -7,7 +7,6 @@ import { EntityOptions, getMetadataArgsStorage } from 'typeorm';
 
 import { UserManagementMetadata } from '../helpers/user-management-medata';
 
-
 interface Ownable {
     /**
      * Who created the entity
@@ -89,14 +88,44 @@ export function OwnableEntity(nameOrOptions?: string | EntityOptions, maybeOptio
             },
         });
 
-        target.prototype.addCreatedBy = function(this: Ownable) {
+        function getUserFromContext(): unknown {
+            const enforce = UserManagementMetadata.instance.enforceOwnableContent;
+            const context = RequestContext.currentRequestContext() as RequestContext | undefined;
+            if (typeof context === 'undefined') {
+                if (enforce) {
+                    throw new Error('Could not obtain requestcontext');
+                } else {
+                    return;
+                }
+            }
+
+            if (typeof context.data === 'undefined' || context.data === null) {
+                if (enforce) {
+                    throw new Error('Could not obtain data from requestcontext');
+                } else {
+                    return;
+                }
+            }
+
             // tslint:disable-next-line:no-any
-            this.createdBy = (RequestContext.currentRequestContext().data as any).user;
+            if (typeof (context.data as any).user === 'undefined' || (context.data as any).user === null) {
+                if (enforce) {
+                    throw new Error('Could not obtain user from requestcontext');
+                } else {
+                    return;
+                }
+            }
+
+            // tslint:disable-next-line:no-any
+            return (context.data as any).user;
+        }
+
+        target.prototype.addCreatedBy = function(this: Ownable) {
+            this.createdBy = getUserFromContext();
         };
 
         target.prototype.addUpdatedBy = function(this: Ownable) {
-            // tslint:disable-next-line:no-any
-            this.updatedBy = (RequestContext.currentRequestContext().data as any).user;
+            this.updatedBy = getUserFromContext();
         };
 
         metaData.entityListeners.push({
