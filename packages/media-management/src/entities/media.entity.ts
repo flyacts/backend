@@ -4,6 +4,7 @@
 
 import { BaseEntity } from '@flyacts/backend-core-entities';
 import { OwnableEntity } from '@flyacts/backend-user-management';
+import { Expose } from 'class-transformer';
 import {
     IsInt,
     IsNumber,
@@ -84,5 +85,17 @@ export class MediaEntity extends BaseEntity {
     @IsInt()
     @IsPositive()
     public sortOrder?: number;
+
+    /**
+     * The original uploaded file
+     */
+    @Expose()
+    public get rawFile() {
+        for (const file of this.files) {
+            if (file.variant === 'raw') {
+                return file;
+            }
+        }
+    }
 
 }
