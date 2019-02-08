@@ -1,3 +1,9 @@
+### 0.12.0 (2019-02-08)
+
+##### New Features
+
+*  allow createdBy and updatedBy to be not enforceable ([801dfc44](https://github.com/flyacts/backend-user-management/commit/801dfc448b916a03742450a35757061593b2684e))
+
 #### 0.11.2 (2019-01-31)
 
 ##### Bug Fixes
