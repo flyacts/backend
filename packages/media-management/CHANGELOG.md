@@ -1,3 +1,14 @@
+### 0.3.0 (2019-02-08)
+
+##### Chores
+
+*  update the user management ([c36df2cd](https://github.com/flyacts/backend-media-management/commit/c36df2cd1c3feb2b3aa12b519ea7253917137471))
+
+##### New Features
+
+*  add a sortorder ([c248f49e](https://github.com/flyacts/backend-media-management/commit/c248f49eaf87001d3ade3ef944279713e735a763))
+*  add a method for deleting media ([51578ed6](https://github.com/flyacts/backend-media-management/commit/51578ed6331dc7f5286b2d89ae3be027efc8017e))
+
 #### 0.2.2 (2019-02-05)
 
 ##### Chores
