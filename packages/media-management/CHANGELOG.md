@@ -1,3 +1,9 @@
+#### 0.3.1 (2019-02-08)
+
+##### Bug Fixes
+
+*  make the sortorder optional ([fb48c351](https://github.com/flyacts/backend-media-management/commit/fb48c3513e17b596b96623c3633ee13b7c55098d))
+
 ### 0.3.0 (2019-02-08)
 
 ##### Chores
