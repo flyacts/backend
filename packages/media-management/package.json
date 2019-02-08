@@ -20,7 +20,7 @@
     },
     "dependencies": {
         "@flyacts/backend-core-entities": "0.11.0",
-        "@flyacts/backend-user-management": "^0.11.2",
+        "@flyacts/backend-user-management": "^0.12.0",
         "class-validator": "0.9.1",
         "content-addressable-blob-store": "^4.6.0",
         "fs-extra": "7.0.1",
