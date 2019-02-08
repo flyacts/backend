@@ -77,9 +77,12 @@ export class MediaEntity extends BaseEntity {
     /**
      * The sort order of the media inside the collection
      */
-    @Column()
+    @Column({
+        name: 'sort_order',
+        nullable: true,
+    })
     @IsInt()
     @IsPositive()
-    public sortOrder!: number;
+    public sortOrder?: number;
 
 }

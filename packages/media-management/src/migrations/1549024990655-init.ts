@@ -72,6 +72,7 @@ export class Init1549024990655 implements MigrationInterface {
                 {
                     'name': 'sort_order',
                     type: 'integer',
+                    isNullable: true,
                 },
             ],
         });
