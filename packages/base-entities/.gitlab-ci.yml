@@ -1,29 +1,17 @@
-image: node:10.4
+image: node:10.15
 
 stages:
-  - lint
   - test
-  - build
   - publish
-  - documentation
 
 before_script:
   - echo $NPMJS_AUTH_TOKEN >> .npmrc
   - npm ci
 
-Lint sources:
-  stage: lint
-  script:
-    - npm run lint
-
-.Run tests:
+Checking sources:
   stage: test
   script:
-    - npm test
-
-Build SDK:
-  stage: build
-  script:
+    - npm run lint
     - npm run build
 
 Publish SDK:

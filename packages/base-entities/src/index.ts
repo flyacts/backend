@@ -1,5 +1,5 @@
 /**
- * @copyright FLYACTS GmbH 2018
+ * @copyright FLYACTS GmbH 2019
  */
 
 import 'reflect-metadata';
