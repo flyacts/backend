@@ -1,3 +1,13 @@
+### 0.12.0 (2019-02-17)
+
+##### Chores
+
+*  bring project up to date ([a206d50b](https://github.com/flyacts/backend-core-entities/commit/a206d50b23b237bb30cd58533a266dfb7d5f8cd9))
+
+##### Documentation Changes
+
+*  update readme ([7e1a30cf](https://github.com/flyacts/backend-core-entities/commit/7e1a30cf6b0ce7da94470ee29873c87856b76a05))
+
 ### 0.11.0 (2018-10-08)
 
 ##### Documentation Changes
