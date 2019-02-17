@@ -5,6 +5,3 @@ This repository provides entities for  starting a new backend using our [stack](
 The following entities are provided:
 
 * Base (Abstract)
-* User
-* Role
-* AccessToken
