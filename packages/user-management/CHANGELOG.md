@@ -1,3 +1,9 @@
+#### 0.12.1 (2019-02-17)
+
+##### Documentation Changes
+
+*  add install and configuration instructions ([9c53ab72](https://github.com/flyacts/backend-user-management/commit/9c53ab7221f30f0adb3734ab531391376657a567))
+
 ### 0.12.0 (2019-02-08)
 
 ##### New Features
