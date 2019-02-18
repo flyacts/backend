@@ -40,7 +40,10 @@ export class FileUploadProvider {
         private connection: Connection,
         private configuration: MediaConfiguration,
     ) {
-        this.storage = new BlobStore(this.configuration.location);
+        this.storage = new BlobStore(
+            this.configuration.location,
+            this.configuration.tempDir,
+        );
     }
 
     /**

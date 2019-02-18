@@ -55,10 +55,15 @@ export class BlobStore {
      */
     private storage: any;
 
-    public constructor(path: string, algo: string = 'sha256') {
+    public constructor(
+        path: string,
+        tmpdir?: string,
+        algo: string = 'sha256',
+    ) {
         this.storage = blobs({
             path,
             algo,
+            tmpdir,
         });
     }
 
