@@ -140,6 +140,7 @@ export class Backend {
                 middlewares,
                 defaultErrorHandler: true,
                 development: true,
+                cors: true,
             });
 
             return be;

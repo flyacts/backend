@@ -28,6 +28,7 @@
         "class-validator-jsonschema": "1.2.0",
         "cls-hooked": "4.2.2",
         "config": "3.0.1",
+        "cors": "2.8.5",
         "express": "4.16.4",
         "moment": "2.24.0",
         "node-emoji": "1.8.1",
