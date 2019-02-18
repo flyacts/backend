@@ -174,11 +174,20 @@ export class FileUploadProvider {
     /**
      * Remove the media from the database and check if we can unlink the file
      */
-    public async removeMedia(media: MediaEntity) {
+    public async removeMedia(media: MediaEntity, transactionManager?: EntityManager) {
+
+        let entityManager: EntityManager;
+        let existingTransaction = false;
         const queryRunner = this.connection.createQueryRunner();
-        await queryRunner.startTransaction();
+
+        if (transactionManager instanceof EntityManager) {
+            entityManager = transactionManager;
+            existingTransaction = true;
+        } else {
+            await queryRunner.startTransaction();
+            entityManager = queryRunner.manager;
+        }
         try {
-            const entityManager = queryRunner.manager;
 
             for (const file of media.files) {
                 await entityManager.remove(file);
@@ -192,9 +201,13 @@ export class FileUploadProvider {
 
             await entityManager.remove(media);
 
-            await queryRunner.commitTransaction();
+            if (!existingTransaction) {
+                await queryRunner.commitTransaction();
+            }
         } catch (error) {
-            await queryRunner.rollbackTransaction();
+            if (!existingTransaction) {
+                await queryRunner.rollbackTransaction();
+            }
             throw new Error('Deleting media entity failed');
         }
     }
