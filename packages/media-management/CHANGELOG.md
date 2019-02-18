@@ -1,3 +1,9 @@
+### 0.4.0 (2019-02-18)
+
+##### New Features
+
+*  create a configurable tempDir ([022c0e1d](https://github.com/flyacts/backend-media-management/commit/022c0e1d2faf385596540d37ba7f330e250950a1))
+
 #### 0.3.2 (2019-02-08)
 
 ##### New Features
