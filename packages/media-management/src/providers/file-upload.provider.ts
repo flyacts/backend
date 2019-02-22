@@ -49,11 +49,13 @@ export class FileUploadProvider {
     /**
      * Attach a media to an entity
      */
+    // tslint:disable-next-line:cognitive-complexity
     public async attachFile(
         collection: string,
         entity: BaseEntity,
         file: Stream | Buffer | unknown,
         name?: string,
+        mimetype?: string,
         transactionManager?: EntityManager,
     ): Promise<MediaEntity> {
         if (!(entity instanceof BaseEntity)) {
@@ -130,10 +132,13 @@ export class FileUploadProvider {
                         reject(err);
                         return;
                     }
+                    result = (
+                        result === 'application/octet-stream' &&
+                        typeof mimetype !== 'undefined'
+                    ) ? mimetype : result;
                     resolve(result);
                 });
             }));
-
 
             await entityManager.save(fileEntity);
 
