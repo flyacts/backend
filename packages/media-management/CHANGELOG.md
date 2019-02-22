@@ -1,3 +1,9 @@
+### 0.7.0 (2019-02-22)
+
+##### New Features
+
+*  allow to pass mimetype when attaching new media ([04d4e1d2](https://github.com/flyacts/backend-media-management/commit/04d4e1d27f96d9a4cfca5e5e03cff2fd190a549e))
+
 ### 0.6.0 (2019-02-22)
 
 ##### Bug Fixes
