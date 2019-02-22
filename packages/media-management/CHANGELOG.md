@@ -1,3 +1,9 @@
+### 0.6.0 (2019-02-22)
+
+##### Bug Fixes
+
+*  release query runner after finishing its work ([9d248824](https://github.com/flyacts/backend-media-management/commit/9d2488249e0e8ea6552492ce187816baa3dffe81))
+
 ### 0.5.0 (2019-02-18)
 
 ##### New Features
