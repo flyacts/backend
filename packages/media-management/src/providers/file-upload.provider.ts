@@ -139,12 +139,14 @@ export class FileUploadProvider {
 
             if (!existingTransaction) {
                 await queryRunner.commitTransaction();
+                await queryRunner.release();
             }
 
             return media;
         } catch (error) {
             if (!existingTransaction) {
                 await queryRunner.rollbackTransaction();
+                await queryRunner.release();
             }
             throw error;
         }
@@ -203,10 +205,12 @@ export class FileUploadProvider {
 
             if (!existingTransaction) {
                 await queryRunner.commitTransaction();
+                await queryRunner.release();
             }
         } catch (error) {
             if (!existingTransaction) {
                 await queryRunner.rollbackTransaction();
+                await queryRunner.release();
             }
             throw new Error('Deleting media entity failed');
         }
