@@ -1,3 +1,9 @@
+### 0.8.0 (2019-02-26)
+
+##### New Features
+
+*  replace mmmagic with file-type ([3c4dfb8a](https://github.com/flyacts/backend-media-management/commit/3c4dfb8ab86abbf59ef916240ca8d4a6b6cda30f))
+
 ### 0.7.0 (2019-02-22)
 
 ##### New Features
