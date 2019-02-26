@@ -3,10 +3,8 @@
  */
 
 import { BaseEntity } from '@flyacts/backend-core-entities';
-import {
-    Magic,
-    MAGIC_MIME_TYPE,
-} from 'mmmagic';
+import * as fileType from 'file-type';
+import * as readChunk from 'read-chunk';
 import {
     Readable,
     Stream,
@@ -49,13 +47,11 @@ export class FileUploadProvider {
     /**
      * Attach a media to an entity
      */
-    // tslint:disable-next-line:cognitive-complexity
     public async attachFile(
         collection: string,
         entity: BaseEntity,
         file: Stream | Buffer | unknown,
         name?: string,
-        mimetype?: string,
         transactionManager?: EntityManager,
     ): Promise<MediaEntity> {
         if (!(entity instanceof BaseEntity)) {
@@ -119,26 +115,19 @@ export class FileUploadProvider {
             }));
 
             const filePath = await this.storage.resolve({ key: hash });
-            const magic = new Magic(MAGIC_MIME_TYPE);
             const fileEntity = new FileEntity();
 
             fileEntity.media = media;
             fileEntity.hash = hash;
             fileEntity.variant = FileUploadProvider.rawVariant;
             fileEntity.size = filePath.stat.size;
-            fileEntity.contentType = await (new Promise((resolve, reject) => {
-                magic.detectFile(filePath.path, (err, result) => {
-                    if (err instanceof Error) {
-                        reject(err);
-                        return;
-                    }
-                    result = (
-                        result === 'application/octet-stream' &&
-                        typeof mimetype !== 'undefined'
-                    ) ? mimetype : result;
-                    resolve(result);
-                });
-            }));
+            const fileContents = await readChunk(filePath.path, 0, fileType.minimumBytes);
+            const results = fileType(fileContents);
+            if (results !== null) {
+                fileEntity.contentType = results.mime;
+            } else {
+                fileEntity.contentType = 'application/octet-stream';
+            }
 
             await entityManager.save(fileEntity);
 
