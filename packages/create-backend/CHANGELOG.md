@@ -1,3 +1,9 @@
+### 0.6.0 (2019-03-03)
+
+##### New Features
+
+*  newest developments ([a3b4de09](https://github.com/flyacts/create-backend/commit/a3b4de0924cfff5f7c8a9f046731eb9203df2415))
+
 ### 0.5.0 (2019-02-06)
 
 ##### Chores
