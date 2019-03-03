@@ -1,27 +1,43 @@
 {
-    "main": "dist/server.js",
     "version": "0.1.0",
+    "main": "src/server.ts",
     "license": "UNLICENSED",
     "private": true,
     "scripts": {
-        "build": "tsc -p tsconfig.json",
+        "build": "rimraf ./dist && tsc -p tsconfig.json",
+        "debug": "node --inspect -r ts-node/register src/server",
+        "democontent": "npm run -s teardown-database && sudo rimraf ./database && npm run -s setup-database -- --persistant && sleep 3 && ts-node src/democontent",
+        "democontent:prod": "node dist/democontent",
+        "generate-compose-file": "ts-node ci/generate-compose-file",
         "lint": "tslint -p tsconfig.json",
         "migrations": "node dist/migrate",
-        "start:dev": "nodemon -r ts-node/register -w src -e ts -e tsx src/server",
+        "notify": "notify",
+        "notify-slack": "ts-node ci/notify-slack",
+        "setup-database": "ts-node scripts/setup-database.ts",
+        "start:dev": "rimraf ./dist && nodemon -r ts-node/register",
         "start:prod": "node dist/server",
         "start": "ts-node src/server",
-        "debug": "node --inspect -r ts-node/register src/server",
-        "test": "jest --bail --no-cache --runInBand",
-        "typeorm": "node -r ts-node/register node_modules/typeorm/cli.js",
-        "notify-slack": "ts-node ci/notify-slack",
-        "generate-compose-file": "ts-node ci/generate-compose-file",
-        "democontent": "rm database.db && ts-node src/democontent",
-        "democontent:prod": "node dist/democontent"
+        "teardown-database": "ts-node scripts/teardown-database.ts",
+        "test": "npm run -s teardown-database && npm run -s setup-database -- --local && npm run -s build && cp ormconfig.test.json dist/ormconfig.json && cross-env NODE_ENV=test mocha --colors --bail --timeout 60000 --recursive dist/tests && npm run -s teardown-database",
+        "test:ci": "npm run -s teardown-database && npm run -s setup-database && npm run -s build && cp ormconfig.test.json dist/ormconfig.json && cross-env NODE_ENV=test mocha --colors --bail --timeout 60000 --recursive dist/tests && npm run -s teardown-database",
+        "tsfmt": "tsfmt",
+        "typeorm": "node -r ts-node/register node_modules/typeorm/cli.js"
+    },
+    "lint-staged": {
+        "src/**/*.ts": [
+            "tslint --fix -p tsconfig.json",
+            "tsfmt -r",
+            "git add"
+        ],
+        "tests/**/*.ts": [
+            "tsfmt -r",
+            "git add"
+        ]
     },
     "husky": {
         "hooks": {
-            "pre-push": "npm run lint && npm run build && rm -R dist && npm run test",
-            "pre-commit": "npm run lint",
+            "pre-push": "npm run -s lint && npm run -s build && rm -R dist && npm run -s test",
+            "pre-commit": "npm run -s lint",
             "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
         }
     }

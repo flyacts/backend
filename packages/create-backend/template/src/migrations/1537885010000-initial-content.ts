@@ -5,6 +5,8 @@
 import { RoleEntity } from '@flyacts/backend-user-management';
 import { MigrationInterface, QueryRunner } from 'typeorm';
 
+// tslint:disable:completed-docs
+
 /**
  * Democontent from migrations
  */

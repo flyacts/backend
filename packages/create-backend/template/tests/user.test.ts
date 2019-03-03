@@ -2,17 +2,19 @@
  * @copyright FLYACTS GmbH 2018
  */
 
+ // tslint:disable-next-line:max-line-length
+ // tslint:disable:no-any no-identical-functions one-variable-per-declaration no-big-function no-duplicate-string no-hardcoded-credentials
+
 import { expect } from 'chai';
 import { Application } from 'express';
 import * as request from 'supertest';
 import { Connection } from 'typeorm';
 
-import { setupDatabase } from './helper';
-require('./request');
-
 import {
     startApp,
 } from '../src/server';
+
+import { closeTestingConnections, setupDatabase } from './helper';
 
 
 const isoRegEx = /\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+([+-][0-2]\d:[0-5]\d|Z)/;
@@ -22,15 +24,19 @@ describe('User Controller', () => {
     let connection: Connection;
     let admin: any, user: any;
 
-    beforeAll(async () => {
+    before(async () => {
         process.env.USE_DEMOCONTENT = 'yes';
         const result = await startApp();
         app = result.express;
-        connection = result.connection;;
+        connection = result.connection;
+    });
+
+    after(async () => {
+        await closeTestingConnections();
     });
 
     describe('login', () => {
-        beforeAll(async () => {
+        before(async () => {
             const users = await setupDatabase(app, connection);
             admin = users.admin;
             user = users.user;
@@ -67,7 +73,7 @@ describe('User Controller', () => {
                 .send({
                     username: 'user@test.test',
                     password: '123456',
-                    realm: 'backoffice',
+                    realm: 'frontend',
                 })
                 .expect(200);
 
@@ -101,7 +107,7 @@ describe('User Controller', () => {
                 .set({
                     Authorization: user.token,
                 })
-                .expect(403)
+                .expect(403);
         });
 
         it('should fail to login with invalid credentials', async () => {
@@ -110,11 +116,9 @@ describe('User Controller', () => {
                 .send({
                     username: 'invalid@test.test',
                     password: '123456',
-                    realm: 'backoffice'
+                    realm: 'backoffice',
                 })
-                .expect(401)
+                .expect(401);
         });
     });
-
-
 });

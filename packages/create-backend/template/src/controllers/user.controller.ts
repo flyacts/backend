@@ -9,7 +9,6 @@ import {
     UserService,
 } from '@flyacts/backend-user-management';
 import { validate } from 'class-validator';
-
 import * as config from 'config';
 import { Response } from 'express';
 import {
@@ -35,7 +34,6 @@ import {
     OpenAPI,
     ResponseSchema,
 } from 'routing-controllers-openapi';
-
 import {
     Service,
 } from 'typedi';
@@ -50,6 +48,7 @@ import {
     UserExtensionEntity,
 } from '../entities/user-extension.entity';
 import { UserRoles } from '../enums/user-roles.enum';
+import { hasValidSortField } from '../helper/funcs';
 
 /**
  * Controller for /user
@@ -112,13 +111,19 @@ export class UserController {
             query.andWhere('ue.id = :id', { id });
         }
 
-        if (typeof sortField === 'string') {
-            if (['firstname', 'lastname', 'user.email', 'id'].includes(sortField)) {
-                if (!sortField.includes('.')) {
-                    sortField = `ue.${sortField}`;
-                }
-                query.orderBy(sortField, sortDirection);
+        if (
+            hasValidSortField(
+                sortField,
+                [
+                    'firstname',
+                    'lastname',
+                    'user.email',
+                    'id',
+                ])) {
+            if (!sortField.includes('.')) {
+                sortField = `ue.${sortField}`;
             }
+            query.orderBy(sortField, sortDirection);
         }
 
         const count = await query.getCount();

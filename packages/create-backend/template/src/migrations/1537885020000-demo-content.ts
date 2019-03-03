@@ -8,13 +8,15 @@ import { MigrationInterface, QueryRunner } from 'typeorm';
 
 import { UserExtensionEntity } from '../entities/user-extension.entity';
 
+// tslint:disable:completed-docs
+
 /**
  * Democontent from migrations
  */
 export class DemoContent1537885020000 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner) {
-        if (!(typeof process.env.USE_DEMOCONTENT === 'undefined')) {
+        if (typeof process.env.USE_DEMOCONTENT !== 'undefined') {
             // tslint:disable-next-line:no-any
             const xfaker: any = faker;
             xfaker.locale = 'de';
@@ -40,14 +42,14 @@ export class DemoContent1537885020000 implements MigrationInterface {
             user.username = 'user@test.test';
             user.email = 'user@test.test';
             user.emailVerified = true;
-            user.realm = 'backoffice';
+            user.realm = 'frontend';
             await user.setPassword('123456');
             user.roles = roles.filter(role => role.name === 'user');
             await queryRunner.connection.manager.save(user);
 
             userExtension = new UserExtensionEntity();
             userExtension.firstname = 'User';
-            userExtension.lastname = 'USer';
+            userExtension.lastname = 'User';
             userExtension.user = user;
             await queryRunner.connection.manager.save(userExtension);
         }

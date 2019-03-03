@@ -1,11 +1,16 @@
 {
     "database": {
-        "type": "sqlite",
-        "database": "database.db",
+        "type": "postgres",
+        "host": "localhost",
+        "port": 5432,
+        "username": "postgres",
+        "password": "",
+        "database": "backend_app",
         "logging": false
     },
     "media": {
-        "directory": "./media"
+        "directory": "/srv/backend/files/media",
+        "tmpdir": "/srv/backend/files/media/tmp"
     },
     "explorer": {
         "enabled": false

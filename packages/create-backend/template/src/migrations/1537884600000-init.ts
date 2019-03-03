@@ -6,6 +6,8 @@ import {MigrationInterface, QueryRunner, Table} from 'typeorm';
 // tslint:disable-next-line
 import { TableColumnOptions } from 'typeorm/schema-builder/options/TableColumnOptions';
 
+// tslint:disable:completed-docs
+
 /**
  * The initial migrations
  */

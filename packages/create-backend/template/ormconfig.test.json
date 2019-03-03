@@ -1,0 +1,25 @@
+{
+    "type": "sqlite",
+    "database": "database.db",
+    "synchronize": false,
+    "logging": true,
+    "entities": [
+        "node_modules/@flyacts/backend-core-entities/dist/entities/**/*.js",
+        "node_modules/@flyacts/backend-user-management/dist/entities/**/*.js",
+        "node_modules/@flyacts/backend-media-management/dist/entities/**/*.js",
+        "dist/src/entities/**/*.js"
+    ],
+    "migrations": [
+        "node_modules/@flyacts/backend-core-entities/dist/migrations/**/*.js",
+        "node_modules/@flyacts/backend-user-management/dist/migrations/**/*.js",
+        "node_modules/@flyacts/backend-media-management/dist/migrations/**/*.js",
+        "dist/src/migrations/**/*.js"
+    ],
+    "subscribers": [
+    ],
+    "cli": {
+        "entitiesDir": "src/entities",
+        "migrationsDir": "src/migrations",
+        "subscribersDir": "src/subscribers"
+    }
+}

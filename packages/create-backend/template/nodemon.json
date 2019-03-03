@@ -1,0 +1,10 @@
+{
+    "verbose": false,
+    "ext": "ts,tsx,json",
+    "watch": [
+        "src"
+    ],
+    "events": {
+        "restart": "npm run -s notify -- --icon https://cdn.jsdelivr.net/gh/remy/nodemon@master/website/nodemon.png --title nodemon --message \"Backend restarted due to:\n$FILENAME\" &"
+    }
+}
