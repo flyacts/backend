@@ -3,8 +3,8 @@
  */
 
 import { BaseEntity } from '@flyacts/backend-core-entities';
-import * as fileType from 'file-type';
-import * as readChunk from 'read-chunk';
+import fileType from 'file-type';
+import readChunk from 'read-chunk';
 import {
     Readable,
     Stream,

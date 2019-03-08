@@ -25,6 +25,9 @@ import { UserManagementMetadata } from '../helpers/user-management-medata';
  */
 @Middleware({ type: 'before' })
 export class CreateContextMiddleware implements ExpressMiddlewareInterface {
+    /**
+     * Express middleware function to create a session
+     */
     public async use(request: Request, _response: Response, next: (err?: unknown) => void) {
         // tslint:disable-next-line
         let session = cls.getNamespace(RequestContext.nsid);

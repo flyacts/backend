@@ -2,6 +2,8 @@
  * @copyright FLYACTS GmbH 2019
  */
 
+// tslint:disable:completed-docs
+
 import {MigrationInterface, QueryRunner, Table} from 'typeorm';
 // tslint:disable-next-line
 import { TableColumnOptions } from 'typeorm/schema-builder/options/TableColumnOptions';
