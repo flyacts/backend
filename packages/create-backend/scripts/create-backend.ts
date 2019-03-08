@@ -59,7 +59,7 @@ import logger from './logger';
             'reflect-metadata',
             'routing-controllers',
             'typedi',
-            'typeorm@0.2.8',
+            'typeorm@0.2.14',
             'uid-generator',
             'winston',
             'zxcvbn',

@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "reflect-metadata": "0.1.13",
-    "typeorm": "0.2.8"
+    "typeorm": "0.2.14"
   },
   "devDependencies": {
     "@commitlint/cli": "7.5.2",

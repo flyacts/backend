@@ -36,7 +36,7 @@
         "routing-controllers-openapi": "1.6.0",
         "swagger-ui-express": "4.0.2",
         "typedi": "0.8.0",
-        "typeorm": "0.2.8",
+        "typeorm": "0.2.14",
         "winston": "3.2.1"
     },
     "devDependencies": {
