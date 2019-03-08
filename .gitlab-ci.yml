@@ -6,6 +6,7 @@ stages:
 
 before_script:
   - echo $NPMJS_AUTH_TOKEN > .npmrc
+  - npm ci
   - npm run lerna -- bootstrap
 
 Check Sources:
