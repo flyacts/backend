@@ -1,3 +1,39 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# 0.13.0 (2019-03-08)
+
+
+### Bug Fixes
+
+* **linting:** fix linter errors ([60bbec3](https://github.com/flyacts/backend-core-entities/commit/60bbec3))
+* **packages:** add ts-jest as a dev dependency ([5f57985](https://github.com/flyacts/backend-core-entities/commit/5f57985))
+* add src to include ([0995b02](https://github.com/flyacts/backend-core-entities/commit/0995b02))
+* correct filename ([36a5770](https://github.com/flyacts/backend-core-entities/commit/36a5770))
+* linting issues ([1593a2e](https://github.com/flyacts/backend-core-entities/commit/1593a2e))
+* remove the entity anotation to hide it from the db ([2c00041](https://github.com/flyacts/backend-core-entities/commit/2c00041))
+* use unix timestamp for migrations ([ef41523](https://github.com/flyacts/backend-core-entities/commit/ef41523))
+
+
+### Features
+
+* **tests:** add initial tests and test setup ([3b8e4a2](https://github.com/flyacts/backend-core-entities/commit/3b8e4a2))
+* add password hashing capabilities ([63e176a](https://github.com/flyacts/backend-core-entities/commit/63e176a))
+* initial migrations ([21fe612](https://github.com/flyacts/backend-core-entities/commit/21fe612))
+* make the user class abstract to hide it from the schema ([4a1d64a](https://github.com/flyacts/backend-core-entities/commit/4a1d64a))
+* refactor user entities into a module ([f2307ad](https://github.com/flyacts/backend-core-entities/commit/f2307ad))
+
+
+### Reverts
+
+* dont make the user abstract ([46e5792](https://github.com/flyacts/backend-core-entities/commit/46e5792))
+
+
+
+
+
 ### 0.12.0 (2019-02-17)
 
 ##### Chores
@@ -133,4 +169,3 @@
 ##### Refactors
 
 *  rename model to entity ([cf3e8373](https://code.flyacts.com/backend/core-entities/commit/cf3e8373b574bd7727db0c78c528db6bc785c31d))
-

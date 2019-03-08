@@ -1,3 +1,40 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# 0.13.0 (2019-03-08)
+
+
+### Bug Fixes
+
+* better stream handling ([2ac55a3](https://github.com/flyacts/backend-media-management/commit/2ac55a3))
+* inherit file entity from base entity ([cdebdb4](https://github.com/flyacts/backend-media-management/commit/cdebdb4))
+* linting and build issues ([3dd96ff](https://github.com/flyacts/backend-media-management/commit/3dd96ff))
+* make the sortorder optional ([aa89fa1](https://github.com/flyacts/backend-media-management/commit/aa89fa1))
+* release query runner after finishing its work ([86df0ff](https://github.com/flyacts/backend-media-management/commit/86df0ff))
+* remove unnecessary async declaration ([3e5ee1c](https://github.com/flyacts/backend-media-management/commit/3e5ee1c))
+* use a postgresql compatible type ([e7431ef](https://github.com/flyacts/backend-media-management/commit/e7431ef))
+* use a postgresql compatible type ([1b4ed46](https://github.com/flyacts/backend-media-management/commit/1b4ed46))
+* use constant ([dcf4879](https://github.com/flyacts/backend-media-management/commit/dcf4879))
+* use postgresql data types ([4c0644e](https://github.com/flyacts/backend-media-management/commit/4c0644e))
+
+
+### Features
+
+* add a getter for the raw file ([34ca79f](https://github.com/flyacts/backend-media-management/commit/34ca79f))
+* add a method for deleting media ([5312f71](https://github.com/flyacts/backend-media-management/commit/5312f71))
+* add a method to get a file from the store ([1b29a89](https://github.com/flyacts/backend-media-management/commit/1b29a89))
+* add a sortorder ([d0a2b85](https://github.com/flyacts/backend-media-management/commit/d0a2b85))
+* allow to pass mimetype when attaching new media ([ed8f1a5](https://github.com/flyacts/backend-media-management/commit/ed8f1a5))
+* allow transaction reuse ([4528877](https://github.com/flyacts/backend-media-management/commit/4528877))
+* create a configurable tempDir ([084bb9c](https://github.com/flyacts/backend-media-management/commit/084bb9c))
+* replace mmmagic with file-type ([cff65b2](https://github.com/flyacts/backend-media-management/commit/cff65b2))
+
+
+
+
+
 ### 0.8.0 (2019-02-26)
 
 ##### New Features
@@ -86,4 +123,3 @@
 ##### New Features
 
 *  add a method to get a file from the store ([012537aa](https://github.com/flyacts/backend-media-management/commit/012537aac94a47ff8135e8787d63bbf47d016adf))
-

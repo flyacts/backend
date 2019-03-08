@@ -1,3 +1,27 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# 0.13.0 (2019-03-08)
+
+
+### Bug Fixes
+
+* move the request-context to extra package 0a4ee9e
+* update lockfile fdd18fb
+
+
+### Features
+
+* add support for middlewares b6c7a50
+* enable cors 4bd3ec3
+* integrate cls-hooked for RequestContext a98fca8
+
+
+
+
+
 #### 0.6.2 (2019-02-08)
 
 ##### Chores
@@ -73,4 +97,3 @@
 ##### Continuous Integration
 
 *  publish package public (8d01965e)
-

@@ -1,3 +1,58 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# 0.13.0 (2019-03-08)
+
+
+### Bug Fixes
+
+* add @types/cls-hooked ([d59b79f](https://github.com/flyacts/backend-user-management/commit/d59b79f))
+* allow other containers to be imported ([b122935](https://github.com/flyacts/backend-user-management/commit/b122935))
+* apply the unique constraint int the migrations ([f6515ee](https://github.com/flyacts/backend-user-management/commit/f6515ee))
+* create new session if none is active ([a424181](https://github.com/flyacts/backend-user-management/commit/a424181))
+* disable empty strings for username and email ([96f6508](https://github.com/flyacts/backend-user-management/commit/96f6508))
+* don't assume a default scope ([4ca0215](https://github.com/flyacts/backend-user-management/commit/4ca0215))
+* dont write the context on context.data 🤦 ([e93045b](https://github.com/flyacts/backend-user-management/commit/e93045b))
+* enlargen the field of the token ([f8acac7](https://github.com/flyacts/backend-user-management/commit/f8acac7))
+* give the uniqe constraints names so a user can match them ([8ca6def](https://github.com/flyacts/backend-user-management/commit/8ca6def))
+* linting and build issues ([3dd96ff](https://github.com/flyacts/backend-user-management/commit/3dd96ff))
+* make password nullable ([3b9a2ba](https://github.com/flyacts/backend-user-management/commit/3b9a2ba))
+* migrate the external links from rawgit to jsdelivr ([3edeea5](https://github.com/flyacts/backend-user-management/commit/3edeea5))
+* only add a service if it is not known ([0d3f42e](https://github.com/flyacts/backend-user-management/commit/0d3f42e))
+* override type for password ([0eb041c](https://github.com/flyacts/backend-user-management/commit/0eb041c))
+* repair migrations ([6a768bc](https://github.com/flyacts/backend-user-management/commit/6a768bc))
+* repair the currentUserChecker ([a4bac01](https://github.com/flyacts/backend-user-management/commit/a4bac01))
+* replace string-type by varchar to be cross db ([55c4872](https://github.com/flyacts/backend-user-management/commit/55c4872))
+* the password is not required ([1befff3](https://github.com/flyacts/backend-user-management/commit/1befff3))
+* use correct variable ([fa5154a](https://github.com/flyacts/backend-user-management/commit/fa5154a))
+* use cross platform default values ([70567cd](https://github.com/flyacts/backend-user-management/commit/70567cd))
+* use cross platform timestamp type ([599ea1b](https://github.com/flyacts/backend-user-management/commit/599ea1b))
+* **current user:** don't throw exceptions on failure ([86001b1](https://github.com/flyacts/backend-user-management/commit/86001b1))
+* use cross platform varchar ([9e2e85f](https://github.com/flyacts/backend-user-management/commit/9e2e85f))
+* use local import ([7dd57e3](https://github.com/flyacts/backend-user-management/commit/7dd57e3))
+* **provider:** disable login for disabled users ([7a53c0b](https://github.com/flyacts/backend-user-management/commit/7a53c0b))
+* **user:** exclude the password from transformation ([171f7ee](https://github.com/flyacts/backend-user-management/commit/171f7ee))
+
+
+### Features
+
+* **tokens:** add a check for the token scopes ([2a81994](https://github.com/flyacts/backend-user-management/commit/2a81994))
+* **user:** add `hasRole` method to user entity ([a8981be](https://github.com/flyacts/backend-user-management/commit/a8981be))
+* add `Ownable`-mixin ([542f152](https://github.com/flyacts/backend-user-management/commit/542f152))
+* add a payload attribute to the tokenentity ([5fd7bd9](https://github.com/flyacts/backend-user-management/commit/5fd7bd9))
+* add more validation ([0f4e474](https://github.com/flyacts/backend-user-management/commit/0f4e474))
+* allow createdBy and updatedBy to be not enforceable ([d9e2949](https://github.com/flyacts/backend-user-management/commit/d9e2949))
+* allow the password to be `NULL` ([a96c529](https://github.com/flyacts/backend-user-management/commit/a96c529))
+* initial commit ([9909bac](https://github.com/flyacts/backend-user-management/commit/9909bac))
+* integrate ownable content ([4a61d7f](https://github.com/flyacts/backend-user-management/commit/4a61d7f))
+* remove dependency from the core backend ([c8d74d1](https://github.com/flyacts/backend-user-management/commit/c8d74d1))
+
+
+
+
+
 #### 0.12.1 (2019-02-17)
 
 ##### Documentation Changes
@@ -259,4 +314,3 @@
 ##### New Features
 
 *  initial commit ([001aadfd](https://github.com/flyacts/backend-user-management/commit/001aadfd31f01a359fb4bbd8388926d229b9abc9))
-

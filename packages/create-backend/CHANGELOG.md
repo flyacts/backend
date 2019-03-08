@@ -1,3 +1,32 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# 0.13.0 (2019-03-08)
+
+
+### Bug Fixes
+
+* create a git ignore since this is not included in the npm package ([1fd04fd](https://github.com/flyacts/create-backend/commit/1fd04fd))
+* linting issues ([5aea811](https://github.com/flyacts/create-backend/commit/5aea811))
+* linting issues ([1c6b680](https://github.com/flyacts/create-backend/commit/1c6b680))
+* remove file-spec to include all files in the package ([b6e3a61](https://github.com/flyacts/create-backend/commit/b6e3a61))
+* remove reference to the owner ([606ba65](https://github.com/flyacts/create-backend/commit/606ba65))
+* repair the entry point ([d11c1b5](https://github.com/flyacts/create-backend/commit/d11c1b5))
+* typo ([fe6e371](https://github.com/flyacts/create-backend/commit/fe6e371))
+
+
+### Features
+
+* add a user controller to the template ([8a986c7](https://github.com/flyacts/create-backend/commit/8a986c7))
+* add some integration tests ([68a9f88](https://github.com/flyacts/create-backend/commit/68a9f88))
+* newest developments ([48ce40b](https://github.com/flyacts/create-backend/commit/48ce40b))
+
+
+
+
+
 ### 0.6.0 (2019-03-03)
 
 ##### New Features
@@ -71,4 +100,3 @@
 *  publish the package with public access (7e7ac75a)
 
 #### 0.2.1 (2018-11-29)
-
