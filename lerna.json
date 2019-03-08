@@ -2,5 +2,17 @@
   "packages": [
     "packages/*"
   ],
+  "command": {
+    "create": {
+      "homepage": "https://github.com/flyacts/backend",
+      "license": "MIT"
+    },
+    "version": {
+      "allowBranch": "master",
+      "conventionalCommits": true,
+      "exact": true,
+      "message": "chore(release): %s"
+    }
+},
   "version": "0.13.0"
 }
