@@ -20,4 +20,4 @@ Publish Package:
   only: ['tags']
   script:
     - npm run lerna -- exec npm run build
-    - npm run lerna -- exec npm run publish
+    - npm run lerna -- publish
