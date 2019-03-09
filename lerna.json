@@ -11,7 +11,9 @@
       "allowBranch": "master",
       "conventionalCommits": true,
       "exact": true,
-      "message": "chore(release): %s"
+      "message": "chore(release): %s",
+      "signGitCommit": true,
+      "signGitTag": true
     }
 },
   "version": "0.13.0"
