@@ -20,4 +20,4 @@ Publish Package:
   only: ['tags']
   script:
     - npm run lerna -- exec npm run build
-    - npm run lerna -- publish from-git
+    - npm run lerna -- publish --yes from-git
