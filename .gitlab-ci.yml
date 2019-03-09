@@ -12,8 +12,8 @@ before_script:
 Check Sources:
   stage: check sources
   script:
-    - npm run lerna -- exec npm run lint
     - npm run lerna -- exec npm run build
+    - npm run lerna -- exec npm run lint
 
 Publish Package:
   stage: publish
