@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.1](https://github.com/flyacts/request-context/compare/v0.13.0...v0.13.1) (2019-03-09)
+
+
+### Features
+
+* update typeorm to 0.2.14 ([7b8ae8c](https://github.com/flyacts/request-context/commit/7b8ae8c))
+
+
+
+
+
 # 0.13.0 (2019-03-08)
 
 
