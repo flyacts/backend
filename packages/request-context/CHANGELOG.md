@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.2](https://github.com/flyacts/request-context/compare/v0.13.1...v0.13.2) (2019-03-09)
+
+**Note:** Version bump only for package @flyacts/request-context
+
+
+
+
+
 ## [0.13.1](https://github.com/flyacts/request-context/compare/v0.13.0...v0.13.1) (2019-03-09)
 
 

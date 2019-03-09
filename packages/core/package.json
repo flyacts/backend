@@ -1,7 +1,7 @@
 {
     "name": "@flyacts/backend",
     "description": "Core backend package for the flyacts backend",
-    "version": "0.13.1",
+    "version": "0.13.2",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
     "author": "FLYACTS Development Team <hallo@flyacts.com>",
@@ -11,8 +11,8 @@
         "lint": "tslint -p tsconfig.json"
     },
     "dependencies": {
-        "@flyacts/backend-user-management": "0.13.1",
-        "@flyacts/request-context": "0.13.1",
+        "@flyacts/backend-user-management": "0.13.2",
+        "@flyacts/request-context": "0.13.2",
         "chalk": "2.4.2",
         "class-validator-jsonschema": "1.2.0",
         "cls-hooked": "4.2.2",
