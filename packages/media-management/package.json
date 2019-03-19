@@ -1,6 +1,6 @@
 {
     "name": "@flyacts/backend-media-management",
-    "version": "0.13.2",
+    "version": "0.14.0",
     "description": "Media management for our backends",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
@@ -15,8 +15,9 @@
         "url": "https://github.com/flyacts/backend-media-management"
     },
     "dependencies": {
-        "@flyacts/backend-core-entities": "0.13.2",
-        "@flyacts/backend-user-management": "0.13.2",
+        "@flyacts/backend-core-entities": "0.14.0",
+        "@flyacts/backend-user-management": "0.14.0",
+        "@flyacts/routing-controllers": "0.8.0",
         "class-transformer": "0.2.0",
         "class-validator": "0.9.1",
         "content-addressable-blob-store": "4.6.0",
@@ -24,7 +25,6 @@
         "fs-extra": "7.0.1",
         "read-chunk": "3.1.0",
         "reflect-metadata": "0.1.13",
-        "@flyacts/routing-controllers": "0.8.0",
         "typedi": "0.8.0",
         "typeorm": "0.2.14"
     },
