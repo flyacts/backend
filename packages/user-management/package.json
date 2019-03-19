@@ -19,8 +19,10 @@
         "@flyacts/backend-crud-service": "0.5.2",
         "@flyacts/request-context": "0.13.2",
         "argon2": "0.21.0",
+        "class-transformer": "0.2.0",
+        "class-validator": "0.9.1",
         "reflect-metadata": "0.1.13",
-        "routing-controllers": "0.7.7",
+        "@flyacts/routing-controllers": "0.8.0",
         "typedi": "0.8.0",
         "typeorm": "0.2.14",
         "uid-generator": "1.0.0"

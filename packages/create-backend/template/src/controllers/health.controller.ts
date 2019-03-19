@@ -5,7 +5,7 @@
 import {
     Get,
     JsonController,
-} from 'routing-controllers';
+} from '@flyacts/routing-controllers';
 import { Service } from 'typedi';
 
 

@@ -3,7 +3,7 @@
  */
 
 import { CrudService } from '@flyacts/backend-crud-service';
-import { UnauthorizedError } from 'routing-controllers';
+import { UnauthorizedError } from '@flyacts/routing-controllers';
 import {
     Service,
 } from 'typedi';

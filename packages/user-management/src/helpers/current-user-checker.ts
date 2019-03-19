@@ -5,7 +5,7 @@
 import {
     Action,
     InternalServerError,
-} from 'routing-controllers';
+} from '@flyacts/routing-controllers';
 import { Connection } from 'typeorm';
 
 import { TokenEntity } from '../entities/token.entity';
@@ -41,7 +41,7 @@ export function createCurrentUserChecker(
         const user = await connection.manager.findOne(UserEntity, tokenEntity.user.id);
 
         if (!(user instanceof UserEntity)) {
-            throw new InternalServerError('Internal Server Error');
+            throw new InternalServerError();
         }
 
         const userClass = UserManagementMetadata.instance.userClass;

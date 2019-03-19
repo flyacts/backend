@@ -57,7 +57,7 @@ import logger from './logger';
             'multer',
             'pg',
             'reflect-metadata',
-            'routing-controllers',
+            '@flyacts/routing-controllers',
             'typedi',
             'typeorm@0.2.14',
             'uid-generator',

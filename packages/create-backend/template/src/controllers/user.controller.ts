@@ -29,11 +29,11 @@ import {
     Put,
     QueryParam,
     Res,
-} from 'routing-controllers';
+} from '@flyacts/routing-controllers';
 import {
     OpenAPI,
     ResponseSchema,
-} from 'routing-controllers-openapi';
+} from '@flyacts/routing-controllers-openapi';
 import {
     Service,
 } from 'typedi';

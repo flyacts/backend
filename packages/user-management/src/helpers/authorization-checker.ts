@@ -2,7 +2,7 @@
  * @copyright FLYACTS GmbH 2019
  */
 
-import { Action } from 'routing-controllers';
+import { Action } from '@flyacts/routing-controllers';
 import { Connection } from 'typeorm';
 
 import { TokenEntity } from '../entities/token.entity';
