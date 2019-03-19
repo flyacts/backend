@@ -12,16 +12,16 @@ import {
     createAuthorizationCheck,
     createCurrentUserChecker,
 } from '@flyacts/backend-user-management';
-import { MetadataStorage } from 'class-validator';
-import { validationMetadatasToSchemas } from 'class-validator-jsonschema';
-import * as config from 'config';
-import { Application } from 'express';
 import {
     createExpressServer,
     getMetadataArgsStorage,
     useContainer as rcUseContainer,
-} from 'routing-controllers';
-import { routingControllersToSpec } from 'routing-controllers-openapi';
+} from '@flyacts/routing-controllers';
+import { routingControllersToSpec } from '@flyacts/routing-controllers-openapi';
+import { MetadataStorage } from 'class-validator';
+import { validationMetadatasToSchemas } from 'class-validator-jsonschema';
+import * as config from 'config';
+import { Application } from 'express';
 import {
     Container,
 } from 'typedi';
