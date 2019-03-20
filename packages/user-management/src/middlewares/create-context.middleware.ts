@@ -8,7 +8,6 @@ import {
     InternalServerError,
     Middleware,
 } from '@flyacts/routing-controllers';
-import * as cls from 'cls-hooked';
 import {
     Request,
     Response,
@@ -29,19 +28,12 @@ export class CreateContextMiddleware implements ExpressMiddlewareInterface {
      * Express middleware function to create a session
      */
     public async use(request: Request, _response: Response, next: (err?: unknown) => void) {
-        // tslint:disable-next-line
-        let session = cls.getNamespace(RequestContext.nsid);
-        let requestContext: RequestContext;
-        if (session.active === null) {
-            session = cls.createNamespace(RequestContext.nsid);
-            requestContext = new RequestContext();
-        } else {
-            requestContext = session.get(RequestContext.name);
-        }
+
         const token = request.get('authorization');
         const connection = Container.get<Connection>('connection');
-        session.run(async () => {
-            session.set(RequestContext.name, requestContext);
+        RequestContext.namespace.run(async () => {
+            const requestContext = new RequestContext();
+            RequestContext.namespace.set(RequestContext.name, requestContext);
             if (typeof token !== 'string') {
                 next();
                 return;
