@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/flyacts/backend/compare/v0.14.0...v0.15.0) (2019-03-20)
+
+
+### Features
+
+* simplify the whole RequestContext business ([7f3f317](https://github.com/flyacts/backend/commit/7f3f317))
+
+
+
+
+
 # [0.14.0](https://github.com/flyacts/backend/compare/v0.13.3...v0.14.0) (2019-03-19)
 
 
