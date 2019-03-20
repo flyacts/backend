@@ -132,6 +132,7 @@ export class Backend {
             controllers,
             middlewares,
             defaultErrorHandler: true,
+            validation: false,
             development: true,
             cors: true,
         });
