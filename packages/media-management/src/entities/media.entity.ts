@@ -93,6 +93,10 @@ export class MediaEntity extends BaseEntity {
      */
     @Expose()
     public get rawFile() {
+        if (!Array.isArray(this.files)) {
+            return;
+        }
+
         for (const file of this.files) {
             if (file.variant === FileUploadProvider.rawVariant) {
                 return file;
