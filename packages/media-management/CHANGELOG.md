@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.2](https://github.com/flyacts/backend-media-management/compare/v0.15.1...v0.15.2) (2019-03-25)
+
+
+### Bug Fixes
+
+* no files are available return undefined ([ccb8c99](https://github.com/flyacts/backend-media-management/commit/ccb8c99))
+
+
+
+
+
 # [0.15.0](https://github.com/flyacts/backend-media-management/compare/v0.14.0...v0.15.0) (2019-03-20)
 
 **Note:** Version bump only for package @flyacts/backend-media-management
