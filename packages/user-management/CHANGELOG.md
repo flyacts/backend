@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.3](https://github.com/flyacts/backend/compare/v0.15.2...v0.15.3) (2019-04-15)
+
+
+### Features
+
+* allow setting the token through a get parameter ([f77d036](https://github.com/flyacts/backend/commit/f77d036))
+
+
+
+
+
 # [0.15.0](https://github.com/flyacts/backend/compare/v0.14.0...v0.15.0) (2019-03-20)
 
 
