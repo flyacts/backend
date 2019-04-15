@@ -3,6 +3,7 @@
  */
 
 import { Action } from '@flyacts/routing-controllers';
+import { Request } from 'express';
 import { Connection } from 'typeorm';
 
 import { TokenEntity } from '../entities/token.entity';
@@ -14,9 +15,12 @@ import { TokenEntity } from '../entities/token.entity';
  */
 export function createAuthorizationCheck(connection: Connection) {
     return async (action: Action, roles: string[]) => {
-        const token = action.request.headers['authorization'];
+        const request: Request = action.request;
+        let token = request.headers['authorization'];
 
-        if (typeof token !== 'string') {
+        if (typeof token !== 'string' && (typeof request.query.authorization === 'string')) {
+            token = request.query.token;
+        } else {
             return false;
         }
 
