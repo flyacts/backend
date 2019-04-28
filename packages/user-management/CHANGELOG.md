@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.4](https://github.com/flyacts/backend/compare/v0.15.3...v0.15.4) (2019-04-28)
+
+
+### Bug Fixes
+
+* only return fals if no token is set ([0079f6c](https://github.com/flyacts/backend/commit/0079f6c))
+
+
+
+
+
 ## [0.15.3](https://github.com/flyacts/backend/compare/v0.15.2...v0.15.3) (2019-04-15)
 
 

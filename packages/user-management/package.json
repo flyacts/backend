@@ -1,6 +1,6 @@
 {
     "name": "@flyacts/backend-user-management",
-    "version": "0.15.3",
+    "version": "0.15.4",
     "description": "User management for our backends",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
