@@ -20,7 +20,7 @@ export function createAuthorizationCheck(connection: Connection) {
 
         if (typeof token !== 'string' && (typeof request.query.authorization === 'string')) {
             token = request.query.token;
-        } else {
+        } else if (typeof token !== 'string') {
             return false;
         }
 
