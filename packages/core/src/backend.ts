@@ -13,7 +13,10 @@ import {
     useContainer as rcUseContainer,
 } from '@flyacts/routing-controllers';
 import { routingControllersToSpec } from '@flyacts/routing-controllers-openapi';
-import { MetadataStorage } from 'class-validator';
+import {
+    getFromContainer,
+    MetadataStorage,
+} from 'class-validator';
 import { validationMetadatasToSchemas } from 'class-validator-jsonschema';
 import * as config from 'config';
 import { Application } from 'express';
@@ -24,7 +27,6 @@ import {
     Connection,
     ConnectionOptions,
     createConnection,
-    getFromContainer,
     useContainer as ormUseContainer,
 } from 'typeorm';
 
