@@ -1,6 +1,6 @@
 {
     "name": "@flyacts/backend-user-management",
-    "version": "0.16.0",
+    "version": "0.16.1",
     "description": "User management for our backends",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
@@ -15,7 +15,7 @@
         "url": "https://github.com/flyacts/backend"
     },
     "dependencies": {
-        "@flyacts/backend-core-entities": "0.16.0",
+        "@flyacts/backend-core-entities": "0.16.1",
         "@flyacts/backend-crud-service": "0.5.2",
         "@flyacts/request-context": "0.16.0",
         "@flyacts/routing-controllers": "0.9.2",
