@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.16.0](https://github.com/flyacts/backend-media-management/compare/v0.15.5...v0.16.0) (2019-05-02)
+
+
+### Features
+
+* update routing-controller ([4b794a1](https://github.com/flyacts/backend-media-management/commit/4b794a1))
+
+
+
+
+
 ## [0.15.4](https://github.com/flyacts/backend-media-management/compare/v0.15.3...v0.15.4) (2019-04-28)
 
 **Note:** Version bump only for package @flyacts/backend-media-management
