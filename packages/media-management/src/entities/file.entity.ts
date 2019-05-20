@@ -27,13 +27,13 @@ export class FileEntity extends BaseEntity {
     /**
      * The linked media of the file
      */
+
     @ManyToOne(
         () => MediaEntity,
     )
     @JoinColumn({
         name: 'media_id',
     })
-    @Type(() => MediaEntity)
     public media!: MediaEntity;
 
     /**
