@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.2](https://github.com/flyacts/backend-media-management/compare/v0.16.1...v0.16.2) (2019-05-20)
+
+
+### Bug Fixes
+
+* don't expose media on the file ([68cc7b4](https://github.com/flyacts/backend-media-management/commit/68cc7b4))
+
+
+### Features
+
+* add the file on the media when the media is initialy created ([72a5945](https://github.com/flyacts/backend-media-management/commit/72a5945))
+
+
+
+
+
 ## [0.16.1](https://github.com/flyacts/backend-media-management/compare/v0.16.0...v0.16.1) (2019-05-02)
 
 **Note:** Version bump only for package @flyacts/backend-media-management
