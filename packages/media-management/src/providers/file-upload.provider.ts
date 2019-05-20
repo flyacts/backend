@@ -136,6 +136,8 @@ export class FileUploadProvider {
                 await queryRunner.release();
             }
 
+            media.files = [ fileEntity ];
+
             return media;
         } catch (error) {
             if (!existingTransaction) {
