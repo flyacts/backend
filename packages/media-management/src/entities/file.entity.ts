@@ -5,6 +5,9 @@
 import { BaseEntity } from '@flyacts/backend-core-entities';
 import { OwnableEntity } from '@flyacts/backend-user-management';
 import {
+    Exclude,
+} from 'class-transformer';
+import {
     IsNumber,
     IsString,
     MaxLength,
@@ -33,6 +36,7 @@ export class FileEntity extends BaseEntity {
     @JoinColumn({
         name: 'media_id',
     })
+    @Exclude()
     public media!: MediaEntity;
 
     /**
