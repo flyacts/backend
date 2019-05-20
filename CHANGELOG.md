@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.4](https://github.com/flyacts/backend/compare/v0.16.3...v0.16.4) (2019-05-20)
+
+
+### Bug Fixes
+
+* exclude media from transformation ([84334e0](https://github.com/flyacts/backend/commit/84334e0))
+
+
+
+
+
 ## [0.16.3](https://github.com/flyacts/backend/compare/v0.16.2...v0.16.3) (2019-05-20)
 
 
