@@ -4,7 +4,6 @@
 
 import { BaseEntity } from '@flyacts/backend-core-entities';
 import { OwnableEntity } from '@flyacts/backend-user-management';
-import { Type } from 'class-transformer';
 import {
     IsNumber,
     IsString,
