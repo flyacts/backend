@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.6](https://github.com/flyacts/backend/compare/v0.16.5...v0.16.6) (2019-05-23)
+
+
+### Bug Fixes
+
+* make createdBy not optional ([ab2acb1](https://github.com/flyacts/backend/commit/ab2acb1))
+
+
+
+
+
 ## [0.16.5](https://github.com/flyacts/backend/compare/v0.16.4...v0.16.5) (2019-05-23)
 
 
