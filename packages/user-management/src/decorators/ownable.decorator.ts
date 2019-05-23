@@ -14,7 +14,7 @@ export interface Ownable<T = unknown> {
     /**
      * Who created the entity
      */
-    createdBy?: T;
+    createdBy: T;
     /**
      * Who updated the entity
      */
