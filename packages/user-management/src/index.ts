@@ -13,4 +13,7 @@ export { createCurrentUserChecker } from './helpers/current-user-checker';
 export { useContainer } from './container';
 export { UserManagementMetadata } from './helpers/user-management-medata';
 export { CreateContextMiddleware } from './middlewares/create-context.middleware';
-export { OwnableEntity } from './decorators/ownable.decorator';
+export {
+    OwnableEntity,
+    Ownable,
+} from './decorators/ownable.decorator';

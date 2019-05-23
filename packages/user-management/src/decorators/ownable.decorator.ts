@@ -7,15 +7,18 @@ import { EntityOptions, getMetadataArgsStorage } from 'typeorm';
 
 import { UserManagementMetadata } from '../helpers/user-management-medata';
 
-interface Ownable {
+/**
+ * Owners of the entity
+ */
+export interface Ownable<T = unknown> {
     /**
      * Who created the entity
      */
-    createdBy?: unknown;
+    createdBy?: T;
     /**
      * Who updated the entity
      */
-    updatedBy?: unknown;
+    updatedBy?: T;
 }
 
 /**
