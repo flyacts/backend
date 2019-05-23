@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.5](https://github.com/flyacts/backend/compare/v0.16.4...v0.16.5) (2019-05-23)
+
+
+### Features
+
+* expose the ownable interface ([3a34c4d](https://github.com/flyacts/backend/commit/3a34c4d))
+
+
+
+
+
 ## [0.16.4](https://github.com/flyacts/backend/compare/v0.16.3...v0.16.4) (2019-05-20)
 
 
