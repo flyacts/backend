@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.7](https://github.com/flyacts/backend/compare/v0.16.6...v0.16.7) (2019-06-12)
+
+
+### Features
+
+* dont require a base entity for the media to attach ([1e0e794](https://github.com/flyacts/backend/commit/1e0e794))
+
+
+
+
+
 ## [0.16.6](https://github.com/flyacts/backend/compare/v0.16.5...v0.16.6) (2019-05-23)
 
 
