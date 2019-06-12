@@ -2,7 +2,6 @@
  * @copyright FLYACTS GmbH 2019
  */
 
-import { BaseEntity } from '@flyacts/backend-core-entities';
 import fileType from 'file-type';
 import readChunk from 'read-chunk';
 import {
@@ -18,6 +17,13 @@ import { MediaConfiguration } from '../configuration/media.configuration';
 import { FileEntity } from '../entities/file.entity';
 import { MediaEntity } from '../entities/media.entity';
 import { BlobStore } from '../helpers/blob-store-wrapper';
+
+type IdIsh = {
+    /**
+     * ID of an entity
+     */
+    id?: number,
+};
 
 /**
  * Services that helps you to upload files to a media
@@ -49,13 +55,13 @@ export class FileUploadProvider {
      */
     public async attachFile(
         collection: string,
-        entity: BaseEntity,
+        entity: IdIsh | undefined,
         file: Stream | Buffer | unknown,
         name?: string,
         transactionManager?: EntityManager,
     ): Promise<MediaEntity> {
-        if (!(entity instanceof BaseEntity)) {
-            throw new Error('Not an instance of base entity');
+        if (!(typeof entity === 'object' && (typeof entity.id === 'number'))) {
+            throw new Error('Entity has no ID');
         }
 
         let entityManager: EntityManager;
