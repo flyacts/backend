@@ -8,9 +8,6 @@ import {
     UserEntity,
     UserService,
 } from '@flyacts/backend-user-management';
-import { validate } from 'class-validator';
-import * as config from 'config';
-import { Response } from 'express';
 import {
     Authorized,
     BadRequestError,
@@ -34,6 +31,9 @@ import {
     OpenAPI,
     ResponseSchema,
 } from '@flyacts/routing-controllers-openapi';
+import { validate } from 'class-validator';
+import * as config from 'config';
+import { Response } from 'express';
 import {
     Service,
 } from 'typedi';
