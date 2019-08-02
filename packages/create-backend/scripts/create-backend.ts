@@ -59,7 +59,7 @@ import logger from './logger';
             'reflect-metadata',
             '@flyacts/routing-controllers',
             'typedi',
-            'typeorm@0.2.14',
+            'typeorm@0.2.18',
             'uid-generator',
             'winston',
             'zxcvbn',

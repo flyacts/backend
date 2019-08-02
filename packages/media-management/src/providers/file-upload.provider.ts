@@ -2,7 +2,7 @@
  * @copyright FLYACTS GmbH 2019
  */
 
-import fileType from 'file-type';
+import * as fileType from 'file-type';
 import readChunk from 'read-chunk';
 import {
     Readable,
@@ -129,7 +129,7 @@ export class FileUploadProvider {
             fileEntity.size = filePath.stat.size;
             const fileContents = await readChunk(filePath.path, 0, fileType.minimumBytes);
             const results = fileType(fileContents);
-            if (results !== null) {
+            if (typeof results !== 'undefined') {
                 fileEntity.contentType = results.mime;
             } else {
                 fileEntity.contentType = 'application/octet-stream';

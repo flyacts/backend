@@ -19,23 +19,23 @@
         "@flyacts/backend-crud-service": "0.5.2",
         "@flyacts/request-context": "0.16.0",
         "@flyacts/routing-controllers": "0.9.2",
-        "argon2": "0.21.0",
-        "class-transformer": "0.2.0",
+        "argon2": "0.24.0",
+        "class-transformer": "0.2.3",
         "class-validator": "0.9.1",
         "reflect-metadata": "0.1.13",
         "typedi": "0.8.0",
-        "typeorm": "0.2.14",
-        "uid-generator": "1.0.0"
+        "typeorm": "0.2.18",
+        "uid-generator": "2.0.0"
     },
     "devDependencies": {
         "@flyacts/tslint-config": "1.2.1",
-        "@types/cls-hooked": "4.2.1",
-        "@types/express": "4.16.1",
-        "@types/node": "11.10.5",
-        "ts-node": "8.0.3",
-        "tslint": "5.13.1",
+        "@types/cls-hooked": "4.3.0",
+        "@types/express": "4.17.0",
+        "@types/node": "12.6.9",
+        "ts-node": "8.3.0",
+        "tslint": "5.18.0",
         "tslint-language-service": "0.9.9",
-        "typescript": "3.3.3333"
+        "typescript": "3.5.3"
     },
     "husky": {
         "hooks": {
