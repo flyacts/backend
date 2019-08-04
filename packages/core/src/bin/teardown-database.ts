@@ -48,7 +48,7 @@ async function destroyDockerContainer() {
  * Shutdown a postgres instance that is running on this computer
  */
 async function shutdownNativePostgres() {
-    const databasePath = path.resolve(__dirname, '../database');
+    const databasePath = path.resolve(process.cwd(), 'database');
     const postgresStatus = child_process.spawnSync('pg_ctl', [
         `--pgdata=${databasePath}`,
         'status',

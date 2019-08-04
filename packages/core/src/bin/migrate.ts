@@ -4,13 +4,14 @@
 
 import { Logger } from '@flyacts/backend-logger';
 import config = require('config');
+import * as path from 'path';
 import { createConnection } from 'typeorm';
 
 // tslint:disable-next-line:no-floating-promises
 (async function() {
     const logger = new Logger();
     const connection = await createConnection({
-        ...require('../ormconfig.json'),
+        ...require(path.resolve(process.cwd(), 'ormconfig.json')),
         ...config.get('database'),
     });
 

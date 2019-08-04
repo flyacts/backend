@@ -74,7 +74,7 @@ async function checkIfPostgresIsRunning(connection: ConnectionInformation, datab
  * Generate a meaningfull packagename from the package name
  */
 export function generateContainerName() {
-    const packageConfig = require(path.resolve(__dirname, '../package.json'));
+    const packageConfig = require(path.resolve(process.cwd(), 'package.json'));
     return `${packageConfig.name.replace('@', '').replace('/', '-')}-local-database`;
 }
 
@@ -99,7 +99,7 @@ async function extractIpFromContainer(docker: Docker, containerId: string) {
         .filter(item => item.Id === containerId)
         .pop();
     if (typeof containerInfo !== 'undefined') {
-        const configPath = path.resolve(__dirname, '../config/test.json');
+        const configPath = path.resolve(process.cwd(), 'config/test.json');
         const configContent = require(configPath);
         const ipAddress = containerInfo.NetworkSettings.Networks.bridge.IPAddress;
         configContent.database = { host: ipAddress };
@@ -116,7 +116,7 @@ async function extractIpFromContainer(docker: Docker, containerId: string) {
 async function setupDockerDatabase(persitant: boolean, databaseName: string): Promise<ConnectionInformation> {
     const binds = [];
     if (persitant === true) {
-        const databasePath = path.resolve(__dirname, '../database');
+        const databasePath = path.resolve(process.cwd(), 'database');
         binds.push(`${databasePath}:/var/lib/postgresql/data`);
     }
     let ipAddress = '127.0.0.1';
@@ -210,13 +210,20 @@ async function fileExists(file: string) {
  * Setup a native database
  */
 async function setupRawDatabase(databaseName: string) {
-    const databasePath = path.resolve(__dirname, '../database');
+    const databasePath = path.resolve(process.cwd(), 'database');
     // first lets check if database is initialized
     if (!(await fileExists(path.resolve(databasePath, 'PG_VERSION')))) {
         // it is not, do it then
         shelljs.exec(`initdb --pgdata "${databasePath}" --username postgres`);
         // copy our config into the database folder and customize it
-        const _config = await fs.readFile(path.resolve(__dirname, 'postgresql.conf'), 'utf-8');
+        const _config = `listen_addresses = '127.0.0.1'
+port = 15432
+max_connections = 100
+unix_socket_directories = '<socket-folder>'
+shared_buffers = 128MB
+log_timezone = 'UTC'
+datestyle = 'iso, dmy'
+timezone = 'UTC'`;
         await fs.writeFile(
             path.resolve(databasePath, 'postgresql.conf'),
             _config.replace('<socket-folder>', databasePath),
