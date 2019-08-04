@@ -13,7 +13,6 @@
         "noImplicitThis": true,
         "module": "commonjs",
         "moduleResolution": "node",
-        "outDir": "./dist",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "sourceMap": true,
@@ -24,7 +23,5 @@
             }
         ]
     },
-    "include": [
-        "src"
-    ]
+
 }

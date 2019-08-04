@@ -91,6 +91,7 @@ export function OwnableEntity(nameOrOptions?: string | EntityOptions, maybeOptio
             },
         });
 
+        // tslint:disable-next-line:completed-docs
         function getUserFromContext(): unknown {
             const enforce = UserManagementMetadata.instance.enforceOwnableContent;
             const context = RequestContext.currentRequestContext() as RequestContext | undefined;

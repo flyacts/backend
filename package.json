@@ -16,8 +16,11 @@
   "devDependencies": {
     "@commitlint/cli": "8.1.0",
     "@commitlint/config-conventional": "8.1.0",
+    "@types/node": "12.6.9",
     "husky": "3.0.2",
-    "lerna": "3.16.4"
+    "lerna": "3.16.4",
+    "tslint-language-service": "0.9.9",
+    "typescript": "3.5.3"
   },
   "husky": {
     "hooks": {
