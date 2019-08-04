@@ -1,8 +1,8 @@
 /*!
- * @copyright FLYACTS GmbH 2018
+ * @copyright FLYACTS GmbH 2019
  */
 
-import { Logger } from '@flyacts/backend';
+import { Logger } from '@flyacts/backend-logger';
 import config = require('config');
 import { createConnection } from 'typeorm';
 
