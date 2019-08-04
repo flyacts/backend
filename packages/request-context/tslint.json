@@ -1,4 +1,1 @@
-{
-  "extends": "@flyacts/tslint-config",
-  "rules": {  }
-}
+../../common-files/tslint.json

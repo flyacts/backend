@@ -1,6 +1,1 @@
-.idea/
-node_modules/
-dist/
-tmp/
-temp/
-dist/
+../../common-files/.gitignore
