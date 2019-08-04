@@ -2,13 +2,14 @@
  * @copyright FLYACTS GmbH 2018
  */
 
+import { Logger } from '@flyacts/backend-logger';
 import * as fs from 'fs-extra';
 import * as shelljs from 'shelljs';
 
-import logger from './logger';
-
 // tslint:disable-next-line
-(async function() {
+(async function () {
+    const logger = new Logger();
+
     try {
         logger.info(`Build 'create-backend' package`);
         logger.info(`Compiling Typescript`);
