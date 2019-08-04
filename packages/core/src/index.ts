@@ -7,3 +7,5 @@ export { Logger } from './providers/logger.provider';
 export { Backend } from './backend';
 export { BaseError } from './errors/base.error';
 export { NoActiveSessionError } from './errors/no-active-session.error';
+export { ValidationError } from './errors/validation.error';
+export { NullAble } from './types/nullable.type';
