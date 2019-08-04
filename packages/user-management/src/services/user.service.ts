@@ -2,12 +2,12 @@
  * @copyright FLYACTS GmbH 2019
  */
 
-import { CrudService } from '@flyacts/backend-crud-service';
 import { UnauthorizedError } from '@flyacts/routing-controllers';
 import {
     Service,
 } from 'typedi';
 import {
+    Connection,
     IsNull,
     Not,
 } from 'typeorm';
@@ -22,7 +22,10 @@ const uidgen = new (require('uid-generator'))(256);
  * Service for providing crud operations
  */
 @Service()
-export class UserService extends CrudService {
+export class UserService {
+    public constructor(
+        public connection: Connection,
+    ) {}
 
     /**
      * Login method
