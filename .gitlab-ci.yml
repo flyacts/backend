@@ -7,17 +7,17 @@ stages:
 before_script:
   - echo $NPMJS_AUTH_TOKEN > .npmrc
   - npm ci
-  - npm run lerna -- bootstrap
+  - npm run lerna -- bootstrap --hoist
 
 Check Sources:
   stage: check sources
   script:
-    - npm run lerna -- exec npm run build
-    - npm run lerna -- exec npm run lint
+    - npm run build
+    - npm run lint
 
 Publish Package:
   stage: publish
   only: ['tags']
   script:
-    - npm run lerna -- exec npm run build
+    - npm run build
     - npm run lerna -- publish --yes from-git
