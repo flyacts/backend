@@ -50,6 +50,7 @@
         "@types/node-emoji": "1.8.1",
         "@types/pg": "7.4.14",
         "@types/shelljs": "0.8.5",
+        "ts-node": "8.3.0",
         "tslint": "5.18.0",
         "tslint-language-service": "0.9.9",
         "typescript": "3.5.3"

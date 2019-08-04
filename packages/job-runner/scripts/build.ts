@@ -11,7 +11,7 @@ import * as shelljs from 'shelljs';
     const logger = new Logger();
 
     try {
-        logger.info(`Build 'create-backend' package`);
+        logger.info(`Build 'job-runner' package`);
         logger.info(`Compiling Typescript`);
         if (shelljs.exec('npm run --silent tsc').code !== 0) {
             throw new Error('Failed to build typescript ');

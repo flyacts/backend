@@ -2,16 +2,16 @@
  * @copyright FLYACTS GmbH 2018
  */
 
+import { Logger } from '@flyacts/backend-logger';
 import * as child_process from 'child_process';
 import * as fs from 'fs-extra';
 import * as nodeEmoji from 'node-emoji';
 import * as path from 'path';
 import * as shelljs from 'shelljs';
 
-import logger from './logger';
-
 // tslint:disable-next-line
 (async function() {
+    const logger = new Logger();
     try {
         const currentPath = shelljs.pwd().stdout;
         logger.debug('Generating FLYACTS Backend');

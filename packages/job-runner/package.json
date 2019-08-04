@@ -29,6 +29,7 @@
         "@types/logform": "1.2.0",
         "@types/node": "12.6.9",
         "@types/node-emoji": "1.8.1",
+        "ts-node": "8.3.0",
         "tslint": "5.18.0",
         "tslint-language-service": "0.9.9",
         "typescript": "3.5.3"

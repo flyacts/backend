@@ -18,7 +18,7 @@ ${content}`);
     const logger = new Logger();
 
     try {
-        logger.info(`Build 'create-backend' package`);
+        logger.info(`Build 'core' package`);
         logger.info(`Compiling Typescript`);
         if (shelljs.exec('npm run --silent tsc').code !== 0) {
             throw new Error('Failed to build typescript ');
@@ -28,7 +28,7 @@ ${content}`);
         await appendSheBang('./dist/bin/migrate.js');
         await appendSheBang('./dist/bin/setup-database.js');
         await appendSheBang('./dist/bin/teardown-database.js');
-        logger.info('Successfully build create-backend');
+        logger.info('Successfully build core');
     } catch (error) {
         logger.error('Failed to execute command.');
         logger.error(error);

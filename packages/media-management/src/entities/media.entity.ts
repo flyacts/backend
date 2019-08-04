@@ -94,7 +94,7 @@ export class MediaEntity extends BaseEntity {
     @Expose()
     public get rawFile() {
         if (!Array.isArray(this.files)) {
-            return;
+            return undefined;
         }
 
         for (const file of this.files) {
@@ -102,6 +102,8 @@ export class MediaEntity extends BaseEntity {
                 return file;
             }
         }
+
+        return undefined;
     }
 
 }

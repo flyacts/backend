@@ -17,7 +17,7 @@ import { JobManager } from '../providers/job-manager.provider';
 type startUpFunction = () => Promise<void>;
 
 // tslint:disable-next-line:no-floating-promises
-(async function () {
+(async function() {
     const logger = new Logger();
 
     try {
