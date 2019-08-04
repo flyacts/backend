@@ -133,12 +133,12 @@ async function setupDockerDatabase(persitant: boolean, databaseName: string): Pr
             if (isCI) {
                 ipAddress = await extractIpFromContainer(docker, preStartContainerInfo.Id);
             }
-            await checkIfPostgresIsRunning({ host: ipAddress, port: 5432 }, databaseName, 5);
+            await checkIfPostgresIsRunning({ host: ipAddress, port: 15432 }, databaseName, 5);
             logger.info('Successfully recycled container');
             process.exit(0);
             return {
                 host: ipAddress,
-                port: 5432,
+                port: 15432,
             };
         } catch (error) {
             logger.error('Failed to connect to database. Cleaning up and then recreate container.');
@@ -175,7 +175,7 @@ async function setupDockerDatabase(persitant: boolean, databaseName: string): Pr
                 '5432/tcp': [
                     {
                         HostIp: '127.0.0.1',
-                        HostPort: '5432',
+                        HostPort: '15432',
                     },
                 ],
             } : undefined),
@@ -190,7 +190,7 @@ async function setupDockerDatabase(persitant: boolean, databaseName: string): Pr
 
     return {
         host: ipAddress,
-        port: 5432,
+        port: 15432,
     };
 }
 

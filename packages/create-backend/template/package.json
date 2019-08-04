@@ -6,7 +6,7 @@
     "scripts": {
         "build": "rimraf ./dist && tsc -p tsconfig.json",
         "debug": "node --inspect -r ts-node/register src/server",
-        "democontent": "teardown-database && sudo rimraf ./database && npm run -s setup-database -- --persistant && sleep 3 && democontent",
+        "democontent": "teardown-database && sudo rimraf ./database && setup-database -- --persistant && sleep 3 && democontent",
         "generate-compose-file": "ts-node ci/generate-compose-file",
         "lint": "tslint -p tsconfig.json",
         "migrations": "migrate-database",

@@ -1,4 +1,7 @@
 {
+    "database": {
+        "port": 15432
+    },
     "explorer": {
         "enabled": true
     }
