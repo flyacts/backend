@@ -1,0 +1,39 @@
+{
+    "name": "@flyacts/job-runner",
+    "description": "Core backend package for the flyacts backend",
+    "version": "0.16.6",
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts",
+    "author": "FLYACTS Development Team <hallo@flyacts.com>",
+    "license": "MIT",
+    "scripts": {
+        "build": "node -r ts-node/register scripts/build",
+        "lint": "tslint -p tsconfig.json",
+        "tsc": "tsc"
+    },
+    "dependencies": {
+        "@flyacts/backend": "0.16.6",
+        "@flyacts/backend-logger": "0.16.7",
+        "@flyacts/backend-media-management": "0.16.7",
+        "@flyacts/backend-user-management": "0.16.6",
+        "class-validator": "0.9.1",
+        "serialize-error": "4.1.0",
+        "typedi": "0.8.0",
+        "typeorm": "0.2.18"
+    },
+    "devDependencies": {
+        "@flyacts/tslint-config": "1.2.1",
+        "@types/cls-hooked": "4.3.0",
+        "@types/config": "0.0.34",
+        "@types/express": "4.17.0",
+        "@types/logform": "1.2.0",
+        "@types/node": "12.6.9",
+        "@types/node-emoji": "1.8.1",
+        "tslint": "5.18.0",
+        "tslint-language-service": "0.9.9",
+        "typescript": "3.5.3"
+    },
+    "bin": {
+        "job-runner": "dist/bin/job-runner.js"
+    }
+}
