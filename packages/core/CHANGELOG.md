@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0](https://github.com/flyacts/backend/compare/v0.16.7...v0.17.0) (2019-08-04)
+
+
+### Bug Fixes
+
+* repair linting and build issues ([8f738da](https://github.com/flyacts/backend/commit/8f738da))
+
+
+### chore
+
+* update dependencies ([68b436b](https://github.com/flyacts/backend/commit/68b436b))
+
+
+### Features
+
+* extract some commonly used code into the core module ([9afd1aa](https://github.com/flyacts/backend/commit/9afd1aa))
+* move more common files into the core ([440b74c](https://github.com/flyacts/backend/commit/440b74c))
+
+
+### BREAKING CHANGES
+
+* updates typeorm to 0.2.18, make sure you also update yours.
+
+
+
+
+
 ## [0.16.6](https://github.com/flyacts/backend/compare/v0.16.5...v0.16.6) (2019-05-23)
 
 **Note:** Version bump only for package @flyacts/backend
