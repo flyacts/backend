@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.17.4](https://github.com/flyacts/backend/compare/v0.17.3...v0.17.4) (2019-08-05)
+
+
+### Bug Fixes
+
+* make the controller useable ([6ddd2c2](https://github.com/flyacts/backend/commit/6ddd2c2))
+
+
+
+
+
 ## [0.17.3](https://github.com/flyacts/backend/compare/v0.17.2...v0.17.3) (2019-08-04)
 
 
