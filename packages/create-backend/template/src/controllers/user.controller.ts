@@ -67,7 +67,9 @@ export class UserController {
      * Return all the users
      */
     @Get()
-    @Authorized([ UserRoles.Admin ])
+    @Authorized([
+        UserRoles.Admin
+    ])
     // tslint:disable-next-line
     public async find(
         @Res() response: Response,
@@ -276,9 +278,12 @@ export class UserController {
      * Delete a user by its id
      */
     @Delete('/:id')
-    @Authorized([ UserRoles.Admin ])
+    @Authorized([
+        UserRoles.Admin,
+    ])
     public async delete(@Param('id') id: number) {
-        return this.service.deleteById(UserExtensionEntity, id);
+        const user = await this.findById(id);
+        await this.connection.manager.remove(user);
     }
 
     /**
@@ -326,7 +331,7 @@ export class UserController {
             throw new BadRequestError();
         }
         await currentUser.user.setPassword(newPassword);
-        await this.service.save(currentUser.user);
+        await this.connection.manager.save(currentUser.user);
     }
 
     /**
@@ -335,12 +340,21 @@ export class UserController {
      * @param id The user identifier
      */
     @Get('/:id([0-9]+)')
-    @Authorized([ UserRoles.Admin ])
+    @Authorized([
+        UserRoles.Admin,
+    ])
+    @OnUndefined(404)
     @ResponseSchema(UserExtensionEntity)
     public async findById(
         @Param('id') id: number,
     ) {
-        return this.service.findById<UserExtensionEntity>(UserExtensionEntity, id);
+        return this
+            .connection
+            .getRepository(UserExtensionEntity)
+            .createQueryBuilder('ue')
+            .innerJoin('ue.user', 'u')
+            .where('ue.id = :id', { id })
+            .getOne()
     }
 
     /**
@@ -440,7 +454,7 @@ export class UserController {
         @Param('id') userId: number,
         @Body() user: UserExtensionEntity,
     ) {
-        const existingUser = await this.service.findById(UserExtensionEntity, userId);
+        const existingUser = await this.findById(userId);
 
         if (!(existingUser instanceof UserExtensionEntity)) {
             throw new NotFoundError();
@@ -451,8 +465,7 @@ export class UserController {
 
         await this.handleValidation(existingUser);
 
-        return this.service.save(existingUser);
-
+        return this.connection.manager.save(existingUser);
     }
 
     /**
