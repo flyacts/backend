@@ -8,6 +8,7 @@ import 'reflect-metadata';
 // tslint:disable-next-line:ordered-imports
 import { Logger } from '@flyacts/backend';
 import config = require('config');
+import * as path from 'path';
 import serializeError = require('serialize-error');
 import Container from 'typedi';
 import { Connection, createConnection } from 'typeorm';
@@ -24,7 +25,7 @@ type startUpFunction = () => Promise<void>;
         logger.info('Starting Job Runner');
 
         const connection = await createConnection({
-            ...require('../ormconfig.json'),
+            ...require(path.resolve(process.cwd(), 'ormconfig.json')),
             ...config.get('database'),
         });
         Container.set(Connection, connection);
