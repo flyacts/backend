@@ -12,14 +12,10 @@ import * as _winston from 'winston';
  */
 @Service()
 export class Logger {
-    public interalLogger: InternalLogger;
+    public interalLogger: InternalLogger = new InternalLogger(config.get('logger.level'));
 
     public error = this.interalLogger.error.bind(this.interalLogger);
     public warn = this.interalLogger.warn.bind(this.interalLogger);
     public info = this.interalLogger.info.bind(this.interalLogger);
     public debug = this.interalLogger.debug.bind(this.interalLogger);
-
-    public constructor() {
-        this.interalLogger = new InternalLogger(config.get('logger.level'));
-    }
 }
