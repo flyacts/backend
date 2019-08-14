@@ -6,6 +6,7 @@ import { Logger } from '@flyacts/backend-logger';
 import * as child_process from 'child_process';
 import * as Docker from 'dockerode';
 import * as path from 'path';
+import serializeError = require('serialize-error');
 
 import {
     DatabaseType,
@@ -83,7 +84,7 @@ async function shutdownNativePostgres() {
             await shutdownNativePostgres();
         }
     } catch (error) {
-        logger.error('failed to teardown the database', error);
+        logger.error('failed to teardown the database', serializeError(error));
         process.exit(1);
     }
 })();
