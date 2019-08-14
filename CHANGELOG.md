@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.17.8](https://github.com/flyacts/backend/compare/v0.17.7...v0.17.8) (2019-08-14)
+
+
+### Bug Fixes
+
+* detect docker without the binary ([d049a83](https://github.com/flyacts/backend/commit/d049a83))
+
+
+
+
+
 ## [0.17.7](https://github.com/flyacts/backend/compare/v0.17.6...v0.17.7) (2019-08-14)
 
 
