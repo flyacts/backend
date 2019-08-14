@@ -85,10 +85,18 @@ export function generateContainerName() {
 export async function getDatabaseType() {
     if (await hasBin('initdb')) {
         return DatabaseType.Raw;
-    } else if (await hasBin('docker')) {
-        return DatabaseType.Docker;
-    } else {
-        return DatabaseType.None;
+    }
+    else {
+        try {
+            const docker = new Docker();
+            if (docker instanceof Docker) {
+                return DatabaseType.Docker;
+            } else {
+                return DatabaseType.None;
+            }
+        } catch (error) {
+            return DatabaseType.None;
+        }
     }
 }
 
