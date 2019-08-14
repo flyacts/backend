@@ -1,7 +1,7 @@
 {
     "name": "@flyacts/job-runner",
     "description": "Core backend package for the flyacts backend",
-    "version": "0.17.6",
+    "version": "0.17.7",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
     "author": "FLYACTS Development Team <hallo@flyacts.com>",
@@ -12,7 +12,7 @@
         "tsc": "tsc"
     },
     "dependencies": {
-        "@flyacts/backend": "0.17.4",
+        "@flyacts/backend": "0.17.7",
         "@flyacts/backend-logger": "0.17.1",
         "@flyacts/backend-media-management": "0.17.2",
         "@flyacts/backend-user-management": "0.17.2",

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.17.7](https://github.com/flyacts/backend/compare/v0.17.6...v0.17.7) (2019-08-14)
+
+
+### Features
+
+* print the exception readable ([8e8ffd4](https://github.com/flyacts/backend/commit/8e8ffd4))
+
+
+
+
+
 ## [0.17.4](https://github.com/flyacts/backend/compare/v0.17.3...v0.17.4) (2019-08-05)
 
 
