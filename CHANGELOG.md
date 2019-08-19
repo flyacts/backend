@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.17.10](https://github.com/flyacts/backend/compare/v0.17.9...v0.17.10) (2019-08-19)
+
+
+### Bug Fixes
+
+* use the correct file for the version ([349a0a7](https://github.com/flyacts/backend/commit/349a0a7))
+
+
+
+
+
 ## [0.17.9](https://github.com/flyacts/backend/compare/v0.17.8...v0.17.9) (2019-08-19)
 
 
