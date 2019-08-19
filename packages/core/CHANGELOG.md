@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.17.9](https://github.com/flyacts/backend/compare/v0.17.8...v0.17.9) (2019-08-19)
+
+
+### Bug Fixes
+
+* use the correct port for ci purposes ([e6fb2f2](https://github.com/flyacts/backend/commit/e6fb2f2))
+
+
+### Features
+
+* add a health controller ([191eb69](https://github.com/flyacts/backend/commit/191eb69))
+
+
+
+
+
 ## [0.17.8](https://github.com/flyacts/backend/compare/v0.17.7...v0.17.8) (2019-08-14)
 
 
