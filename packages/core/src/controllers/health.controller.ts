@@ -30,7 +30,7 @@ export class HealthController {
     public async root() {
         return {
             health: 'ok',
-            version: require(path.resolve(process.cwd(), 'ormconfig.json')).version,
+            version: require(path.resolve(process.cwd(), 'package.json')).version,
             boot: moment(this.startup).toISOString(),
             uptime: (+(new Date()) - +(this.startup)) / 1000,
             migrations: (
