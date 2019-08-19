@@ -129,6 +129,7 @@ async function setupDockerDatabase(persitant: boolean, databaseName: string): Pr
         binds.push(`${databasePath}:/var/lib/postgresql/data`);
     }
     let ipAddress = '127.0.0.1';
+    let port = 15432;
 
     const containerName = generateContainerName();
     const docker = new Docker();
@@ -141,13 +142,13 @@ async function setupDockerDatabase(persitant: boolean, databaseName: string): Pr
         try {
             if (isCI) {
                 ipAddress = await extractIpFromContainer(docker, preStartContainerInfo.Id);
+                port = 5432;
             }
             await checkIfPostgresIsRunning({ host: ipAddress, port: 15432 }, databaseName, 5);
             logger.info('Successfully recycled container');
-            process.exit(0);
             return {
                 host: ipAddress,
-                port: 15432,
+                port,
             };
         } catch (error) {
             logger.error('Failed to connect to database. Cleaning up and then recreate container.');
@@ -194,12 +195,13 @@ async function setupDockerDatabase(persitant: boolean, databaseName: string): Pr
     await database.start();
     if (isCI) {
         ipAddress = await extractIpFromContainer(docker, database.id);
+        port = 5432;
     }
     logger.info('Successfully started database container');
 
     return {
         host: ipAddress,
-        port: 15432,
+        port,
     };
 }
 
