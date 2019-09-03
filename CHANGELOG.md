@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.17.11](https://github.com/flyacts/backend/compare/v0.17.10...v0.17.11) (2019-09-03)
+
+
+### Features
+
+* allow overiding all rc parameters ([d6a9928](https://github.com/flyacts/backend/commit/d6a9928))
+
+
+
+
+
 ## [0.17.10](https://github.com/flyacts/backend/compare/v0.17.9...v0.17.10) (2019-08-19)
 
 
