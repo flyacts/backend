@@ -8,6 +8,7 @@ import {
     createCurrentUserChecker,
 } from '@flyacts/backend-user-management';
 import {
+    Action,
     createExpressServer,
     getMetadataArgsStorage,
     useContainer as rcUseContainer,
@@ -112,11 +113,18 @@ export class Backend {
     /**
      * Create a new backend instance and configure it
      */
+    // tslint:disable-next-line:parameters-max-number
     public static async create(
         typeOrmConfig: ConnectionOptions,
         controllers: Function[],
         middlewares: Function[],
         versionInformation: VersionInformation,
+        authorizationChecker?: (action: Action, roles: string[]) => Promise<boolean>,
+        currentUserChecker?: (action: Action) => Promise<unknown>,
+        development: boolean = true,
+        cors: boolean = true,
+        validation: boolean = false,
+        defaultErrorHandler: boolean = true,
     ) {
         const be = new Backend(versionInformation);
         be.connection = await createConnection(typeOrmConfig);
@@ -129,14 +137,18 @@ export class Backend {
         ormUseContainer(Container);
 
         be.express = createExpressServer({
-            authorizationChecker: createAuthorizationCheck(be.connection),
-            currentUserChecker: createCurrentUserChecker(be.connection),
+            authorizationChecker: typeof authorizationChecker === 'undefined' ?
+                createAuthorizationCheck(be.connection) :
+                authorizationChecker,
+            currentUserChecker: typeof currentUserChecker === 'undefined' ?
+                createCurrentUserChecker(be.connection) :
+                currentUserChecker,
             controllers,
             middlewares,
-            defaultErrorHandler: true,
-            validation: false,
-            development: true,
-            cors: true,
+            defaultErrorHandler,
+            validation,
+            development,
+            cors,
         });
 
         return be;
