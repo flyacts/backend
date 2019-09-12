@@ -23,6 +23,11 @@ ${content}`);
         if (shelljs.exec('npm run --silent tsc').code !== 0) {
             throw new Error('Failed to build typescript ');
         }
+        logger.info('Copy Schematics JSON files');
+        await fs.copy('./src/schematics/entity/schema.json', './dist/schematics/entity/schema.json');
+        await fs.copy('./src/schematics/controller/schema.json', './dist/schematics/controller/schema.json');
+        shelljs.cp('-r', './src/schematics/entity/files', './dist/schematics/entity');
+        shelljs.cp('-r', './src/schematics/controller/files', './dist/schematics/controller');
         logger.info('Add shebang');
         await appendSheBang('./dist/bin/democontent.js');
         await appendSheBang('./dist/bin/migrate.js');

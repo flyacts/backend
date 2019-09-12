@@ -1,0 +1,59 @@
+/*!
+ * @copyright FLYACTS GmbH 2019
+ */
+
+import {MigrationInterface, QueryRunner, Table} from 'typeorm';
+import { TableColumnOptions } from 'typeorm/schema-builder/options/TableColumnOptions';
+
+/**
+ * Create the <%= pluralize(underscore(name)) %> table
+ */
+export class Add<%= classify(name) %>Entity<%= timestamp %> implements MigrationInterface {
+    // tslint:disable-next-line:completed-docs
+    public async up(queryRunner: QueryRunner) {
+        const baseEntitySchema: TableColumnOptions[] = [
+            {
+                name: 'id',
+                isPrimary: true,
+                type: 'integer',
+                isGenerated: true,
+                generationStrategy: 'increment',
+            },
+            {
+                name: 'createdAt',
+                type: 'timestamp',
+                default: 'CURRENT_TIMESTAMP',
+            },
+            {
+                name: 'updatedAt',
+                type: 'timestamp',
+                default: 'CURRENT_TIMESTAMP',
+            },
+        ];
+
+        const table = new Table({
+            name: '<%= pluralize(underscore(name)) %>',
+            columns: [
+                ...baseEntitySchema,
+                {
+                    name: 'created_by',
+                    type: 'integer',
+                    isNullable: true,
+                },
+                {
+                    name: 'updated_by',
+                    type: 'integer',
+                    isNullable: true,
+                },
+            ],
+        });
+
+        await queryRunner.createTable(table);
+    }
+
+    // tslint:disable-next-line:completed-docs
+    public async down(queryRunner: QueryRunner) {
+        await queryRunner.dropTable('<%= pluralize(underscore(name)) %>');
+    }
+
+}

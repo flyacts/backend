@@ -1,0 +1,15 @@
+{
+    "$schema": "./node_modules/@angular-devkit/schematics/collection-schema.json",
+    "schematics": {
+        "entity": {
+            "description": "Create an entity",
+            "factory": "./dist/schematics/entity/factory",
+            "schema": "./dist/schematics/entity/schema.json"
+        },
+        "controller": {
+            "description": "Create a controller",
+            "factory": "./dist/schematics/controller/factory",
+            "schema": "./dist/schematics/controller/schema.json"
+        }
+    }
+}

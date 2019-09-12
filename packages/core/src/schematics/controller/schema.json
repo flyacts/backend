@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "id": "EntitySchematics",
+    "title": "Entity Options Schema",
+    "type": "object",
+    "description": "Creates an Entity",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "The package name for the new schematic.",
+            "$default": {
+                "$source": "argv",
+                "index": 0
+            },
+            "x-prompt": "What is the name of your entity?"
+        }
+    }
+}

@@ -1,0 +1,54 @@
+/*!
+ * @copyright FLYACTS GmbH 2019
+ */
+
+// tslint:disable
+
+import { expect } from 'chai';
+import { Application } from 'express';
+import * as request from 'supertest';
+import { Connection } from 'typeorm';
+
+import {
+    startApp,
+} from '../src/server';
+
+import { closeTestingConnections, setupDatabase } from './helper';
+
+describe('<%= classify(name) %> Controller', () => {
+    let app: Application;
+    let connection: Connection;
+    let admin: any;
+
+    before(async () => {
+        process.env.USE_TESTDATA = 'yes';
+        const result = await startApp();
+        app = result.express;
+        connection = result.connection;
+    });
+
+    after(async () => {
+        await closeTestingConnections();
+    });
+
+    describe('GET /', () => {
+        before(async () => {
+            const users = await setupDatabase(app, connection);
+            admin = users.admin;
+        });
+
+        it('should return all <%= classify(pluralize(name)) %>', async () => {
+            const response = await request(app)
+                .get('/<%= dasherize(pluralize(name)) %>')
+                .set({
+                    Authorization: admin.token,
+                })
+                .expect(200);
+
+            const body = response.body;
+
+            expect(body).to.be.an('array');
+            expect(body).to.have.property('length', 0);
+        });
+    })
+});
