@@ -21,11 +21,6 @@ export class RequestContext {
      */
     public static nsid = '94799794-063d-497c-ae51-f614fdb17cb3';
 
-    /**
-     * The global namespace
-     */
-    public static namespace: cls.Namespace = cls.createNamespace(RequestContext.nsid);
-
     public constructor() {
         this.id = Math.random();
     }
@@ -34,6 +29,21 @@ export class RequestContext {
      * Returns the current requestContext
      */
     public static currentRequestContext(): RequestContext {
-        return RequestContext.namespace.get(RequestContext.name);
+        const namespace = RequestContext.obtainNamespace();
+        return namespace.get(RequestContext.name);
+    }
+
+    /**
+     * Checks if the namespace exists, if not creates it, either way returns it
+     */
+    public static obtainNamespace(): cls.Namespace {
+        const ns = cls.getNamespace(RequestContext.nsid);
+
+        // tslint:disable-next-line:strict-type-predicates
+        if (typeof ns === 'undefined') {
+            return cls.createNamespace(RequestContext.nsid);
+        } else {
+            return ns;
+        }
     }
 }

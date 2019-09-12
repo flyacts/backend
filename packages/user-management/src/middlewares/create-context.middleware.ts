@@ -31,9 +31,10 @@ export class CreateContextMiddleware implements ExpressMiddlewareInterface {
 
         const token = request.get('authorization');
         const connection = Container.get<Connection>('connection');
-        RequestContext.namespace.run(async () => {
+        const namespace = RequestContext.obtainNamespace();
+        namespace.run(async () => {
             const requestContext = new RequestContext();
-            RequestContext.namespace.set(RequestContext.name, requestContext);
+            namespace.set(RequestContext.name, requestContext);
             if (typeof token !== 'string') {
                 next();
                 return;
