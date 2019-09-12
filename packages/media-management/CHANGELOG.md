@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.18.0](https://github.com/flyacts/backend-media-management/compare/v0.17.11...v0.18.0) (2019-09-12)
+
+**Note:** Version bump only for package @flyacts/backend-media-management
+
+
+
+
+
 ## [0.17.2](https://github.com/flyacts/backend-media-management/compare/v0.17.1...v0.17.2) (2019-08-04)
 
 **Note:** Version bump only for package @flyacts/backend-media-management

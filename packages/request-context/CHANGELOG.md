@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.18.0](https://github.com/flyacts/request-context/compare/v0.17.11...v0.18.0) (2019-09-12)
+
+
+### Bug Fixes
+
+* handle RequestContext better ([a43f5ac](https://github.com/flyacts/request-context/commit/a43f5ac))
+
+
+
+
+
 ## [0.17.1](https://github.com/flyacts/request-context/compare/v0.17.0...v0.17.1) (2019-08-04)
 
 
