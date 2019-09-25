@@ -6,13 +6,17 @@ import { Logger } from '@flyacts/backend-logger';
 import * as child_process from 'child_process';
 import * as Docker from 'dockerode';
 import * as path from 'path';
+import * as minimist from 'minimist';
+
 import serializeError = require('serialize-error');
+
 
 import {
     DatabaseType,
     generateContainerName,
     getDatabaseType,
 } from './setup-database';
+
 
 const logger = new Logger();
 
@@ -48,8 +52,7 @@ async function destroyDockerContainer() {
 /**
  * Shutdown a postgres instance that is running on this computer
  */
-async function shutdownNativePostgres() {
-    const databasePath = path.resolve(process.cwd(), 'database');
+async function shutdownNativePostgres(databasePath: string) {
     const postgresStatus = child_process.spawnSync('pg_ctl', [
         `--pgdata=${databasePath}`,
         'status',
@@ -76,11 +79,29 @@ async function shutdownNativePostgres() {
     logger.info('Tearing down database');
 
     try {
-        const databaseType = await getDatabaseType();
+        const args = minimist((process.argv.slice(2)));
+        const databaseTypeOption = args['db-type'];
+        let databasePath = typeof args['db-path'] === 'string' ? args['db-path'] : 'database';
+        if (!databasePath.startsWith('/')) {
+            databasePath = path.resolve(process.cwd(), databasePath);
+        }
+
+        let databaseType;
+        if (typeof databaseTypeOption === 'string') {
+            if (databaseTypeOption === 'docker') {
+                databaseType = DatabaseType.Docker;
+            } else if (databaseType === 'native') {
+                databaseType = DatabaseType.Native;
+            } else {
+                databaseType = await getDatabaseType();
+            }
+        } else {
+            databaseType = await getDatabaseType();
+        }
 
         if (databaseType === DatabaseType.Docker) {
             await destroyDockerContainer();
-        } else if (databaseType === DatabaseType.Raw) {
+        } else if (databaseType === DatabaseType.Native) {
             await shutdownNativePostgres();
         }
     } catch (error) {

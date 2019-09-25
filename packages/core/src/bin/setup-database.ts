@@ -18,9 +18,9 @@ const isCI = require('is-ci') as boolean;
 const _hasBin = require('hasbin') as (binary: string, callback: (result: boolean) => void) => void;
 
 export enum DatabaseType {
-    Raw,
-    Docker,
-    None,
+    Native = 'Native',
+    Docker = 'Docker',
+    None = 'None',
 }
 
 interface ConnectionInformation {
@@ -84,7 +84,7 @@ export function generateContainerName() {
  */
 export async function getDatabaseType() {
     if (await hasBin('initdb')) {
-        return DatabaseType.Raw;
+        return DatabaseType.Native;
     }
     else {
         try {
@@ -111,7 +111,10 @@ async function extractIpFromContainer(docker: Docker, containerId: string) {
         const configPath = path.resolve(process.cwd(), 'config/test.json');
         const configContent = require(configPath);
         const ipAddress = containerInfo.NetworkSettings.Networks.bridge.IPAddress;
-        configContent.database = { host: ipAddress };
+        configContent.database = {
+            ...configContent.database,
+            host: ipAddress
+        };
         await fs.writeFile(configPath, JSON.stringify(configContent, undefined, 4));
         return ipAddress;
     } else {
@@ -122,10 +125,10 @@ async function extractIpFromContainer(docker: Docker, containerId: string) {
 /**
  * Use docker to setup a database
  */
-async function setupDockerDatabase(persitant: boolean, databaseName: string): Promise<ConnectionInformation> {
+async function setupDockerDatabase(persitant: boolean, databaseName: string, databasePath: string): Promise<ConnectionInformation> {
     const binds = [];
     if (persitant === true) {
-        const databasePath = path.resolve(process.cwd(), 'database');
+        // const databasePath = path.resolve(process.cwd(), 'database');
         binds.push(`${databasePath}:/var/lib/postgresql/data`);
     }
     let ipAddress = '127.0.0.1';
@@ -220,8 +223,8 @@ async function fileExists(file: string) {
 /**
  * Setup a native database
  */
-async function setupRawDatabase(databaseName: string) {
-    const databasePath = path.resolve(process.cwd(), 'database');
+async function setupRawDatabase(databaseName: string, databasePath: string) {
+    // const databasePath = path.resolve(process.cwd(), 'database');
     // first lets check if database is initialized
     if (!(await fileExists(path.resolve(databasePath, 'PG_VERSION')))) {
         // it is not, do it then
@@ -284,7 +287,7 @@ timezone = 'UTC'`;
 }
 
 // tslint:disable-next-line:no-floating-promises
-(async function() {
+(async function () {
     if (require.main !== module) {
         return;
     }
@@ -292,13 +295,29 @@ timezone = 'UTC'`;
 
     try {
         const args = minimist((process.argv.slice(2)));
+        const databaseTypeOption = args['db-type'];
+        let databasePath = typeof args['db-path'] === 'string' ? args['db-path'] : 'database';
+        if (!databasePath.startsWith('/')) {
+            databasePath = path.resolve(process.cwd(), databasePath);
+        }
         const databaseName = config.get<string>('database.database');
         let connection: ConnectionInformation;
-        const databaseType = await getDatabaseType();
+        let databaseType;
+        if (typeof databaseTypeOption === 'string') {
+            if (databaseTypeOption === 'docker') {
+                databaseType = DatabaseType.Docker;
+            } else if (databaseType === 'native') {
+                databaseType = DatabaseType.Native;
+            } else {
+                databaseType = await getDatabaseType();
+            }
+        } else {
+            databaseType = await getDatabaseType();
+        }
         if (databaseType === DatabaseType.Docker) {
-            connection = await setupDockerDatabase(args.persistant, databaseName);
-        } else if (databaseType === DatabaseType.Raw) {
-            connection = await setupRawDatabase(databaseName);
+            connection = await setupDockerDatabase(args.persistant, databaseName, databasePath);
+        } else if (databaseType === DatabaseType.Native) {
+            connection = await setupRawDatabase(databaseName, databasePath);
         } else {
             throw new Error('No Database available');
         }
