@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.18.3](https://github.com/flyacts/backend/compare/v0.18.2...v0.18.3) (2019-09-25)
+
+
+### Bug Fixes
+
+* linting issues ([2240274](https://github.com/flyacts/backend/commit/2240274))
+
+
+
+
+
 ## [0.18.2](https://github.com/flyacts/backend/compare/v0.18.1...v0.18.2) (2019-09-25)
 
 
