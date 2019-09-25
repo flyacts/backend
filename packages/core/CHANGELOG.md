@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.18.1](https://github.com/flyacts/backend/compare/v0.18.0...v0.18.1) (2019-09-25)
+
+
+### Features
+
+* make the setup and teardown database skript configureable ([1c4b044](https://github.com/flyacts/backend/commit/1c4b044))
+
+
+
+
+
 # [0.18.0](https://github.com/flyacts/backend/compare/v0.17.11...v0.18.0) (2019-09-12)
 
 
