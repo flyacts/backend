@@ -102,7 +102,7 @@ async function shutdownNativePostgres(databasePath: string) {
         if (databaseType === DatabaseType.Docker) {
             await destroyDockerContainer();
         } else if (databaseType === DatabaseType.Native) {
-            await shutdownNativePostgres();
+            await shutdownNativePostgres(databasePath);
         }
     } catch (error) {
         logger.error('failed to teardown the database', serializeError(error));
