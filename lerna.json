@@ -12,8 +12,8 @@
       "conventionalCommits": true,
       "exact": true,
       "message": "chore(release): %s",
-      "signGitCommit": true,
-      "signGitTag": true
+      "signGitCommit": false,
+      "signGitTag": false
     }
   },
   "version": "0.18.0"
