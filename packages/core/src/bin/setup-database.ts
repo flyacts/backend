@@ -113,7 +113,7 @@ async function extractIpFromContainer(docker: Docker, containerId: string) {
         const ipAddress = containerInfo.NetworkSettings.Networks.bridge.IPAddress;
         configContent.database = {
             ...configContent.database,
-            host: ipAddress
+            host: ipAddress,
         };
         await fs.writeFile(configPath, JSON.stringify(configContent, undefined, 4));
         return ipAddress;
@@ -125,10 +125,13 @@ async function extractIpFromContainer(docker: Docker, containerId: string) {
 /**
  * Use docker to setup a database
  */
-async function setupDockerDatabase(persitant: boolean, databaseName: string, databasePath: string): Promise<ConnectionInformation> {
+async function setupDockerDatabase(
+    persitant: boolean,
+    databaseName: string,
+    databasePath: string,
+): Promise<ConnectionInformation> {
     const binds = [];
     if (persitant === true) {
-        // const databasePath = path.resolve(process.cwd(), 'database');
         binds.push(`${databasePath}:/var/lib/postgresql/data`);
     }
     let ipAddress = '127.0.0.1';
@@ -287,7 +290,7 @@ timezone = 'UTC'`;
 }
 
 // tslint:disable-next-line:no-floating-promises
-(async function () {
+(async function() {
     if (require.main !== module) {
         return;
     }
