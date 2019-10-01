@@ -17,7 +17,7 @@
     "dependencies": {
         "@flyacts/backend-core-entities": "0.18.0",
         "@flyacts/request-context": "0.18.0",
-        "@flyacts/routing-controllers": "0.10.1",
+        "@flyacts/routing-controllers": "0.10.2",
         "argon2": "0.24.0",
         "class-transformer": "0.2.3",
         "class-validator": "0.9.1",
