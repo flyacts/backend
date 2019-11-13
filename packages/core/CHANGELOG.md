@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.18.5](https://github.com/flyacts/backend/compare/v0.18.4...v0.18.5) (2019-11-13)
+
+
+### Features
+
+* **schematics:** add a schematic for migrations ([3686d14](https://github.com/flyacts/backend/commit/3686d14))
+
+
+
+
+
 ## [0.18.4](https://github.com/flyacts/backend/compare/v0.18.3...v0.18.4) (2019-10-01)
 
 **Note:** Version bump only for package @flyacts/backend
