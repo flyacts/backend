@@ -1,0 +1,26 @@
+/*!
+ * @copyright FLYACTS GmbH <%= now.format('YYYY') %>
+ */
+
+import {MigrationInterface, QueryRunner, Table} from 'typeorm';
+import { TableColumnOptions } from 'typeorm/schema-builder/options/TableColumnOptions';
+
+/**
+ * Run migration <%= pluralize(underscore(name)) %>
+ */
+export class <%= classify(name) %><%= timestamp %> implements MigrationInterface {
+    /**
+     * TypeORMs migration up
+     */
+    public async up(queryRunner: QueryRunner) {
+
+    }
+
+    /**
+     * TypeORMs migration down
+     */
+    public async down(queryRunner: QueryRunner) {
+
+    }
+
+}
