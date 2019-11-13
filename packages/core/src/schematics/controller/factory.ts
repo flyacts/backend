@@ -12,6 +12,7 @@ import {
     Tree,
     url,
 } from '@angular-devkit/schematics';
+import moment = require('moment');
 const pluralize = require('pluralize');
 
 export interface OptionSchema {
@@ -24,12 +25,15 @@ export interface OptionSchema {
 // tslint:disable-next-line:no-default-export
 export default function(options: OptionSchema): Rule {
     return (_tree: Tree, _context: SchematicContext) => {
+
+        const now = moment();
         const source = apply(url('./files'), [
             applyTemplates({
                 ...options,
                 ...strings,
                 pluralize,
-                timestamp: +(new Date()),
+                timestamp: +(now.toDate()),
+                now,
             }),
         ]);
         return mergeWith(source);
