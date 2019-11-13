@@ -10,6 +10,11 @@
             "description": "Create a controller",
             "factory": "./dist/schematics/controller/factory",
             "schema": "./dist/schematics/controller/schema.json"
+        },
+        "migration": {
+            "description": "Create a migration",
+            "factory": "./dist/schematics/migration/factory",
+            "schema": "./dist/schematics/migration/schema.json"
         }
     }
 }
