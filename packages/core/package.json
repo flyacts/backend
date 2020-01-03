@@ -18,7 +18,7 @@
         "@flyacts/backend-user-management": "0.18.8",
         "@flyacts/request-context": "0.18.4",
         "@flyacts/routing-controllers": "0.10.5",
-        "@flyacts/routing-controllers-openapi": "1.8.1",
+        "@flyacts/routing-controllers-openapi": "1.8.2",
         "chalk": "2.4.2",
         "class-validator": "0.9.1",
         "class-validator-jsonschema": "1.3.0",
