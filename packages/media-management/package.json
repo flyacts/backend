@@ -17,7 +17,7 @@
     "dependencies": {
         "@flyacts/backend-core-entities": "0.18.4",
         "@flyacts/backend-user-management": "0.18.4",
-        "@flyacts/routing-controllers": "0.10.2",
+        "@flyacts/routing-controllers": "0.10.5",
         "class-transformer": "0.2.3",
         "class-validator": "0.9.1",
         "content-addressable-blob-store": "4.6.0",
