@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.18.8](https://github.com/flyacts/backend/compare/v0.18.7...v0.18.8) (2020-01-03)
+
+**Note:** Version bump only for package @flyacts/job-runner
+
+
+
+
+
 ## [0.18.7](https://github.com/flyacts/backend/compare/v0.18.6...v0.18.7) (2019-11-13)
 
 **Note:** Version bump only for package @flyacts/job-runner

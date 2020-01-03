@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.18.8](https://github.com/flyacts/backend/compare/v0.18.7...v0.18.8) (2020-01-03)
+
+**Note:** Version bump only for package @flyacts/backend-user-management
+
+
+
+
+
 ## [0.18.4](https://github.com/flyacts/backend/compare/v0.18.3...v0.18.4) (2019-10-01)
 
 **Note:** Version bump only for package @flyacts/backend-user-management

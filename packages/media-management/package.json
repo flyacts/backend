@@ -1,6 +1,6 @@
 {
     "name": "@flyacts/backend-media-management",
-    "version": "0.18.4",
+    "version": "0.18.8",
     "description": "Media management for our backends",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
@@ -16,7 +16,7 @@
     },
     "dependencies": {
         "@flyacts/backend-core-entities": "0.18.4",
-        "@flyacts/backend-user-management": "0.18.4",
+        "@flyacts/backend-user-management": "0.18.8",
         "@flyacts/routing-controllers": "0.10.5",
         "class-transformer": "0.2.3",
         "class-validator": "0.9.1",
