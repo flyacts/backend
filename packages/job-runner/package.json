@@ -6,6 +6,10 @@
     "typings": "dist/index.d.ts",
     "author": "FLYACTS Development Team <hallo@flyacts.com>",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/flyacts/backend"
+    },
     "scripts": {
         "build": "node -r ts-node/register scripts/build",
         "lint": "tslint -p tsconfig.json",

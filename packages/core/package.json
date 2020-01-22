@@ -11,6 +11,10 @@
         "tsc": "tsc",
         "lint": "tslint -p tsconfig.json"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/flyacts/backend"
+    },
     "dependencies": {
         "@angular-devkit/schematics": "8.3.4",
         "@angular-devkit/schematics-cli": "0.803.4",

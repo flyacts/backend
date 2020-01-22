@@ -12,8 +12,8 @@
     "license": "SEE LICENSE IN LICENSE",
     "repository": {
         "type": "git",
-        "url": "https://github.com/flyacts/backend-media-management"
-    },
+        "url": "https://github.com/flyacts/backend"
+      },
     "dependencies": {
         "@flyacts/backend-core-entities": "0.18.4",
         "@flyacts/backend-user-management": "0.18.8",
