@@ -14,4 +14,4 @@ RUN chown -R node /opt/flyacts-backend
 USER node
 RUN npm ci && npm run build && rm -R src
 
-ENTRYPOINT [ "/usr/local/bin/npm", "run", "start:prod" ]
+ENTRYPOINT [ "/usr/local/bin/npm", "run" ]
