@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.19.1](https://github.com/flyacts/backend/compare/v0.19.0...v0.19.1) (2020-02-02)
+
+
+### Bug Fixes
+
+* repair cookie parsing ([0d240d9](https://github.com/flyacts/backend/commit/0d240d9))
+
+
+
+
+
 # [0.19.0](https://github.com/flyacts/backend/compare/v0.18.9...v0.19.0) (2020-02-02)
 
 
