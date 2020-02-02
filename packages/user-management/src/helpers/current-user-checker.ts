@@ -6,12 +6,12 @@ import {
     Action,
     InternalServerError,
 } from '@flyacts/routing-controllers';
-import { Request } from 'express';
 import { Connection } from 'typeorm';
 
 import { TokenEntity } from '../entities/token.entity';
 import { UserEntity } from '../entities/user.entity';
 
+import { getTokenFromRequest } from './authorization-checker';
 import { UserManagementMetadata } from './user-management-medata';
 
 /**
@@ -23,21 +23,7 @@ export function createCurrentUserChecker(
     connection: Connection,
 ) {
     return async (action: Action) => {
-        const request: Request = action.request;
-
-        let token = request.headers['authorization'];
-
-        if (typeof token !== 'string') {
-            token = request.query.token;
-        }
-
-        if (typeof token !== 'string') {
-            token = request.cookies.authorization;
-        }
-
-        if (typeof token !== 'string') {
-            return false;
-        }
+        const token = getTokenFromRequest(action.request);
 
         const tokenEntity = await connection.manager.findOne(TokenEntity, {
             where: {

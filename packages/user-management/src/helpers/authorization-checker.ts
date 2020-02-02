@@ -3,6 +3,7 @@
  */
 
 import { Action } from '@flyacts/routing-controllers';
+import cookie = require('cookie');
 import { Request } from 'express';
 import { Connection } from 'typeorm';
 
@@ -15,20 +16,7 @@ import { TokenEntity } from '../entities/token.entity';
  */
 export function createAuthorizationCheck(connection: Connection) {
     return async (action: Action, roles: string[]) => {
-        const request: Request = action.request;
-        let token = request.headers['authorization'];
-
-        if (typeof token !== 'string') {
-            token = request.query.token;
-        }
-
-        if (typeof token !== 'string') {
-            token = request.cookies.authorization;
-        }
-
-        if (typeof token !== 'string') {
-            return false;
-        }
+        const token = getTokenFromRequest(action.request);
 
         const tokenTentity = await connection.manager.findOne(TokenEntity, {
             where: {
@@ -69,4 +57,27 @@ export function createAuthorizationCheck(connection: Connection) {
 
         return true;
     };
+}
+
+/**
+ * Try to extract token from request
+ */
+export function getTokenFromRequest(request: Request) {
+    let token = request.headers['authorization'];
+
+    if (typeof token !== 'string') {
+        token = request.query.token;
+    }
+
+    if (typeof token !== 'string' &&
+        (typeof request.headers.cookie === 'string')) {
+        const cookies = cookie.parse(request.headers.cookie);
+        token = cookies.authorization;
+    }
+
+    if (typeof token !== 'string') {
+        return undefined;
+    }
+
+    return token;
 }
