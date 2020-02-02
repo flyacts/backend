@@ -115,7 +115,7 @@ export class Backend {
      */
     // tslint:disable-next-line:parameters-max-number
     public static async create(
-        typeOrmConfig: ConnectionOptions,
+        typeOrmConfig: ConnectionOptions | Connection,
         controllers: Function[],
         middlewares: Function[],
         versionInformation: VersionInformation,
@@ -127,7 +127,11 @@ export class Backend {
         defaultErrorHandler: boolean = true,
     ) {
         const be = new Backend(versionInformation);
-        be.connection = await createConnection(typeOrmConfig);
+        if (typeOrmConfig instanceof Connection) {
+            be.connection = typeOrmConfig;
+        } else {
+            be.connection = await createConnection(typeOrmConfig);
+        }
 
         Container.set(Connection, be.connection);
         Container.set('connection', be.connection);
