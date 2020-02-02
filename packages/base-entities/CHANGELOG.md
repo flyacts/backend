@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://github.com/flyacts/backend/compare/v0.18.9...v0.19.0) (2020-02-02)
+
+
+### Bug Fixes
+
+* unify repository urls ([31bda39](https://github.com/flyacts/backend/commit/31bda39))
+
+
+
+
+
 ## [0.18.4](https://github.com/flyacts/backend/compare/v0.18.3...v0.18.4) (2019-10-01)
 
 **Note:** Version bump only for package @flyacts/backend-core-entities

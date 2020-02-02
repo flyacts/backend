@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://github.com/flyacts/backend/compare/v0.18.9...v0.19.0) (2020-02-02)
+
+
+### Bug Fixes
+
+* unify repository urls ([31bda39](https://github.com/flyacts/backend/commit/31bda39))
+
+
+### Features
+
+* allow setting the authorization via cookie ([be27d5c](https://github.com/flyacts/backend/commit/be27d5c))
+
+
+
+
+
 ## [0.18.8](https://github.com/flyacts/backend/compare/v0.18.7...v0.18.8) (2020-01-03)
 
 **Note:** Version bump only for package @flyacts/backend-user-management

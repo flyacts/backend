@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://github.com/flyacts/backend/compare/v0.18.9...v0.19.0) (2020-02-02)
+
+
+### Bug Fixes
+
+* unify repository urls ([31bda39](https://github.com/flyacts/backend/commit/31bda39))
+
+
+### Features
+
+* allow passing the connection to the module ([0f654ae](https://github.com/flyacts/backend/commit/0f654ae))
+
+
+
+
+
 ## [0.18.9](https://github.com/flyacts/backend/compare/v0.18.8...v0.18.9) (2020-01-03)
 
 **Note:** Version bump only for package @flyacts/backend
