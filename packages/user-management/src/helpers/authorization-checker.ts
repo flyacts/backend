@@ -18,9 +18,15 @@ export function createAuthorizationCheck(connection: Connection) {
         const request: Request = action.request;
         let token = request.headers['authorization'];
 
-        if (typeof token !== 'string' && (typeof request.query.authorization === 'string')) {
+        if (typeof token !== 'string') {
             token = request.query.token;
-        } else if (typeof token !== 'string') {
+        }
+
+        if (typeof token !== 'string') {
+            token = request.cookies.authorization;
+        }
+
+        if (typeof token !== 'string') {
             return false;
         }
 
