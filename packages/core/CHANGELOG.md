@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.20.0](https://github.com/flyacts/backend/compare/v0.19.1...v0.20.0) (2020-02-16)
+
+**Note:** Version bump only for package @flyacts/backend
+
+
+
+
+
 ## [0.19.1](https://github.com/flyacts/backend/compare/v0.19.0...v0.19.1) (2020-02-02)
 
 **Note:** Version bump only for package @flyacts/backend

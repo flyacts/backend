@@ -1,7 +1,7 @@
 {
     "name": "@flyacts/backend",
     "description": "Core backend package for the flyacts backend",
-    "version": "0.19.1",
+    "version": "0.20.0",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
     "author": "FLYACTS Development Team <hallo@flyacts.com>",
@@ -18,9 +18,9 @@
     "dependencies": {
         "@angular-devkit/schematics": "8.3.4",
         "@angular-devkit/schematics-cli": "0.803.4",
-        "@flyacts/backend-logger": "0.19.0",
-        "@flyacts/backend-user-management": "0.19.1",
-        "@flyacts/request-context": "0.19.0",
+        "@flyacts/backend-logger": "0.20.0",
+        "@flyacts/backend-user-management": "0.20.0",
+        "@flyacts/request-context": "0.20.0",
         "@flyacts/routing-controllers": "0.10.5",
         "@flyacts/routing-controllers-openapi": "1.8.2",
         "chalk": "2.4.2",
@@ -62,8 +62,8 @@
         "@types/shelljs": "0.8.5",
         "ts-node": "8.3.0",
         "tslint": "5.18.0",
-        "typescript-tslint-plugin": "0.5.5",
-        "typescript": "3.7.5"
+        "typescript": "3.7.5",
+        "typescript-tslint-plugin": "0.5.5"
     },
     "schematics": "./collection.json",
     "bin": {
