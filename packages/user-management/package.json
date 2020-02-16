@@ -24,7 +24,7 @@
         "cookie": "0.4.0",
         "reflect-metadata": "0.1.13",
         "typedi": "0.8.0",
-        "typeorm": "0.2.18",
+        "typeorm": "0.2.22",
         "uid-generator": "2.0.0"
     },
     "devDependencies": {
@@ -35,8 +35,8 @@
         "@types/node": "12.6.9",
         "ts-node": "8.3.0",
         "tslint": "5.18.0",
-        "tslint-language-service": "0.9.9",
-        "typescript": "3.5.3"
+        "typescript-tslint-plugin": "0.5.5",
+        "typescript": "3.7.5"
     },
     "husky": {
         "hooks": {

@@ -58,7 +58,7 @@ import * as shelljs from 'shelljs';
             'reflect-metadata',
             '@flyacts/routing-controllers',
             'typedi',
-            'typeorm@0.2.18',
+            'typeorm@0.2.22',
             'uid-generator',
             'winston',
             'zxcvbn',
