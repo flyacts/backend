@@ -17,6 +17,7 @@ import { Connection } from 'typeorm';
 
 import { TokenEntity } from '../entities/token.entity';
 import { UserEntity } from '../entities/user.entity';
+import { getTokenFromRequest } from '../helpers/authorization-checker';
 import { UserManagementMetadata } from '../helpers/user-management-medata';
 
 /**
@@ -29,7 +30,7 @@ export class CreateContextMiddleware implements ExpressMiddlewareInterface {
      */
     public async use(request: Request, _response: Response, next: (err?: unknown) => void) {
 
-        const token = request.get('authorization');
+        const token = getTokenFromRequest(request);
         const connection = Container.get<Connection>('connection');
         const namespace = RequestContext.obtainNamespace();
         namespace.run(async () => {
