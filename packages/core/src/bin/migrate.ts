@@ -18,7 +18,7 @@ import { createConnection } from 'typeorm';
     logger.info('Starting migrations');
     try {
         await connection.runMigrations({
-            transaction: false,
+            transaction: 'all',
         });
         logger.info('finished migrations');
         process.exit(0);

@@ -20,6 +20,7 @@
         "@flyacts/backend-logger": "0.20.0",
         "@flyacts/backend-media-management": "0.20.0",
         "@flyacts/backend-user-management": "0.20.0",
+        "@flyacts/backend-core-entities": "0.20.0",
         "class-validator": "0.9.1",
         "serialize-error": "4.1.0",
         "typedi": "0.8.0",

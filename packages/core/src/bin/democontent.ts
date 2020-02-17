@@ -23,7 +23,7 @@ require('ts-node/register');
     try {
         process.env.USE_DEMOCONTENT = 'yes';
         await connection.runMigrations({
-            transaction: false,
+            transaction: 'none',
         });
         logger.info('finished democontent');
         process.exit(0);
