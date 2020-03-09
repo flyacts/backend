@@ -157,7 +157,7 @@ export class FileUploadProvider {
     /**
      * Create a readstream from a media and variant
      */
-    public getFilestream(media: MediaEntity, variant?: string) {
+    public async getFilestream(media: MediaEntity, variant?: string) {
         if (!Array.isArray(media.files)) {
             throw new Error();
         }
@@ -172,7 +172,16 @@ export class FileUploadProvider {
             throw new Error();
         }
 
-        return this.storage.createReadStream({ key: file.hash });
+        try {
+            const fileExist = await this.storage.exists({ key: file.hash });
+            if (fileExist) {
+                return this.storage.createReadStream({ key: file.hash });
+            } else {
+                throw new Error();
+            }
+        } catch (e) {
+            throw new Error();
+        }
     }
 
     /**
