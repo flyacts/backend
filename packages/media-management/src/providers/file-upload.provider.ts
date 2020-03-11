@@ -16,6 +16,7 @@ import { Connection, EntityManager } from 'typeorm';
 import { MediaConfiguration } from '../configuration/media.configuration';
 import { FileEntity } from '../entities/file.entity';
 import { MediaEntity } from '../entities/media.entity';
+import { FileNotFoundError } from '../errors/file-not-found.error';
 import { BlobStore } from '../helpers/blob-store-wrapper';
 
 type IdIsh = {
@@ -172,16 +173,13 @@ export class FileUploadProvider {
             throw new Error();
         }
 
-        try {
-            const fileExist = await this.storage.exists({ key: file.hash });
-            if (fileExist) {
-                return this.storage.createReadStream({ key: file.hash });
-            } else {
-                throw new Error();
-            }
-        } catch (e) {
-            throw new Error();
+        const fileExist = await this.storage.exists({ key: file.hash });
+
+        if (!fileExist) {
+            throw new FileNotFoundError();
         }
+
+        return this.storage.createReadStream({ key: file.hash });
     }
 
     /**
