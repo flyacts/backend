@@ -2,7 +2,7 @@
  * @copyright FLYACTS GmbH 2020
  */
 
-import { BaseError } from './base.error';
+import { BaseError } from '@flyacts/backend';
 
 /**
  * Thrown if no file found

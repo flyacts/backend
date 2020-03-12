@@ -15,6 +15,7 @@
         "url": "https://github.com/flyacts/backend"
     },
     "dependencies": {
+        "@flyacts/backend": "0.20.1",
         "@flyacts/backend-core-entities": "0.20.1",
         "@flyacts/backend-user-management": "0.20.1",
         "@flyacts/routing-controllers": "0.10.5",
