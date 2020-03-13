@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.21.0](https://github.com/flyacts/backend/compare/v0.20.1...v0.21.0) (2020-03-13)
+
+
+### Bug Fixes
+
+* add FileNotFoundError to getFilestream function ([96ae5b6](https://github.com/flyacts/backend/commit/96ae5b6))
+* backend crash, if file not exits ([0268947](https://github.com/flyacts/backend/commit/0268947))
+* change base error import ([4127abe](https://github.com/flyacts/backend/commit/4127abe))
+
+
+
+
+
 ## [0.20.1](https://github.com/flyacts/backend/compare/v0.20.0...v0.20.1) (2020-02-17)
 
 
