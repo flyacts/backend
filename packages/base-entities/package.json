@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "reflect-metadata": "0.1.13",
-    "typeorm": "0.2.22"
+    "typeorm": "0.2.24"
   },
   "devDependencies": {
     "@flyacts/tslint-config": "1.2.1",

@@ -24,7 +24,7 @@
         "cookie": "0.4.0",
         "reflect-metadata": "0.1.13",
         "typedi": "0.8.0",
-        "typeorm": "0.2.22",
+        "typeorm": "0.2.24",
         "uid-generator": "2.0.0"
     },
     "devDependencies": {

@@ -24,7 +24,7 @@
         "class-validator": "0.9.1",
         "serialize-error": "4.1.0",
         "typedi": "0.8.0",
-        "typeorm": "0.2.22"
+        "typeorm": "0.2.24"
     },
     "devDependencies": {
         "@flyacts/tslint-config": "1.2.1",
