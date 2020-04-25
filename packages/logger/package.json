@@ -24,7 +24,7 @@
         "winston": "3.2.1"
     },
     "devDependencies": {
-        "@flyacts/tslint-config": "1.2.1",
+        "@flyacts/tslint-config": "1.2.2",
         "@types/node": "12.6.9",
         "@types/node-emoji": "1.8.1",
         "tslint": "5.18.0",

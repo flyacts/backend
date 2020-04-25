@@ -20,7 +20,7 @@
     "typeorm": "0.2.24"
   },
   "devDependencies": {
-    "@flyacts/tslint-config": "1.2.1",
+    "@flyacts/tslint-config": "1.2.2",
     "@types/node": "12.6.9",
     "ts-node": "8.3.0",
     "tslint": "5.18.0",
