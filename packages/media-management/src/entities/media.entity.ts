@@ -2,7 +2,7 @@
  * @copyright FLYACTS GmbH 2019
  */
 
-import { BaseEntity } from '@flyacts/backend-core-entities';
+import { BaseEntity, uuid } from '@flyacts/backend-core-entities';
 import { OwnableEntity } from '@flyacts/backend-user-management';
 import { Expose } from 'class-transformer';
 import {
@@ -44,7 +44,7 @@ export class MediaEntity extends BaseEntity {
         name: 'model_id',
     })
     @IsNumber()
-    public modelId!: number;
+    public modelId!: uuid;
 
     /**
      * The name of a collection

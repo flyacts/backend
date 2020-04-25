@@ -6,4 +6,8 @@ import 'reflect-metadata';
 
 export {
     BaseEntity,
-} from './entities';
+} from './entities/base.entity';
+
+export {
+    uuid,
+} from './types/uuid.type';

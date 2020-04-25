@@ -12,16 +12,11 @@ import * as shelljs from 'shelljs';
     const logger = new Logger();
 
     try {
-        logger.info(`Build 'job-runner' package`);
+        logger.info(`Build 'user-management' package`);
         logger.info(`Compiling Typescript`);
         if (shelljs.exec('npm run --silent tsc').code !== 0) {
             throw new Error('Failed to build typescript ');
         }
-        logger.info('Add shebang');
-        const content = await fs.readFile('./dist/bin/job-runner.js', 'utf-8');
-        await fs.writeFile('./dist/bin/job-runner.js', `#!/usr/bin/env node
-
-${content}`);
 
         logger.info('Copying migration sql files');
         await fs.copy(

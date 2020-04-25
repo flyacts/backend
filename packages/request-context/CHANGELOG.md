@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.0](https://github.com/flyacts/backend/compare/v0.21.1...v1.0.0-alpha.0) (2020-04-26)
+
+**Note:** Version bump only for package @flyacts/request-context
+
+
+
+
+
 # [0.21.0](https://github.com/flyacts/backend/compare/v0.20.1...v0.21.0) (2020-03-13)
 
 **Note:** Version bump only for package @flyacts/request-context

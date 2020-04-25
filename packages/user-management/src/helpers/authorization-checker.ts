@@ -65,7 +65,7 @@ export function createAuthorizationCheck(connection: Connection) {
 export function getTokenFromRequest(request: Request) {
     let token = request.headers['authorization'];
 
-    if (typeof token !== 'string') {
+    if (typeof token !== 'string' && typeof request.query.token === 'string') {
         token = request.query.token;
     }
 

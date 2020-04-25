@@ -1,11 +1,12 @@
 {
     "name": "@flyacts/backend-media-management",
-    "version": "0.21.1",
+    "version": "1.0.0-alpha.0",
     "description": "Media management for our backends",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
     "scripts": {
-        "build": "tsc -p tsconfig.json",
+        "build": "node -r ts-node/register scripts/build",
+        "tsc": "tsc",
         "lint": "tslint -p tsconfig.json"
     },
     "author": "FLYACTS GmbH",
@@ -15,9 +16,10 @@
         "url": "https://github.com/flyacts/backend"
     },
     "dependencies": {
-        "@flyacts/backend": "0.21.1",
-        "@flyacts/backend-core-entities": "0.21.0",
-        "@flyacts/backend-user-management": "0.21.0",
+        "@flyacts/backend": "1.0.0-alpha.0",
+        "@flyacts/backend-core-entities": "1.0.0-alpha.0",
+        "@flyacts/backend-logger": "1.0.0-alpha.0",
+        "@flyacts/backend-user-management": "1.0.0-alpha.0",
         "@flyacts/routing-controllers": "0.10.5",
         "class-transformer": "0.2.3",
         "class-validator": "0.9.1",

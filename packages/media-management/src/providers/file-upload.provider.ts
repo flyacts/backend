@@ -2,6 +2,7 @@
  * @copyright FLYACTS GmbH 2019
  */
 
+import { uuid } from '@flyacts/backend-core-entities';
 import * as fileType from 'file-type';
 import readChunk from 'read-chunk';
 import {
@@ -23,7 +24,7 @@ type IdIsh = {
     /**
      * ID of an entity
      */
-    id?: number,
+    id?: uuid,
 };
 
 /**
@@ -61,7 +62,7 @@ export class FileUploadProvider {
         name?: string,
         transactionManager?: EntityManager,
     ): Promise<MediaEntity> {
-        if (!(typeof entity === 'object' && (typeof entity.id === 'number'))) {
+        if (!(typeof entity === 'object' && (typeof entity.id === 'string'))) {
             throw new Error('Entity has no ID');
         }
 

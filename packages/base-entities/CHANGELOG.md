@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.0](https://github.com/flyacts/backend/compare/v0.21.1...v1.0.0-alpha.0) (2020-04-26)
+
+
+### Bug Fixes
+
+* give the column a database conformant name ([cf8be0f](https://github.com/flyacts/backend/commit/cf8be0fa4b08cfa0b7f4285a02082dc38f330511))
+
+
+### Features
+
+* change the basic id type to uuid ([b474c56](https://github.com/flyacts/backend/commit/b474c567af567735a6ac54863f45c7d8254577fe))
+* update typeorm ([5df37d8](https://github.com/flyacts/backend/commit/5df37d8a10ac38c1d7a5ce3615794fff378fe509))
+
+
+
+
+
 # [0.21.0](https://github.com/flyacts/backend/compare/v0.20.1...v0.21.0) (2020-03-13)
 
 **Note:** Version bump only for package @flyacts/backend-core-entities
