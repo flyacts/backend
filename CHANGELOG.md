@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.5](https://github.com/flyacts/backend/compare/v1.1.4...v1.1.5) (2020-05-11)
+
+
+### Bug Fixes
+
+* don't output the result of the `git status` command ([de95531](https://github.com/flyacts/backend/commit/de95531accedefa2900d53aed90516b8d5204b3f))
+
+
+
+
+
 ## [1.1.4](https://github.com/flyacts/backend/compare/v1.1.3...v1.1.4) (2020-05-11)
 
 
