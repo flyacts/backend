@@ -36,5 +36,37 @@
             "pre-commit": "npm run -s lint",
             "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
         }
+    },
+    "mocha": {
+        "bail": true,
+        "colors": true,
+        "timeout": 120000,
+        "recursive": true,
+        "require": [
+            "ts-node/register",
+            "source-map-support/register"
+        ],
+        "extensions": [
+            "ts",
+            "tsx"
+        ]
+    },
+    "nyc": {
+        "extends": "@istanbuljs/nyc-config-typescript",
+        "extension": [
+            ".ts",
+            ".tsx"
+        ],
+        "exclude": [
+            "**/*.d.ts"
+        ],
+        "include": [
+            "src"
+        ],
+        "reporter": [
+            "lcov",
+            "text"
+        ],
+        "all": true
     }
 }
