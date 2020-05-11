@@ -3,7 +3,6 @@
  */
 
 import { Logger } from '@flyacts/backend-logger';
-import * as child_process from 'child_process';
 import * as config from 'config';
 import * as Docker from 'dockerode';
 import * as fs from 'fs-extra';
@@ -15,27 +14,13 @@ import * as shelljs from 'shelljs';
 
 const logger = new Logger();
 const isCI = require('is-ci') as boolean;
-const _hasBin = require('hasbin') as (binary: string, callback: (result: boolean) => void) => void;
-
-export enum DatabaseType {
-    Native = 'Native',
-    Docker = 'Docker',
-    None = 'None',
-}
 
 interface ConnectionInformation {
     host: string;
     port: number;
 }
 
-/**
- * Check if binary is in path
- */
-async function hasBin(binary: string) {
-    return new Promise<boolean>((resolve) => {
-        _hasBin(binary, (result) => { resolve(result); });
-    });
-}
+export const containerSuffix = 'local-database';
 
 /**
  * sleep for time miliseconds
@@ -47,7 +32,11 @@ async function sleep(time: number) {
 /**
  * Helper to check if the postgres database is running
  */
-async function checkIfPostgresIsRunning(connection: ConnectionInformation, databaseName: string, timeout?: number) {
+async function checkIfPostgresIsRunning(
+    connection: ConnectionInformation,
+    databaseName: string,
+    timeout?: number,
+) {
     let running = 0;
     while (true) {
         if (typeof timeout === 'number' && running >= timeout) {
@@ -76,29 +65,9 @@ async function checkIfPostgresIsRunning(connection: ConnectionInformation, datab
  */
 export function generateContainerName() {
     const packageConfig = require(path.resolve(process.cwd(), 'package.json'));
-    return `${packageConfig.name.replace('@', '').replace('/', '-')}-local-database`;
+    return `${packageConfig.name.replace('@', '').replace('/', '-')}-${containerSuffix}`;
 }
 
-/**
- * Determins if a local postgres binary is used or the database is run by docker
- */
-export async function getDatabaseType() {
-    if (await hasBin('initdb')) {
-        return DatabaseType.Native;
-    }
-    else {
-        try {
-            const docker = new Docker();
-            if (docker instanceof Docker) {
-                return DatabaseType.Docker;
-            } else {
-                return DatabaseType.None;
-            }
-        } catch (error) {
-            return DatabaseType.None;
-        }
-    }
-}
 
 /**
  * Extract the ip address of the container
@@ -126,16 +95,18 @@ async function extractIpFromContainer(docker: Docker, containerId: string) {
  * Use docker to setup a database
  */
 async function setupDockerDatabase(
-    persitant: boolean,
+    persistent: boolean,
     databaseName: string,
     databasePath: string,
 ): Promise<ConnectionInformation> {
+    console.dir(arguments);
     const binds = [];
-    if (persitant === true) {
+    if (persistent === true) {
         binds.push(`${databasePath}:/var/lib/postgresql/data`);
     }
+    console.dir(binds);
     let ipAddress = '127.0.0.1';
-    let port = 15432;
+    let port = (isCI ? 5432 : 15432);
 
     const containerName = generateContainerName();
     const docker = new Docker();
@@ -148,9 +119,8 @@ async function setupDockerDatabase(
         try {
             if (isCI) {
                 ipAddress = await extractIpFromContainer(docker, preStartContainerInfo.Id);
-                port = 5432;
             }
-            await checkIfPostgresIsRunning({ host: ipAddress, port: 15432 }, databaseName, 5);
+            await checkIfPostgresIsRunning({ host: ipAddress, port }, databaseName, 5);
             logger.info('Successfully recycled container');
             return {
                 host: ipAddress,
@@ -164,7 +134,7 @@ async function setupDockerDatabase(
 
     logger.info('Pulling postgres image');
     await (new Promise((resolve, reject) => {
-        docker.pull('postgres:10', {}, (err, stream) => {
+        docker.pull('postgres:12', {}, (err, stream) => {
             if (err) {
                 reject(err);
             }
@@ -180,10 +150,17 @@ async function setupDockerDatabase(
 
     logger.info('Creating postgres container');
     const database = await docker.createContainer({
-        Image: 'postgres:10',
+        Image: 'postgres:12',
         name: containerName,
         Env: [
             `POSTGRES_DB=${databaseName}`,
+            /**
+             * We use the trust model here because the database is
+             * intended to run local on the developers computer or
+             * in a CI environment where outside acces should not be
+             * possible
+             */
+            'POSTGRES_HOST_AUTH_METHOD=trust',
         ],
         HostConfig: {
             Binds: binds,
@@ -201,7 +178,6 @@ async function setupDockerDatabase(
     await database.start();
     if (isCI) {
         ipAddress = await extractIpFromContainer(docker, database.id);
-        port = 5432;
     }
     logger.info('Successfully started database container');
 
@@ -211,86 +187,8 @@ async function setupDockerDatabase(
     };
 }
 
-/**
- * Check if the file exists
- */
-async function fileExists(file: string) {
-    try {
-        await fs.access(file);
-        return true;
-    } catch (error) {
-        return false;
-    }
-}
-
-/**
- * Setup a native database
- */
-async function setupRawDatabase(databaseName: string, databasePath: string) {
-    // const databasePath = path.resolve(process.cwd(), 'database');
-    // first lets check if database is initialized
-    if (!(await fileExists(path.resolve(databasePath, 'PG_VERSION')))) {
-        // it is not, do it then
-        shelljs.exec(`initdb --pgdata "${databasePath}" --username postgres`);
-        // copy our config into the database folder and customize it
-        const _config = `listen_addresses = '127.0.0.1'
-port = 15432
-max_connections = 100
-unix_socket_directories = '<socket-folder>'
-shared_buffers = 128MB
-log_timezone = 'UTC'
-datestyle = 'iso, dmy'
-timezone = 'UTC'`;
-        await fs.writeFile(
-            path.resolve(databasePath, 'postgresql.conf'),
-            _config.replace('<socket-folder>', databasePath),
-        );
-    }
-
-    // check if postgres is already running
-    logger.info('Check if postgres is already running');
-    const postgresStatus = child_process.spawnSync('pg_ctl', [
-        `--pgdata=${databasePath}`,
-        'status',
-    ]).stdout.toString();
-
-    if (postgresStatus.match(/PID: (\d+)/) === null) {
-        logger.info(`Starting database with pgdate=${databasePath}`);
-        // start the database
-        child_process.execFileSync('pg_ctl', [
-            `--pgdata=${databasePath}`,
-            'start',
-        ], { stdio: 'inherit' });
-    } else {
-        logger.info('Postgres is already running…');
-    }
-
-    await sleep(2000);
-
-    logger.info('check if the database exists in postgres');
-
-    const databaseStatus = child_process.spawnSync('psql', [
-        '--host=127.0.0.1',
-        '--port=15432',
-        '--username=postgres',
-        '-l',
-    ]).stdout.toString();
-
-    if (databaseStatus.match(databaseName) === null) {
-        logger.info(`Creating the database ${databaseName}`);
-        shelljs.exec(`createdb --host=127.0.0.1 --port=15432 --username=postgres ${databaseName}`);
-    } else {
-        logger.info(`Database ${databaseName} already exists`);
-    }
-
-    return {
-        host: '127.0.0.1',
-        port: 15432,
-    };
-}
-
 // tslint:disable-next-line:no-floating-promises
-(async function() {
+(async function () {
     if (require.main !== module) {
         return;
     }
@@ -298,35 +196,25 @@ timezone = 'UTC'`;
 
     try {
         const args = minimist((process.argv.slice(2)));
-        const databaseTypeOption = args['db-type'];
-        let databasePath = typeof args['db-path'] === 'string' ? args['db-path'] : 'database';
+        let databasePath = typeof args['db-path'] === 'string' ?
+            args['db-path'] :
+            'database';
+
         if (!databasePath.startsWith('/')) {
             databasePath = path.resolve(process.cwd(), databasePath);
         }
+
         const databaseName = config.get<string>('database.database');
+
         let connection: ConnectionInformation;
-        let databaseType;
-        if (typeof databaseTypeOption === 'string') {
-            if (databaseTypeOption === 'docker') {
-                databaseType = DatabaseType.Docker;
-            } else if (databaseType === 'native') {
-                databaseType = DatabaseType.Native;
-            } else {
-                databaseType = await getDatabaseType();
-            }
-        } else {
-            databaseType = await getDatabaseType();
-        }
-        if (databaseType === DatabaseType.Docker) {
-            connection = await setupDockerDatabase(args.persistant, databaseName, databasePath);
-        } else if (databaseType === DatabaseType.Native) {
-            connection = await setupRawDatabase(databaseName, databasePath);
-        } else {
-            throw new Error('No Database available');
-        }
+
+        console.dir(args);
+        connection = await setupDockerDatabase(args.persistent, databaseName, databasePath);
 
         logger.info(`Trying to establish a connection to the database on ${connection.host}:${connection.port}`);
+
         await checkIfPostgresIsRunning(connection, databaseName);
+
         logger.info('Database is ready to connect');
         process.exit(0);
     } catch (error) {

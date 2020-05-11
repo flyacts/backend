@@ -3,7 +3,6 @@
  */
 
 import { Logger } from '@flyacts/backend-logger';
-import * as child_process from 'child_process';
 import * as Docker from 'dockerode';
 import * as minimist from 'minimist';
 import * as path from 'path';
@@ -11,9 +10,7 @@ import serializeError = require('serialize-error');
 
 
 import {
-    DatabaseType,
-    generateContainerName,
-    getDatabaseType,
+    generateContainerName, containerSuffix,
 } from './setup-database';
 
 
@@ -34,7 +31,14 @@ async function destroyDockerContainer() {
     }
 
     for (const container of containers) {
-        if (!container.Names.includes(`/${generateContainerName()}`)) {
+        const eligibleForDestruction = container
+            .Names
+            .map(item =>
+                item === `/${generateContainerName()}` ||
+                item.endsWith(containerSuffix))
+            .includes(true);
+
+        if (!eligibleForDestruction) {
             continue;
         }
 
@@ -48,29 +52,9 @@ async function destroyDockerContainer() {
     }
 }
 
-/**
- * Shutdown a postgres instance that is running on this computer
- */
-async function shutdownNativePostgres(databasePath: string) {
-    const postgresStatus = child_process.spawnSync('pg_ctl', [
-        `--pgdata=${databasePath}`,
-        'status',
-    ]).stdout.toString();
-
-    if (postgresStatus.match(/PID: (\d+)/) !== null) {
-        logger.info(`Stopping postgresql`);
-        // start the database
-        child_process.execFileSync('pg_ctl', [
-            `--pgdata=${databasePath}`,
-            'stop',
-        ]);
-    } else {
-        logger.info('No database running. Do nothing…');
-    }
-}
 
 // tslint:disable-next-line:no-floating-promises
-(async function() {
+(async function () {
     if (require.main !== module) {
         return;
     }
@@ -79,30 +63,16 @@ async function shutdownNativePostgres(databasePath: string) {
 
     try {
         const args = minimist((process.argv.slice(2)));
-        const databaseTypeOption = args['db-type'];
-        let databasePath = typeof args['db-path'] === 'string' ? args['db-path'] : 'database';
+
+        let databasePath = typeof args['db-path'] === 'string' ?
+            args['db-path'] :
+            'database';
+
         if (!databasePath.startsWith('/')) {
             databasePath = path.resolve(process.cwd(), databasePath);
         }
 
-        let databaseType;
-        if (typeof databaseTypeOption === 'string') {
-            if (databaseTypeOption === 'docker') {
-                databaseType = DatabaseType.Docker;
-            } else if (databaseType === 'native') {
-                databaseType = DatabaseType.Native;
-            } else {
-                databaseType = await getDatabaseType();
-            }
-        } else {
-            databaseType = await getDatabaseType();
-        }
-
-        if (databaseType === DatabaseType.Docker) {
-            await destroyDockerContainer();
-        } else if (databaseType === DatabaseType.Native) {
-            await shutdownNativePostgres(databasePath);
-        }
+        await destroyDockerContainer();
     } catch (error) {
         logger.error('failed to teardown the database', serializeError(error));
         process.exit(1);
