@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/flyacts/backend/compare/v0.21.1...v1.0.0) (2020-05-11)
+
+
+### Features
+
+* change the basic id type to uuid ([dac7379](https://github.com/flyacts/backend/commit/dac7379))
+* update typeorm ([5df37d8](https://github.com/flyacts/backend/commit/5df37d8))
+
+
+
+
+
 # [1.0.0-alpha.0](https://github.com/flyacts/backend/compare/v0.21.1...v1.0.0-alpha.0) (2020-04-26)
 
 
