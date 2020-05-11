@@ -104,7 +104,7 @@ import * as shelljs from 'shelljs';
         shelljs.exec(`npm install --silent --save-exact --save-dev ${devDependencies.join(' ')}`);
         logger.info('write .gitignore');
         await fs.writeFile('.gitignore', ['node_modules', 'dist', 'database.db'].join('\n'));
-        const status = shelljs.exec('git status').code;
+        const status = shelljs.exec('git status', { silent: true }).code;
         if (status === 128) {
             logger.debug('Initializing Git');
             shelljs.exec(`git init`);
