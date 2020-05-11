@@ -58,9 +58,8 @@ import * as shelljs from 'shelljs';
             'reflect-metadata',
             '@flyacts/routing-controllers',
             'typedi',
-            'typeorm@0.2.22',
+            'typeorm@0.2.24',
             'uid-generator',
-            'winston',
             'zxcvbn',
         ];
         shelljs.exec(`npm install --silent --save-exact --save ${packages.join(' ')}`);
@@ -82,11 +81,7 @@ import * as shelljs from 'shelljs';
             '@types/mocha',
             '@types/multer',
             '@types/nock',
-            '@types/node-emoji',
             '@types/pg',
-            '@types/react-dom',
-            '@types/react',
-            '@types/sparkpost',
             '@types/supertest',
             '@types/zxcvbn',
             'chai',
@@ -105,7 +100,7 @@ import * as shelljs from 'shelljs';
             'supertest',
             'ts-node',
             'tslint',
-            'tslint-language-service',
+            'typescript-tslint-plugin',
             'node-notifier-cli',
             'typescript',
         ];
