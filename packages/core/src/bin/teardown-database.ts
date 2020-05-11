@@ -10,7 +10,7 @@ import serializeError = require('serialize-error');
 
 
 import {
-    generateContainerName, containerSuffix,
+    containerSuffix, generateContainerName,
 } from './setup-database';
 
 
@@ -54,7 +54,7 @@ async function destroyDockerContainer() {
 
 
 // tslint:disable-next-line:no-floating-promises
-(async function () {
+(async function() {
     if (require.main !== module) {
         return;
     }

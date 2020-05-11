@@ -92,6 +92,26 @@ async function extractIpFromContainer(docker: Docker, containerId: string) {
 }
 
 /**
+ * Pull a docker image and resolve when its finished
+ */
+async function pullDockerImage(docker: Docker, name: string) {
+    return (new Promise((resolve, reject) => {
+        docker.pull(name, {}, (err, stream) => {
+            if (err) {
+                reject(err);
+            }
+            docker.modem.followProgress(stream, (_err: unknown) => {
+                // tslint:disable-next-line
+                if (_err) {
+                    reject(err);
+                }
+                resolve();
+            });
+        });
+    }));
+}
+
+/**
  * Use docker to setup a database
  */
 async function setupDockerDatabase(
@@ -99,14 +119,12 @@ async function setupDockerDatabase(
     databaseName: string,
     databasePath: string,
 ): Promise<ConnectionInformation> {
-    console.dir(arguments);
     const binds = [];
     if (persistent === true) {
         binds.push(`${databasePath}:/var/lib/postgresql/data`);
     }
-    console.dir(binds);
     let ipAddress = '127.0.0.1';
-    let port = (isCI ? 5432 : 15432);
+    const port = (isCI ? 5432 : 15432);
 
     const containerName = generateContainerName();
     const docker = new Docker();
@@ -133,20 +151,8 @@ async function setupDockerDatabase(
     }
 
     logger.info('Pulling postgres image');
-    await (new Promise((resolve, reject) => {
-        docker.pull('postgres:12', {}, (err, stream) => {
-            if (err) {
-                reject(err);
-            }
-            docker.modem.followProgress(stream, (_err: unknown) => {
-                // tslint:disable-next-line
-                if (_err) {
-                    reject(err);
-                }
-                resolve();
-            });
-        });
-    }));
+
+    await pullDockerImage(docker, 'postgres:12');
 
     logger.info('Creating postgres container');
     const database = await docker.createContainer({
@@ -188,7 +194,7 @@ async function setupDockerDatabase(
 }
 
 // tslint:disable-next-line:no-floating-promises
-(async function () {
+(async function() {
     if (require.main !== module) {
         return;
     }
@@ -208,7 +214,6 @@ async function setupDockerDatabase(
 
         let connection: ConnectionInformation;
 
-        console.dir(args);
         connection = await setupDockerDatabase(args.persistent, databaseName, databasePath);
 
         logger.info(`Trying to establish a connection to the database on ${connection.host}:${connection.port}`);
