@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/flyacts/backend/compare/v1.0.0...v1.1.0) (2020-05-11)
+
+
+### Bug Fixes
+
+* repair initial project issues ([30e410f](https://github.com/flyacts/backend/commit/30e410f23d51d50be655cd2dd06d479adc273dfe))
+* use the correct typeorm version ([dfd4b67](https://github.com/flyacts/backend/commit/dfd4b676d92f01a81880920d079bfca96a3943bd))
+
+
+
+
+
 # [1.0.0](https://github.com/flyacts/backend/compare/v0.21.1...v1.0.0) (2020-05-11)
 
 

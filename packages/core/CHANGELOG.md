@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/flyacts/backend/compare/v1.0.0...v1.1.0) (2020-05-11)
+
+
+### Bug Fixes
+
+* change database transaction level to each ([ac5f278](https://github.com/flyacts/backend/commit/ac5f278e332cc239a3b2b040231dc159f178448b))
+
+
+### Features
+
+* remove native support from the database tools ([7608e97](https://github.com/flyacts/backend/commit/7608e9760de9fd9b755bc4f9ff1911b1f1681df9))
+
+
+
+
+
 # [1.0.0](https://github.com/flyacts/backend/compare/v0.21.1...v1.0.0) (2020-05-11)
 
 
