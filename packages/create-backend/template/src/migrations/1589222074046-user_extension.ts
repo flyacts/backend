@@ -13,7 +13,7 @@ import { TableColumnOptions } from 'typeorm/schema-builder/options/TableColumnOp
  */
 export class UserExtension1589222074046 implements MigrationInterface {
     public async up(queryRunner: QueryRunner) {
-        await queryRunner.query('CREATE SCHEMA user_management');
+        await queryRunner.query('CREATE SCHEMA IF NOT EXISTS user_management');
 
         const baseEntitySchema: TableColumnOptions[] = [
             {
