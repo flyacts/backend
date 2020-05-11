@@ -10,7 +10,7 @@ import * as path from 'path';
 import * as shelljs from 'shelljs';
 
 // tslint:disable-next-line
-(async function() {
+(async function () {
     const logger = new Logger();
     try {
         const currentPath = shelljs.pwd().stdout;
@@ -27,16 +27,13 @@ import * as shelljs from 'shelljs';
             logger.error('package.json already exists, please bootstrap a backend only in an empty directory');
             process.exit(-1);
         }
-        logger.debug('Initializing Git');
-        shelljs.exec(`git init`);
-        shelljs.exec(`git checkout -b develop`);
         logger.debug('Copying files…');
         await fs.copy(templateDirectory, process.cwd(), {
             recursive: true,
             errorOnExist: true,
         });
         logger.debug('Initialize package.json');
-        child_process.execFileSync('npm', ['init'], {stdio: 'inherit'});
+        child_process.execFileSync('npm', ['init'], { stdio: 'inherit' });
         logger.debug('Installing dependencies');
         const packages = [
             '@flyacts/backend',
@@ -107,9 +104,17 @@ import * as shelljs from 'shelljs';
         shelljs.exec(`npm install --silent --save-exact --save-dev ${devDependencies.join(' ')}`);
         logger.info('write .gitignore');
         await fs.writeFile('.gitignore', ['node_modules', 'dist', 'database.db'].join('\n'));
-        logger.info('Crafting initial commit');
-        shelljs.exec('git add -A');
-        shelljs.exec('git commit --message="chore: initial commit"');
+        const status = shelljs.exec('git status').code;
+        if (status === 128) {
+            logger.debug('Initializing Git');
+            shelljs.exec(`git init`);
+            shelljs.exec(`git checkout -b develop`);
+            logger.info('Crafting initial commit');
+            shelljs.exec('git add -A');
+            shelljs.exec('git commit --message="chore: initial commit"');
+        } else {
+            logger.info('Already a git repository, no need to create one');
+        }
         logger.info(`Successfully scaffolded your backend! ${nodeEmoji.get('rocket')} ${nodeEmoji.get('tada')}`);
         process.exit(0);
     } catch (error) {
