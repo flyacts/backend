@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/flyacts/backend/compare/v1.1.0...v1.1.1) (2020-05-11)
+
+
+### Bug Fixes
+
+* linting issues ([26260f6](https://github.com/flyacts/backend/commit/26260f63819d059b96bdb4eb5880efd4aa093314))
+
+
+
+
+
 # [1.1.0](https://github.com/flyacts/backend/compare/v1.0.0...v1.1.0) (2020-05-11)
 
 
