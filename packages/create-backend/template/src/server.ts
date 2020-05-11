@@ -32,7 +32,7 @@ if (typeof process.env.NODE_ENV === 'undefined') {
 export async function startApp() {
     const typeOrmConfig = {
         ...require('../ormconfig.json'),
-        ...config.get('database'),
+        ...config.get<object>('database'),
     };
 
     const mediaLocation = config.get<string>('media.directory');

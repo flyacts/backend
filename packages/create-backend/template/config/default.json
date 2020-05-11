@@ -2,7 +2,7 @@
     "database": {
         "type": "postgres",
         "host": "localhost",
-        "port": 5432,
+        "port": 15432,
         "username": "postgres",
         "password": "",
         "database": "backend_app",

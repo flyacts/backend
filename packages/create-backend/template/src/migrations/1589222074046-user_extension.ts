@@ -11,50 +11,50 @@ import { TableColumnOptions } from 'typeorm/schema-builder/options/TableColumnOp
 /**
  * The initial migrations
  */
-export class Init1537884600000 implements MigrationInterface {
+export class UserExtension1589222074046 implements MigrationInterface {
     public async up(queryRunner: QueryRunner) {
+        await queryRunner.query('CREATE SCHEMA user_management');
+
         const baseEntitySchema: TableColumnOptions[] = [
             {
                 name: 'id',
                 isPrimary: true,
-                type: 'integer',
+                type: 'uuid',
                 isGenerated: true,
-                generationStrategy: 'increment',
+                generationStrategy: 'uuid',
             },
             {
-                name: 'createdAt',
+                name: 'created_at',
                 type: 'timestamp',
                 default: 'CURRENT_TIMESTAMP',
             },
             {
-                name: 'updatedAt',
+                name: 'updated_at',
                 type: 'timestamp',
                 default: 'CURRENT_TIMESTAMP',
             },
         ];
 
         const userExtension = new Table({
-            name: 'user_extensions',
+            name: 'user_management.user_extensions',
             columns: [
                 ...baseEntitySchema,
                 {
                     name: 'firstname',
-                    type: 'varchar',
-                    length: '60',
+                    type: 'text',
                 },
                 {
                     name: 'lastname',
-                    type: 'varchar',
-                    length: '60',
+                    type: 'text',
                 },
                 {
                     name: 'users_id',
-                    type: 'integer',
+                    type: 'uuid',
                 },
             ],
             foreignKeys: [
                 {
-                    name: 'fk__user_extensions',
+                    name: 'fk___user_extensions___users_id___users',
                     columnNames: ['users_id'],
                     referencedTableName: 'users',
                     referencedColumnNames: ['id'],

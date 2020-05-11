@@ -29,7 +29,9 @@ export async function setupDatabase(
 
     await session.runPromise(async () => {
         session.set(RequestContext.name, requestContext);
-        await connection.runMigrations({ transaction: false });
+        await connection.runMigrations({
+            transaction: 'each',
+        });
     });
 
     let response = await request(app)

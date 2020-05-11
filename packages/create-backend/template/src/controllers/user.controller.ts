@@ -68,7 +68,7 @@ export class UserController {
      */
     @Get()
     @Authorized([
-        UserRoles.Admin
+        UserRoles.Admin,
     ])
     // tslint:disable-next-line
     public async find(
@@ -354,7 +354,7 @@ export class UserController {
             .createQueryBuilder('ue')
             .innerJoin('ue.user', 'u')
             .where('ue.id = :id', { id })
-            .getOne()
+            .getOne();
     }
 
     /**

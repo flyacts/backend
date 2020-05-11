@@ -25,7 +25,10 @@ import {
 /**
  * Extends the user with attributes
  */
-@Entity('user_extensions')
+@Entity({
+    name: 'user_extensions',
+    schema: 'user_management',
+})
 export class UserExtensionEntity extends BaseEntity {
     @Column()
     @IsString()

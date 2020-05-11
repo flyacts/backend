@@ -2,7 +2,6 @@
  * @copyright FLYACTS GmbH 2018
  */
 
-import { RoleEntity } from '@flyacts/backend-user-management';
 import { MigrationInterface, QueryRunner } from 'typeorm';
 
 // tslint:disable:completed-docs
@@ -10,7 +9,7 @@ import { MigrationInterface, QueryRunner } from 'typeorm';
 /**
  * Democontent from migrations
  */
-export class InitialContent1537885010000 implements MigrationInterface {
+export class UserRoles1589222074047 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner) {
         const roles = [
@@ -19,9 +18,9 @@ export class InitialContent1537885010000 implements MigrationInterface {
         ];
 
         for (const role of roles) {
-            const roleEntity = new RoleEntity();
-            roleEntity.name = role;
-            await queryRunner.connection.manager.save(roleEntity);
+            await queryRunner.query('INSERT INTO public.roles(name) VALUES($1)', [
+                role,
+            ]);
         }
     }
 

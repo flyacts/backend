@@ -15,8 +15,7 @@
         "start:dev": "rimraf ./dist && nodemon",
         "start:prod": "node dist/server",
         "start": "node -r ts-node/register src/server",
-        "test": "teardown-database && setup-database && npm run -s build && cp ormconfig.test.json dist/ormconfig.json && cross-env NODE_ENV=test mocha --colors --bail --timeout 60000 --recursive dist/tests && teardown-database",
-        "test:ci": "teardown-database && setup-database && npm run -s build && cp ormconfig.test.json dist/ormconfig.json && cross-env NODE_ENV=test mocha --colors --bail --timeout 60000 --recursive dist/tests && teardown-database",
+        "test": "cross-env NODE_ENV=test node -r ts-node/register scripts/run-tests.ts",
         "tsfmt": "tsfmt",
         "typeorm": "node -r ts-node/register node_modules/typeorm/cli.js"
     },
