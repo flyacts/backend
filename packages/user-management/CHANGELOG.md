@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.6](https://github.com/flyacts/backend/compare/v1.1.5...v1.1.6) (2020-05-24)
+
+
+### Bug Fixes
+
+* differ migration names ([61fae4a](https://github.com/flyacts/backend/commit/61fae4a69b3381bdae7872b0c5f66a09025c54e0))
+
+
+
+
+
 ## [1.1.5](https://github.com/flyacts/backend/compare/v1.1.4...v1.1.5) (2020-05-11)
 
 **Note:** Version bump only for package @flyacts/backend-user-management
