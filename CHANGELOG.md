@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.11](https://github.com/flyacts/backend/compare/v1.1.10...v1.1.11) (2020-05-25)
+
+
+### Bug Fixes
+
+* remove job contraints from media sql ([9275d79](https://github.com/flyacts/backend/commit/9275d796c8bd0a55e16b653725918fd43a2446d9))
+
+
+
+
+
 ## [1.1.10](https://github.com/flyacts/backend/compare/v1.1.9...v1.1.10) (2020-05-25)
 
 
