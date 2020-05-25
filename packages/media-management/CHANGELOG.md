@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.8](https://github.com/flyacts/backend/compare/v1.1.7...v1.1.8) (2020-05-25)
+
+
+### Bug Fixes
+
+* fix fk typo in sql ([f4fecfb](https://github.com/flyacts/backend/commit/f4fecfb3786f0790c86162b243a8e7bf67174ce8))
+
+
+
+
+
 ## [1.1.7](https://github.com/flyacts/backend/compare/v1.1.6...v1.1.7) (2020-05-25)
 
 
