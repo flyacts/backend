@@ -17,8 +17,9 @@ ALTER TABLE public.media DROP COLUMN id;
 ALTER TABLE public.media RENAME COLUMN uuid_id TO id;
 ALTER TABLE public.media ADD CONSTRAINT pk___media___id PRIMARY KEY (id);
 
+ALTER TABLE public.jobs DROP CONSTRAINT IF EXISTS fk___jobs___job_queues_id___job_queue;
 ALTER TABLE public.jobs ADD CONSTRAINT fk___jobs___job_queues_id___job_queue FOREIGN KEY (job_queues_id)
-    REFERENCES public.jobs_queues (id) MATCH FULL
+    REFERENCES public.job_queues (id) MATCH FULL
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 ALTER TABLE public.media RENAME COLUMN model_id TO legacy_model_id;
