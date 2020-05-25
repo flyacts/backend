@@ -1,6 +1,6 @@
 {
   "name": "@flyacts/backend-core-entities",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "A set of basic entities for use in our backend code",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",

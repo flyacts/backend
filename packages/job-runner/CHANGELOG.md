@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.9](https://github.com/flyacts/backend/compare/v1.1.8...v1.1.9) (2020-05-25)
+
+
+### Bug Fixes
+
+* rename job_queue_id foreign key in jobs ([f19f613](https://github.com/flyacts/backend/commit/f19f613eedc6adadf27fb8941d9fdcde44703870))
+
+
+
+
+
 ## [1.1.8](https://github.com/flyacts/backend/compare/v1.1.7...v1.1.8) (2020-05-25)
 
 
