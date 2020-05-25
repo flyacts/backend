@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.10](https://github.com/flyacts/backend/compare/v1.1.9...v1.1.10) (2020-05-25)
+
+
+### Bug Fixes
+
+* jobs_queues typo ([a08923e](https://github.com/flyacts/backend/commit/a08923e0265872d082a55b4d5a70c67070ea6275))
+
+
+
+
+
 ## [1.1.9](https://github.com/flyacts/backend/compare/v1.1.8...v1.1.9) (2020-05-25)
 
 
