@@ -9,7 +9,7 @@ import { MigrationInterface, QueryRunner } from 'typeorm';
 /**
  * Run migration change_id_to_uuids
  */
-export class ChangeIDToUUID1587836774946 implements MigrationInterface {
+export class ChangeIDToUUIDForMedia1587836774946 implements MigrationInterface {
     /**
      * TypeORMs migration up
      */
