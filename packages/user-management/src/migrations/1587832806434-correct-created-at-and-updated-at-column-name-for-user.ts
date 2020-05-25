@@ -9,7 +9,7 @@ import { MigrationInterface, QueryRunner } from 'typeorm';
 /**
  * Run migration correct_created_at_and_updated_at_column_name_s
  */
-export class CorrectCreatedAtAndUpdatedAtColumnName1587832806434 implements MigrationInterface {
+export class CorrectCreatedAtAndUpdatedAtColumnNameForUser1587832806434 implements MigrationInterface {
     /**
      * TypeORMs migration up
      */
