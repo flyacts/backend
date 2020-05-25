@@ -5,7 +5,7 @@ ALTER TABLE public.job_queues ADD COLUMN uuid_id uuid DEFAULT uuid_generate_v4()
 ALTER TABLE public.jobs ADD COLUMN uuid_id uuid DEFAULT uuid_generate_v4();
 
 ALTER TABLE public.jobs ADD COLUMN uuid_job_queue_id uuid;
-UPDATE public.jobs SET uuid_job_queue_id = (SELECT uuid_id FROM public.jobs_queues WHERE id = job_queue_id);
+UPDATE public.jobs SET uuid_job_queue_id = (SELECT uuid_id FROM public.job_queues WHERE id = job_queue_id);
 ALTER TABLE public.jobs DROP COLUMN job_queue_id;
 ALTER TABLE public.jobs RENAME uuid_job_queue_id TO job_queues_id;
 
