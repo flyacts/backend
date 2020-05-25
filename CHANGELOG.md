@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.7](https://github.com/flyacts/backend/compare/v1.1.6...v1.1.7) (2020-05-25)
+
+
+### Bug Fixes
+
+* differ id to uuid migrations names ([72d5d6d](https://github.com/flyacts/backend/commit/72d5d6de0ea3605fb8b59a260f4bb2cf6fcd2471))
+
+
+
+
+
 ## [1.1.6](https://github.com/flyacts/backend/compare/v1.1.5...v1.1.6) (2020-05-24)
 
 

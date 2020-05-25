@@ -1,7 +1,7 @@
 {
     "name": "@flyacts/create-backend",
     "description": "description",
-    "version": "1.1.5",
+    "version": "1.1.7",
     "main": "dist/create-backend.js",
     "author": "FLYACTS Development Team <hallo@flyacts.com>",
     "license": "MIT",
@@ -15,7 +15,7 @@
         "tsc": "tsc"
     },
     "dependencies": {
-        "@flyacts/backend-logger": "1.1.5",
+        "@flyacts/backend-logger": "1.1.7",
         "chalk": "2.4.2",
         "fs-extra": "8.1.0",
         "moment": "2.24.0",
