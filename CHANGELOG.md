@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.12](https://github.com/flyacts/backend/compare/v1.1.11...v1.1.12) (2020-05-25)
+
+
+### Bug Fixes
+
+* job queue id renaming ([6766770](https://github.com/flyacts/backend/commit/6766770454a8c43b0abaccccba1b3c4ba4ff0323))
+
+
+
+
+
 ## [1.1.11](https://github.com/flyacts/backend/compare/v1.1.10...v1.1.11) (2020-05-25)
 
 
