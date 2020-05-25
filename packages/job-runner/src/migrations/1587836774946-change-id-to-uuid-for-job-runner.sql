@@ -17,6 +17,7 @@ ALTER TABLE public.job_queues DROP COLUMN id;
 ALTER TABLE public.job_queues RENAME COLUMN uuid_id TO id;
 ALTER TABLE public.job_queues ADD CONSTRAINT pk___job_queues___id PRIMARY KEY (id);
 
+ALTER TABLE public.jobs DROP CONSTRAINT IF EXISTS fk___jobs___job_queues_id___job_queue;
 ALTER TABLE public.jobs ADD CONSTRAINT fk___jobs___job_queues_id___job_queue FOREIGN KEY (job_queues_id)
-    REFERENCES public.jobs_queues (id) MATCH FULL
+    REFERENCES public.job_queues (id) MATCH FULL
     ON DELETE NO ACTION ON UPDATE NO ACTION;
