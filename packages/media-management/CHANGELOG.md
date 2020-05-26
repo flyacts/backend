@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.13](https://github.com/flyacts/backend/compare/v1.1.12...v1.1.13) (2020-05-26)
+
+
+### Bug Fixes
+
+* make media.legacy_model_is nullable ([645c1df](https://github.com/flyacts/backend/commit/645c1df3baba15b15028fd2960141a2613eb1f52))
+
+
+
+
+
 ## [1.1.12](https://github.com/flyacts/backend/compare/v1.1.11...v1.1.12) (2020-05-25)
 
 **Note:** Version bump only for package @flyacts/backend-media-management
