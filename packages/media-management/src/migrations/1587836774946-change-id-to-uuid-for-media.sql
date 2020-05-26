@@ -18,4 +18,5 @@ ALTER TABLE public.media RENAME COLUMN uuid_id TO id;
 ALTER TABLE public.media ADD CONSTRAINT pk___media___id PRIMARY KEY (id);
 
 ALTER TABLE public.media RENAME COLUMN model_id TO legacy_model_id;
+ALTER TABLE public.media ALTER COLUMN legacy_model_id DROP NOT NULL;
 ALTER TABLE public.media ADD COLUMN model_id uuid;
