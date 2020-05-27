@@ -207,8 +207,9 @@ async function setupDockerDatabase(
             args['db-path'] :
             'database';
 
-        const dockerImage = typeof args['docker-image'] === 'string' ?
-            args['docker-image'] :
+        const dockerImageArg = process.argv.filter(arg => arg.includes('docker-image=')).shift();
+        const dockerImage = typeof dockerImageArg === 'string' ?
+            dockerImageArg.split('docker-image=')[1] :
             'postgres:12';
 
         if (!databasePath.startsWith('/')) {
