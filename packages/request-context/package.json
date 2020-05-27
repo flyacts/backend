@@ -1,6 +1,6 @@
 {
     "name": "@flyacts/request-context",
-    "version": "1.1.14",
+    "version": "1.1.15",
     "description": "A generic request context for use in other packages",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
