@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.14](https://github.com/flyacts/backend/compare/v1.1.13...v1.1.14) (2020-05-27)
+
+
+### Features
+
+* add docker-image as args parameter ([95736df](https://github.com/flyacts/backend/commit/95736df35e013c551dd4a4a7389ec46727c7060c))
+
+
+
+
+
 ## [1.1.13](https://github.com/flyacts/backend/compare/v1.1.12...v1.1.13) (2020-05-26)
 
 **Note:** Version bump only for package @flyacts/backend
