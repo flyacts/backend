@@ -118,6 +118,7 @@ async function setupDockerDatabase(
     persistent: boolean,
     databaseName: string,
     databasePath: string,
+    dockerImage: string,
 ): Promise<ConnectionInformation> {
     const binds = [];
     if (persistent === true) {
@@ -152,11 +153,11 @@ async function setupDockerDatabase(
 
     logger.info('Pulling postgres image');
 
-    await pullDockerImage(docker, 'postgres:12');
+    await pullDockerImage(docker, dockerImage);
 
     logger.info('Creating postgres container');
     const database = await docker.createContainer({
-        Image: 'postgres:12',
+        Image: dockerImage,
         name: containerName,
         Env: [
             `POSTGRES_DB=${databaseName}`,
@@ -206,6 +207,10 @@ async function setupDockerDatabase(
             args['db-path'] :
             'database';
 
+        const dockerImage = typeof args['docker-image'] === 'string' ?
+            args['docker-image'] :
+            'postgres:12';
+
         if (!databasePath.startsWith('/')) {
             databasePath = path.resolve(process.cwd(), databasePath);
         }
@@ -214,7 +219,7 @@ async function setupDockerDatabase(
 
         let connection: ConnectionInformation;
 
-        connection = await setupDockerDatabase(args.persistent, databaseName, databasePath);
+        connection = await setupDockerDatabase(args.persistent, databaseName, databasePath, dockerImage);
 
         logger.info(`Trying to establish a connection to the database on ${connection.host}:${connection.port}`);
 
