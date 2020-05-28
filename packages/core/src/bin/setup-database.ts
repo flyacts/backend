@@ -175,7 +175,7 @@ async function setupDockerDatabase(
                 '5432/tcp': [
                     {
                         HostIp: '127.0.0.1',
-                        HostPort: databasePort,
+                        HostPort: `${databasePort}`,
                     },
                 ],
             }),
