@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/flyacts/backend/compare/v1.2.0...v1.2.1) (2020-06-15)
+
+
+### Bug Fixes
+
+* updated files & media createdBy, updatedBy column to uuid ([18aca49](https://github.com/flyacts/backend/commit/18aca49ec2d6320f1fd575079e4e8b0f096a10fc))
+
+
+
+
+
 # [1.2.0](https://github.com/flyacts/backend/compare/v1.1.15...v1.2.0) (2020-05-27)
 
 **Note:** Version bump only for package @flyacts/backend-media-management
