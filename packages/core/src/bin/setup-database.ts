@@ -117,6 +117,7 @@ async function pullDockerImage(docker: Docker, name: string) {
 async function setupDockerDatabase(
     persistent: boolean,
     databaseName: string,
+    databasePort: number,
     databasePath: string,
     dockerImage: string,
 ): Promise<ConnectionInformation> {
@@ -125,7 +126,6 @@ async function setupDockerDatabase(
         binds.push(`${databasePath}:/var/lib/postgresql/data`);
     }
     let ipAddress = '127.0.0.1';
-    const port = (isCI ? 5432 : 15432);
 
     const containerName = generateContainerName();
     const docker = new Docker();
@@ -139,11 +139,11 @@ async function setupDockerDatabase(
             if (isCI) {
                 ipAddress = await extractIpFromContainer(docker, preStartContainerInfo.Id);
             }
-            await checkIfPostgresIsRunning({ host: ipAddress, port }, databaseName, 5);
+            await checkIfPostgresIsRunning({ host: ipAddress, port: databasePort }, databaseName, 5);
             logger.info('Successfully recycled container');
             return {
                 host: ipAddress,
-                port,
+                port: databasePort,
             };
         } catch (error) {
             logger.error('Failed to connect to database. Cleaning up and then recreate container.');
@@ -171,14 +171,14 @@ async function setupDockerDatabase(
         ],
         HostConfig: {
             Binds: binds,
-            PortBindings: (!isCI ? {
+            PortBindings: ({
                 '5432/tcp': [
                     {
                         HostIp: '127.0.0.1',
-                        HostPort: '15432',
+                        HostPort: databasePort,
                     },
                 ],
-            } : undefined),
+            }),
         },
     });
 
@@ -190,7 +190,7 @@ async function setupDockerDatabase(
 
     return {
         host: ipAddress,
-        port,
+        port: databasePort,
     };
 }
 
@@ -217,10 +217,11 @@ async function setupDockerDatabase(
         }
 
         const databaseName = config.get<string>('database.database');
+        const databasePort = config.get<number>('database.port');
 
         let connection: ConnectionInformation;
 
-        connection = await setupDockerDatabase(args.persistent, databaseName, databasePath, dockerImage);
+        connection = await setupDockerDatabase(args.persistent, databaseName, databasePort, databasePath, dockerImage);
 
         logger.info(`Trying to establish a connection to the database on ${connection.host}:${connection.port}`);
 
