@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/flyacts/backend/compare/v1.2.1...v1.2.2) (2020-06-15)
+
+
+### Bug Fixes
+
+* fix broken host port setting ([80ae67b](https://github.com/flyacts/backend/commit/80ae67b898b25c62ed9aa45fe1ceb4fe44ee9513))
+
+
+
+
+
 ## [1.2.1](https://github.com/flyacts/backend/compare/v1.2.0...v1.2.1) (2020-06-15)
 
 **Note:** Version bump only for package @flyacts/backend

@@ -1,7 +1,7 @@
 {
     "name": "@flyacts/job-runner",
     "description": "Core backend package for the flyacts backend",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
     "author": "FLYACTS Development Team <hallo@flyacts.com>",
@@ -16,10 +16,10 @@
         "tsc": "tsc"
     },
     "dependencies": {
-        "@flyacts/backend": "1.2.1",
+        "@flyacts/backend": "1.2.2",
         "@flyacts/backend-core-entities": "1.2.1",
         "@flyacts/backend-logger": "1.2.1",
-        "@flyacts/backend-media-management": "1.2.1",
+        "@flyacts/backend-media-management": "1.2.2",
         "@flyacts/backend-user-management": "1.2.1",
         "class-validator": "0.9.1",
         "serialize-error": "4.1.0",
