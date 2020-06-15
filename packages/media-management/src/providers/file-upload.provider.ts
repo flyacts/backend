@@ -204,9 +204,9 @@ export class FileUploadProvider {
             for (const file of media.files) {
                 await entityManager.remove(file);
 
-                const isUsed = (await entityManager.find(FileEntity, { where: { hash: file.hash } })).length > 0;
+                const isUsed = await queryRunner.query('SELECT * FROM public.files WHERE hash = $1', [file.hash]);
 
-                if (!isUsed) {
+                if (isUsed.length > 0) {
                     await this.storage.delete({ key: file.hash });
                 }
             }
