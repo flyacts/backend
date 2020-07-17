@@ -1,7 +1,7 @@
 {
     "name": "@flyacts/job-runner",
     "description": "Core backend package for the flyacts backend",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
     "author": "FLYACTS Development Team <hallo@flyacts.com>",
