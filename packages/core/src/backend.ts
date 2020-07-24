@@ -20,6 +20,7 @@ import {
 } from 'class-validator';
 import { validationMetadatasToSchemas } from 'class-validator-jsonschema';
 import * as config from 'config';
+import { CorsOptions } from 'cors';
 import { Application } from 'express';
 import {
     Container,
@@ -30,7 +31,6 @@ import {
     createConnection,
     useContainer as ormUseContainer,
 } from 'typeorm';
-import { CorsOptions } from 'cors';
 
 import { VersionInformation } from './interfaces/version-information.interface';
 import { Logger } from './providers/logger.provider';
