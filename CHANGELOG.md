@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/flyacts/backend/compare/v1.2.3...v1.3.0) (2020-07-24)
+
+
+### Features
+
+* allow passing cors options through ([cc0a97a](https://github.com/flyacts/backend/commit/cc0a97a717de9f32c20fd54c13a8d64facb1bb40))
+
+
+
+
+
 ## [1.2.3](https://github.com/flyacts/backend/compare/v1.2.2...v1.2.3) (2020-07-17)
 
 
