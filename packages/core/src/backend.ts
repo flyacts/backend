@@ -30,6 +30,7 @@ import {
     createConnection,
     useContainer as ormUseContainer,
 } from 'typeorm';
+import { CorsOptions } from 'cors';
 
 import { VersionInformation } from './interfaces/version-information.interface';
 import { Logger } from './providers/logger.provider';
@@ -122,7 +123,7 @@ export class Backend {
         authorizationChecker?: (action: Action, roles: string[]) => Promise<boolean>,
         currentUserChecker?: (action: Action) => Promise<unknown>,
         development: boolean = true,
-        cors: boolean = true,
+        cors: boolean | CorsOptions = true,
         validation: boolean = false,
         defaultErrorHandler: boolean = true,
     ) {
