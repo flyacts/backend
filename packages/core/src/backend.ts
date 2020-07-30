@@ -20,6 +20,7 @@ import {
 } from 'class-validator';
 import { validationMetadatasToSchemas } from 'class-validator-jsonschema';
 import * as config from 'config';
+import { CorsOptions } from 'cors';
 import { Application } from 'express';
 import {
     Container,
@@ -122,7 +123,7 @@ export class Backend {
         authorizationChecker?: (action: Action, roles: string[]) => Promise<boolean>,
         currentUserChecker?: (action: Action) => Promise<unknown>,
         development: boolean = true,
-        cors: boolean = true,
+        cors: boolean | CorsOptions = true,
         validation: boolean = false,
         defaultErrorHandler: boolean = true,
     ) {

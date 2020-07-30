@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/flyacts/backend/compare/v1.3.0...v1.3.1) (2020-07-24)
+
+
+### Bug Fixes
+
+* linting ([ec8e2d4](https://github.com/flyacts/backend/commit/ec8e2d4146bb1bdeb85b39887f6791ce8d98e9b3))
+
+
+
+
+
+# [1.3.0](https://github.com/flyacts/backend/compare/v1.2.3...v1.3.0) (2020-07-24)
+
+
+### Features
+
+* allow passing cors options through ([cc0a97a](https://github.com/flyacts/backend/commit/cc0a97a717de9f32c20fd54c13a8d64facb1bb40))
+
+
+
+
+
 ## [1.2.3](https://github.com/flyacts/backend/compare/v1.2.2...v1.2.3) (2020-07-17)
 
 

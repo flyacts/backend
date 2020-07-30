@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/flyacts/backend/compare/v1.3.0...v1.3.1) (2020-07-24)
+
+**Note:** Version bump only for package @flyacts/backend-core-entities
+
+
+
+
+
+# [1.3.0](https://github.com/flyacts/backend/compare/v1.2.3...v1.3.0) (2020-07-24)
+
+**Note:** Version bump only for package @flyacts/backend-core-entities
+
+
+
+
+
 ## [1.2.1](https://github.com/flyacts/backend/compare/v1.2.0...v1.2.1) (2020-06-15)
 
 **Note:** Version bump only for package @flyacts/backend-core-entities
