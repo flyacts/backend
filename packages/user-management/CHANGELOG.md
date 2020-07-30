@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.2](https://github.com/flyacts/backend/compare/v1.3.1...v1.3.2) (2020-07-30)
+
+
+### Bug Fixes
+
+* typo ([13a96e4](https://github.com/flyacts/backend/commit/13a96e48380ff25544f1d18dc5d1ad0264380ba2))
+
+
+### Features
+
+* add permission to user_management ([afe6b34](https://github.com/flyacts/backend/commit/afe6b34599d40f181180d4bacc51145e7a817770))
+
+
+
+
+
 ## [1.3.1](https://github.com/flyacts/backend/compare/v1.3.0...v1.3.1) (2020-07-24)
 
 **Note:** Version bump only for package @flyacts/backend-user-management
