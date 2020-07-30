@@ -19,7 +19,7 @@ export class Permissions1587832816434 implements MigrationInterface {
                 isPrimary: true,
                 type: 'uuid',
                 isGenerated: true,
-                generationStrategy: 'increment',
+                generationStrategy: 'uuid',
             },
             {
                 name: 'created_at',
