@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.5](https://github.com/flyacts/backend/compare/v1.3.4...v1.3.5) (2020-07-30)
+
+
+### Bug Fixes
+
+* manually set package lock versions ([60a7b43](https://github.com/flyacts/backend/commit/60a7b432130dc81b55a6c61a17ece8c47701cc86))
+
+
+
+
+
 ## [1.3.4](https://github.com/flyacts/backend/compare/v1.3.3...v1.3.4) (2020-07-30)
 
 **Note:** Version bump only for package root
