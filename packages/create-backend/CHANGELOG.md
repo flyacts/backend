@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.8](https://github.com/flyacts/backend/compare/v1.3.7...v1.3.8) (2020-07-30)
+
+
+### Bug Fixes
+
+* permission uuid generation ([b55f090](https://github.com/flyacts/backend/commit/b55f090fcbb7e84fcaa623bda54a30583b968e10))
+
+
+
+
+
 ## [1.3.7](https://github.com/flyacts/backend/compare/v1.3.6...v1.3.7) (2020-07-30)
 
 
