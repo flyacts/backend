@@ -9,7 +9,7 @@ import {MigrationInterface, QueryRunner, Table} from 'typeorm';
 import { TableColumnOptions } from 'typeorm/schema-builder/options/TableColumnOptions';
 
 /**
- * The initial migrations
+ * Add permissions
  */
 export class Permissions1587832816434 implements MigrationInterface {
     public async up(queryRunner: QueryRunner) {
