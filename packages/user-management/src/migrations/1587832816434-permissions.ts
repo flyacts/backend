@@ -22,7 +22,7 @@ export class Permissions1587832816434 implements MigrationInterface {
                 generationStrategy: 'increment',
             },
             {
-                name: 'created-at',
+                name: 'created_at',
                 type: 'timestamp',
                 default: 'CURRENT_TIMESTAMP',
             },
