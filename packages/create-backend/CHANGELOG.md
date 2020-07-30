@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.6](https://github.com/flyacts/backend/compare/v1.3.5...v1.3.6) (2020-07-30)
+
+
+### Bug Fixes
+
+* correct created_at, updated_at spelling ([2a1e9b0](https://github.com/flyacts/backend/commit/2a1e9b02d5e3f4f57b9a38eda89c2e1e8ad9d15b))
+
+
+
+
+
 ## [1.3.5](https://github.com/flyacts/backend/compare/v1.3.4...v1.3.5) (2020-07-30)
 
 
