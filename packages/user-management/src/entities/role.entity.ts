@@ -9,6 +9,7 @@ import {
     JoinTable,
     ManyToMany,
 } from 'typeorm';
+
 import { PermissionEntity } from './permission.entity';
 
 /**
