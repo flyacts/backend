@@ -8,54 +8,76 @@ import { Request } from 'express';
 import { Connection } from 'typeorm';
 
 import { TokenEntity } from '../entities/token.entity';
+import { Scopes } from '../enums/scopes.enum';
+
+const SCOPE_PREFIX = '@SCOPE';
+const PERMISSION_PREFIX = '@PERMISSION';
 
 /**
- * Create a authorization checker for routing controllers
+ * Create a checker for `@Authorized`-statements in the backend
+ *
+ * This checker checks if any of the passed restrictables are are available.
+ *
+ * You can pass regular user roles, permissions (with the prefix `@PERMISSION/`),
+ * specialy scoped tokens (with the prefix `@SCOPE/`).
+ *
+ * If a token is issued for a specific scope it cannot be used to check for group
+ * or permission membership.
  *
  * @param connection a typeorm connection
  */
+// tslint:disable-next-line:cognitive-complexity
 export function createAuthorizationCheck(connection: Connection) {
-    return async (action: Action, roles: string[]) => {
+    // tslint:disable-next-line:mccabe-complexity
+    return async (action: Action, restrictables: string[]) => {
         const token = getTokenFromRequest(action.request);
 
-        const tokenTentity = await connection.manager.findOne(TokenEntity, {
+        const tokenEntity = await connection.manager.findOne(TokenEntity, {
             where: {
                 token: token,
             },
         });
 
-        if (!(tokenTentity instanceof TokenEntity)) {
+        if (!(tokenEntity instanceof TokenEntity)) {
             return false;
         }
 
-        if (roles.length > 0) {
-            const hasRole = roles
-                .filter(role => !role.startsWith('@SCOPE'))
-                .map(role =>
-                    tokenTentity
-                        .user
-                        .roles
-                        .map(_role => _role.name)
-                        .includes(role),
-                )
-                .filter(item => item === true)
-                .length > 0;
+        const isAuthorizationToken = tokenEntity.scopes.includes(Scopes.Authorization);
 
-            const hasScope = roles
-                .filter(scope => scope.startsWith('@SCOPE'))
-                .map(scope =>
-                    tokenTentity
-                        .scopes
-                        .map(_scope => `@SCOPE/${_scope}`)
-                        .includes(scope),
-                )
-                .filter(item => item === true)
-                .length > 0;
-
-            return hasRole || hasScope;
+        if (restrictables.length === 0) {
+            return isAuthorizationToken;
         }
 
-        return true;
+        for (const restrictable of restrictables) {
+            if (restrictable.startsWith(SCOPE_PREFIX)) {
+                const hasCorrectScope = tokenEntity
+                    .scopes
+                    .map(item => `${SCOPE_PREFIX}/${item}`)
+                    .includes(restrictable);
+
+                if (hasCorrectScope) {
+                    return true;
+                }
+            } else if (restrictable.startsWith(PERMISSION_PREFIX)) {
+                const userRoles = tokenEntity.user.roles;
+
+                for (const userRole of userRoles) {
+                    for (const permission of userRole.permissions) {
+                        if (restrictable === `${PERMISSION_PREFIX}/${permission.name}` && isAuthorizationToken) {
+                            return true;
+                        }
+                    }
+                }
+            } else {
+                const hasRole = tokenEntity.user.hasRole(restrictable);
+
+                if (isAuthorizationToken && hasRole) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     };
 }
 
