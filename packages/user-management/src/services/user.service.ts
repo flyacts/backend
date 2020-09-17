@@ -14,6 +14,7 @@ import {
 
 import { TokenEntity } from '../entities/token.entity';
 import { UserEntity } from '../entities/user.entity';
+import { Scopes } from '../enums/scopes.enum';
 
 
 const uidgen = new (require('uid-generator'))(256);
@@ -25,7 +26,7 @@ const uidgen = new (require('uid-generator'))(256);
 export class UserService {
     public constructor(
         public connection: Connection,
-    ) {}
+    ) { }
 
     /**
      * Login method
@@ -53,7 +54,7 @@ export class UserService {
 
         token.user = user;
         token.token = await uidgen.generate();
-        token.scopes = ['authorization'];
+        token.scopes = [Scopes.Authorization];
 
         await this.connection.manager.save(token);
 

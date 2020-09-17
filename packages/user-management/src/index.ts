@@ -17,3 +17,4 @@ export {
     OwnableEntity,
     Ownable,
 } from './decorators/ownable.decorator';
+export { Scopes } from './enums/scopes.enum';
