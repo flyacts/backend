@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/flyacts/backend/compare/v1.3.8...v1.4.0) (2020-09-17)
+
+
+### Features
+
+* refactor token check to include permission and honour the scope ([b7d78fb](https://github.com/flyacts/backend/commit/b7d78fb00b5a89bc26658d70103a80346158c1c4))
+
+
+
+
+
 ## [1.3.8](https://github.com/flyacts/backend/compare/v1.3.7...v1.3.8) (2020-07-30)
 
 

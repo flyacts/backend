@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/flyacts/backend/compare/v1.3.8...v1.4.0) (2020-09-17)
+
+**Note:** Version bump only for package @flyacts/create-backend
+
+
+
+
+
 ## [1.3.8](https://github.com/flyacts/backend/compare/v1.3.7...v1.3.8) (2020-07-30)
 
 
