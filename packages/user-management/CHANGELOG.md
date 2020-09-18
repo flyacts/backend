@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.2](https://github.com/flyacts/backend/compare/v1.4.1...v1.4.2) (2020-09-18)
+
+
+### Bug Fixes
+
+* throw unauthorized on invalid/empty token ([c873cb6](https://github.com/flyacts/backend/commit/c873cb694b35411a741bfa02da91fcf5444b8897))
+
+
+
+
+
 ## [1.4.1](https://github.com/flyacts/backend/compare/v1.4.0...v1.4.1) (2020-09-18)
 
 **Note:** Version bump only for package @flyacts/backend-user-management
