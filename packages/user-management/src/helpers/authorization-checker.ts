@@ -2,7 +2,7 @@
  * @copyright FLYACTS GmbH 2019
  */
 
-import { Action } from '@flyacts/routing-controllers';
+import { Action, UnauthorizedError } from '@flyacts/routing-controllers';
 import cookie = require('cookie');
 import { Request } from 'express';
 import { Connection } from 'typeorm';
@@ -39,7 +39,7 @@ export function createAuthorizationCheck(connection: Connection) {
         });
 
         if (!(tokenEntity instanceof TokenEntity)) {
-            return false;
+            throw new UnauthorizedError();
         }
 
         const isAuthorizationToken = tokenEntity.scopes.includes(Scopes.Authorization);
