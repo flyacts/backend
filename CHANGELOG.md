@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.3](https://github.com/flyacts/backend/compare/v1.4.2...v1.4.3) (2020-09-29)
+
+
+### Bug Fixes
+
+* correctly generate ref pointers for nested open api objects ([2ef90ad](https://github.com/flyacts/backend/commit/2ef90ad70bedf48fa81ff346a0eac1eb7bcf0933))
+
+
+
+
+
 ## [1.4.2](https://github.com/flyacts/backend/compare/v1.4.1...v1.4.2) (2020-09-18)
 
 
