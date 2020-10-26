@@ -1,30 +1,26 @@
 /*!
- * @copyright FLYACTS GmbH 2019
+ * @copyright FLYACTS GmbH 2020
  */
 
 import { uuid } from '@flyacts/backend-core-entities';
-import * as fileType from 'file-type';
-import readChunk from 'read-chunk';
-import {
-    Readable,
-    Stream,
-} from 'stream';
-import {
-    Service,
-} from 'typedi';
+import { plainToClass } from 'class-transformer';
+import { Readable, Stream } from 'stream';
+import { Service } from 'typedi';
 import { Connection, EntityManager } from 'typeorm';
 
 import { MediaConfiguration } from '../configuration/media.configuration';
 import { FileEntity } from '../entities/file.entity';
 import { MediaEntity } from '../entities/media.entity';
 import { FileNotFoundError } from '../errors/file-not-found.error';
-import { BlobStore } from '../helpers/blob-store-wrapper';
+
+import { FileStorageProvider } from './file-storage.provider';
+import { MediaActionProvider } from './media-action.provider';
 
 type IdIsh = {
     /**
      * ID of an entity
      */
-    id?: uuid,
+    id?: uuid;
 };
 
 /**
@@ -37,23 +33,15 @@ export class FileUploadProvider {
      */
     public static readonly rawVariant = 'raw';
 
-    /**
-     * The internal file storage
-     */
-    private storage: BlobStore;
-
     public constructor(
         private connection: Connection,
-        private configuration: MediaConfiguration,
-    ) {
-        this.storage = new BlobStore(
-            this.configuration.location,
-            this.configuration.tempDir,
-        );
-    }
+        private mediaActionProvider: MediaActionProvider,
+        private fileStorageProvider: FileStorageProvider,
+        private mediaConfiguration: MediaConfiguration,
+    ) {}
 
     /**
-     * Attach a media to an entity
+     * Attach a medium to an entity
      */
     public async attachFile(
         collection: string,
@@ -62,7 +50,7 @@ export class FileUploadProvider {
         name?: string,
         transactionManager?: EntityManager,
     ): Promise<MediaEntity> {
-        if (!(typeof entity === 'object' && (typeof entity.id === 'string'))) {
+        if (!(typeof entity === 'object' && typeof entity.id === 'string')) {
             throw new Error('Entity has no ID');
         }
 
@@ -79,74 +67,41 @@ export class FileUploadProvider {
         }
 
         try {
-            const media = new MediaEntity();
-            media.collection = collection;
-            media.model = entity.constructor.name;
-            media.modelId = entity.id;
-            media.name = name;
-            await entityManager.save(media);
+            const medium = new MediaEntity();
+            medium.collection = collection;
+            medium.model = entity.constructor.name;
+            medium.modelId = entity.id;
+            medium.name = name;
+            medium.files = [];
+            await entityManager.save(medium);
 
-            let fileStream: Stream;
+            const fileStream = this.getReadStreamFromFileInput(file);
+            const storedFile = await this.fileStorageProvider.storeFile(
+                fileStream,
+            );
 
-            if (file instanceof Stream) {
-                fileStream = file;
-            } else if (file instanceof Buffer) {
-                fileStream = new Readable({
-                    read() {
-                        this.push(file);
-                        this.push(null);
-                    },
-                });
-            } else if (typeof file === 'string') {
-                fileStream = new Readable({
-                    read() {
-                        this.push(Buffer.from(file, 'base64'));
-                        this.push(null);
-                    },
-                });
-            } else {
-                throw new Error('Input not supported');
-            }
+            const rawFileEntity = plainToClass(FileEntity, storedFile);
+            rawFileEntity.media = medium;
+            rawFileEntity.variant = FileUploadProvider.rawVariant;
+            medium.files.push(rawFileEntity);
 
-            const writeStream = this.storage.createWriteStream();
+            const variantEntities = await this.handleMediaVariants(
+                medium,
+                rawFileEntity,
+                entity,
+                collection,
+            );
+            medium.files.push(...variantEntities);
 
-            fileStream.pipe(writeStream);
-
-            const hash = await (new Promise<string>((resolve, reject) => {
-                writeStream.on('error', (err: unknown) => {
-                    reject(err);
-                });
-
-                writeStream.on('finish', () => {
-                    resolve(writeStream.key);
-                });
-            }));
-
-            const filePath = await this.storage.resolve({ key: hash });
-            const fileEntity = new FileEntity();
-
-            fileEntity.media = media;
-            fileEntity.hash = hash;
-            fileEntity.variant = FileUploadProvider.rawVariant;
-            fileEntity.size = filePath.stat.size;
-            const fileContents = await readChunk(filePath.path, 0, fileType.minimumBytes);
-            const results = fileType(fileContents);
-            if (typeof results !== 'undefined') {
-                fileEntity.contentType = results.mime;
-            } else {
-                fileEntity.contentType = 'application/octet-stream';
-            }
-
-            await entityManager.save(fileEntity);
+            await entityManager.save(medium.files);
+            await entityManager.save(medium);
 
             if (!existingTransaction) {
                 await queryRunner.commitTransaction();
                 await queryRunner.release();
             }
 
-            media.files = [ fileEntity ];
-
-            return media;
+            return medium;
         } catch (error) {
             if (!existingTransaction) {
                 await queryRunner.rollbackTransaction();
@@ -159,8 +114,8 @@ export class FileUploadProvider {
     /**
      * Create a readstream from a media and variant
      */
-    public async getFilestream(media: MediaEntity, variant?: string) {
-        if (!Array.isArray(media.files)) {
+    public async getFilestream(medium: MediaEntity, variant?: string) {
+        if (!Array.isArray(medium.files)) {
             throw new Error();
         }
 
@@ -168,26 +123,30 @@ export class FileUploadProvider {
             variant = FileUploadProvider.rawVariant;
         }
 
-        const file = media.files.filter(item => item.variant === variant).pop();
+        const file = medium.files
+            .filter((item) => item.variant === variant)
+            .pop();
 
         if (typeof file === 'undefined') {
             throw new Error();
         }
 
-        const fileExist = await this.storage.exists({ key: file.hash });
+        const fileExist = await this.fileStorageProvider.fileExists(file.hash);
 
         if (!fileExist) {
             throw new FileNotFoundError();
         }
 
-        return this.storage.createReadStream({ key: file.hash });
+        return this.fileStorageProvider.getFileStream(file.hash);
     }
 
     /**
-     * Remove the media from the database and check if we can unlink the file
+     * Remove the medium from the database and check if we can unlink the file
      */
-    public async removeMedia(media: MediaEntity, transactionManager?: EntityManager) {
-
+    public async removeMedia(
+        medium: MediaEntity,
+        transactionManager?: EntityManager,
+    ) {
         let entityManager: EntityManager;
         let existingTransaction = false;
         const queryRunner = this.connection.createQueryRunner();
@@ -200,18 +159,20 @@ export class FileUploadProvider {
             entityManager = queryRunner.manager;
         }
         try {
-
-            for (const file of media.files) {
+            for (const file of medium.files) {
                 await entityManager.remove(file);
 
-                const isUsed = await queryRunner.query('SELECT * FROM public.files WHERE hash = $1', [file.hash]);
+                const isUsed = await queryRunner.query(
+                    'SELECT * FROM public.files WHERE hash = $1',
+                    [file.hash],
+                );
 
                 if (isUsed.length > 0) {
-                    await this.storage.delete({ key: file.hash });
+                    await this.fileStorageProvider.deleteFile(file.hash);
                 }
             }
 
-            await entityManager.remove(media);
+            await entityManager.remove(medium);
 
             if (!existingTransaction) {
                 await queryRunner.commitTransaction();
@@ -223,6 +184,83 @@ export class FileUploadProvider {
                 await queryRunner.release();
             }
             throw new Error('Deleting media entity failed');
+        }
+    }
+
+    /**
+     * Handles the variant actions for a medium
+     */
+    private async handleMediaVariants(
+        medium: MediaEntity,
+        rawFile: FileEntity,
+        relatedEntity: IdIsh,
+        collection?: string,
+    ) {
+        const variants = this.getVariantConfigForMedium(
+            this.mediaConfiguration,
+            relatedEntity,
+            collection,
+        );
+        if (typeof variants === 'undefined') {
+            return [];
+        }
+        const storedFileVariants = await this.mediaActionProvider.handleVariants(
+            rawFile,
+            variants,
+        );
+        return storedFileVariants.map((variant) => {
+            const fileEntity = plainToClass(FileEntity, variant);
+            fileEntity.media = medium;
+            return fileEntity;
+        });
+    }
+
+    /**
+     * Processed the variant config for a medium
+     */
+    private getVariantConfigForMedium(
+        config: MediaConfiguration,
+        relatedEntity: IdIsh,
+        collection?: string,
+    ) {
+        return config.types.find((type) => {
+            const isValidForEntity =
+                relatedEntity instanceof type.validForEntity;
+            if (
+                typeof type.validForCollections === 'undefined' ||
+                type.validForCollections.length === 0
+            ) {
+                return isValidForEntity;
+            }
+            const isValidForCollection =
+                typeof collection === 'string' &&
+                type.validForCollections?.includes(collection);
+            return isValidForEntity && isValidForCollection;
+        })?.variants;
+    }
+
+    /**
+     * Transforms possible inputs for the file uploads to a read stream.
+     */
+    private getReadStreamFromFileInput(fileInput: unknown) {
+        if (fileInput instanceof Readable) {
+            return fileInput;
+        } else if (fileInput instanceof Buffer) {
+            return new Readable({
+                read() {
+                    this.push(fileInput);
+                    this.push(null);
+                },
+            });
+        } else if (typeof fileInput === 'string') {
+            return new Readable({
+                read() {
+                    this.push(Buffer.from(fileInput, 'base64'));
+                    this.push(null);
+                },
+            });
+        } else {
+            throw new Error('Input not supported');
         }
     }
 }

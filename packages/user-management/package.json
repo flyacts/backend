@@ -26,6 +26,7 @@
         "cookie": "0.4.0",
         "fs-extra": "9.0.0",
         "reflect-metadata": "0.1.13",
+        "shelljs": "0.8.3",
         "typedi": "0.8.0",
         "typeorm": "0.2.24",
         "uid-generator": "2.0.0"
@@ -37,6 +38,7 @@
         "@types/express": "4.17.0",
         "@types/fs-extra": "8.1.0",
         "@types/node": "12.6.9",
+        "@types/shelljs": "0.8.5",
         "ts-node": "8.3.0",
         "tslint": "5.18.0",
         "typescript": "3.7.5",
