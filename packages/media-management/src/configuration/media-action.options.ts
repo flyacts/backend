@@ -8,7 +8,7 @@ export type MediaActionOptions =
 
 
 /** Options for the media variant action resize */
-class ResizeActionOptions {
+export class ResizeActionOptions {
     public constructor(
         public width: number,
         public height: number,

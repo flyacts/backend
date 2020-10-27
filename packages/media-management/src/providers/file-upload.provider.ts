@@ -201,7 +201,7 @@ export class FileUploadProvider {
             relatedEntity,
             collection,
         );
-        if (typeof variants === 'undefined') {
+        if (variants.length === 0) {
             return [];
         }
         const storedFileVariants = await this.mediaActionProvider.handleVariants(
@@ -216,27 +216,30 @@ export class FileUploadProvider {
     }
 
     /**
-     * Processed the variant config for a medium
+     * Process the variant config for a medium
      */
     private getVariantConfigForMedium(
         config: MediaConfiguration,
         relatedEntity: IdIsh,
         collection?: string,
     ) {
-        return config.types.find((type) => {
+        for (const type of config.types) {
             const isValidForEntity =
                 relatedEntity instanceof type.validForEntity;
             if (
                 typeof type.validForCollections === 'undefined' ||
                 type.validForCollections.length === 0
             ) {
-                return isValidForEntity;
+                return type.variants;
             }
             const isValidForCollection =
                 typeof collection === 'string' &&
                 type.validForCollections?.includes(collection);
-            return isValidForEntity && isValidForCollection;
-        })?.variants;
+            if (isValidForEntity && isValidForCollection) {
+                return type.variants;
+            }
+        }
+        return [];
     }
 
     /**

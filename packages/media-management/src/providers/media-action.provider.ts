@@ -5,7 +5,7 @@
 import * as sharp from 'sharp';
 import { Service } from 'typedi';
 
-import { MediaActionOptions } from '../configuration/media-action.options';
+import { ResizeActionOptions } from '../configuration/media-action.options';
 import { MediaVariantConfiguration } from '../configuration/media-variant.configuration';
 import { FileEntity } from '../entities/file.entity';
 
@@ -46,7 +46,7 @@ export class MediaActionProvider {
     /**
      * Resize an image
      */
-    public async resizeImage(rawFile: FileEntity, { width, height }: MediaActionOptions): Promise<StoredFile> {
+    private async resizeImage(rawFile: FileEntity, { width, height }: ResizeActionOptions): Promise<StoredFile> {
         const readStream = this.fileStorageProvider.getFileStream(rawFile.hash);
         const resizer = sharp()
             .resize(width, height)
