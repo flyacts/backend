@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/flyacts/backend/compare/v1.4.3...v1.5.0) (2020-10-28)
+
+
+### Features
+
+* **media-management:** add image resizing ([ff73217](https://github.com/flyacts/backend/commit/ff732170ae675a58e5d2cdc81c487dd67d902b12))
+
+
+
+
+
 ## [1.4.3](https://github.com/flyacts/backend/compare/v1.4.2...v1.4.3) (2020-09-29)
 
 **Note:** Version bump only for package @flyacts/job-runner
