@@ -8,7 +8,9 @@ export { MediaEntity } from './entities/media.entity';
 export { FileEntity } from './entities/file.entity';
 export { BlobStore } from './helpers/blob-store-wrapper';
 export { FileUploadProvider } from './providers/file-upload.provider';
+export { FileStorageProvider } from './providers/file-storage.provider';
 export { MediaConfiguration } from './configuration/media.configuration';
 export { MediaTypeConfiguration } from './configuration/media-type.configuration';
 export { MediaActionConfiguration } from './configuration/media-action.configuration';
 export { MediaVariantConfiguration } from './configuration/media-variant.configuration';
+

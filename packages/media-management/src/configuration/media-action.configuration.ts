@@ -8,6 +8,8 @@ import {
     IsString,
 } from 'class-validator';
 
+import { MediaActionOptions } from './media-action.options';
+
 /**
  * A media action configuration
  */
@@ -22,9 +24,9 @@ export class MediaActionConfiguration {
      * Options for the action
      */
     @IsDefined()
-    public options: unknown;
+    public options: MediaActionOptions;
 
-    public constructor(type: string, options: unknown) {
+    public constructor(type: string, options: MediaActionOptions) {
         this.type = type;
         this.options = options;
     }
