@@ -8,6 +8,7 @@ import { Service } from 'typedi';
 import { ResizeActionOptions } from '../configuration/media-action.options';
 import { MediaVariantConfiguration } from '../configuration/media-variant.configuration';
 import { FileEntity } from '../entities/file.entity';
+import { MediaActionNotAvailableError } from '../errors/media-action-not-available.error';
 
 import { FileStorageProvider, StoredFile } from './file-storage.provider';
 
@@ -36,7 +37,7 @@ export class MediaActionProvider {
                     });
                 }
                 else {
-                    throw new Error(`Media action ${type} is not available`);
+                    throw new MediaActionNotAvailableError(`Media action ${type} is not available`);
                 }
             }
         }

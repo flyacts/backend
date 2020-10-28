@@ -13,3 +13,4 @@ export { MediaConfiguration } from './configuration/media.configuration';
 export { MediaTypeConfiguration } from './configuration/media-type.configuration';
 export { MediaActionConfiguration } from './configuration/media-action.configuration';
 export { MediaVariantConfiguration } from './configuration/media-variant.configuration';
+

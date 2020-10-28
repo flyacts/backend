@@ -12,6 +12,7 @@ import { MediaConfiguration } from '../configuration/media.configuration';
 import { FileEntity } from '../entities/file.entity';
 import { MediaEntity } from '../entities/media.entity';
 import { FileNotFoundError } from '../errors/file-not-found.error';
+import { InvalidFileInputError } from '../errors/invalid-file-input.error';
 
 import { FileStorageProvider } from './file-storage.provider';
 import { MediaActionProvider } from './media-action.provider';
@@ -131,9 +132,9 @@ export class FileUploadProvider {
             throw new Error();
         }
 
-        const fileExist = await this.fileStorageProvider.fileExists(file.hash);
+        const fileExists = await this.fileStorageProvider.fileExists(file.hash);
 
-        if (!fileExist) {
+        if (!fileExists) {
             throw new FileNotFoundError();
         }
 
@@ -263,7 +264,7 @@ export class FileUploadProvider {
                 },
             });
         } else {
-            throw new Error('Input not supported');
+            throw new InvalidFileInputError();
         }
     }
 }
