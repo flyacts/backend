@@ -6,7 +6,7 @@ import { uuid } from '@flyacts/backend-core-entities';
 import { plainToClass } from 'class-transformer';
 import { Readable, Stream } from 'stream';
 import { Service } from 'typedi';
-import { Connection, EntityManager } from 'typeorm';
+import { Connection, EntityManager, QueryRunner } from 'typeorm';
 
 import { MediaConfiguration } from '../configuration/media.configuration';
 import { FileEntity } from '../entities/file.entity';
@@ -149,38 +149,38 @@ export class FileUploadProvider {
         transactionManager?: EntityManager,
     ) {
         let entityManager: EntityManager;
-        let existingTransaction = false;
-        const queryRunner = this.connection.createQueryRunner();
+        let queryRunner: QueryRunner | null = null;
 
         if (transactionManager instanceof EntityManager) {
             entityManager = transactionManager;
-            existingTransaction = true;
         } else {
+            queryRunner = this.connection.createQueryRunner();
             await queryRunner.startTransaction();
+            await queryRunner.connect();
             entityManager = queryRunner.manager;
         }
         try {
             for (const file of medium.files) {
                 await entityManager.remove(file);
 
-                const isUsed = await queryRunner.query(
-                    'SELECT * FROM public.files WHERE hash = $1',
-                    [file.hash],
-                );
-
-                if (isUsed.length > 0) {
+                const fileEntity = await entityManager.findOne(FileEntity, {
+                    where: {
+                        hash: file.hash,
+                    },
+                });
+                if (fileEntity instanceof FileEntity) {
                     await this.fileStorageProvider.deleteFile(file.hash);
                 }
             }
 
             await entityManager.remove(medium);
 
-            if (!existingTransaction) {
+            if (queryRunner !== null) {
                 await queryRunner.commitTransaction();
                 await queryRunner.release();
             }
         } catch (error) {
-            if (!existingTransaction) {
+            if (queryRunner !== null) {
                 await queryRunner.rollbackTransaction();
                 await queryRunner.release();
             }
