@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/flyacts/backend/compare/v1.5.0...v1.5.1) (2020-11-05)
+
+
+### Bug Fixes
+
+* **media-mgmt:** only use query runner when no transaction is provided ([203e2b4](https://github.com/flyacts/backend/commit/203e2b4bbcdfdd831a15ac873801accdac18be11))
+
+
+
+
+
 # [1.5.0](https://github.com/flyacts/backend/compare/v1.4.3...v1.5.0) (2020-10-28)
 
 
