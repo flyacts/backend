@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.2](https://github.com/flyacts/backend/compare/v1.5.1...v1.5.2) (2020-11-26)
+
+
+### Bug Fixes
+
+* removing file entity from db must be done after removing from the filesystem ([be5de3b](https://github.com/flyacts/backend/commit/be5de3b8bfb56e4b9304920577700a947f012dcd))
+* trailing whitespace linter ([7471832](https://github.com/flyacts/backend/commit/74718325670476fbf8640f43b2d23bafc25c5082))
+
+
+
+
+
 ## [1.5.1](https://github.com/flyacts/backend/compare/v1.5.0...v1.5.1) (2020-11-05)
 
 
