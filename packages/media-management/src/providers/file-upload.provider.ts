@@ -166,7 +166,7 @@ export class FileUploadProvider {
                         hash: file.hash,
                     },
                 });
-                
+
                 if (fileEntity instanceof FileEntity) {
                     await this.fileStorageProvider.deleteFile(file.hash);
                 }
