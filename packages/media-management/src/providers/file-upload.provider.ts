@@ -161,16 +161,17 @@ export class FileUploadProvider {
         }
         try {
             for (const file of medium.files) {
-                await entityManager.remove(file);
-
                 const fileEntity = await entityManager.findOne(FileEntity, {
                     where: {
                         hash: file.hash,
                     },
                 });
+
                 if (fileEntity instanceof FileEntity) {
                     await this.fileStorageProvider.deleteFile(file.hash);
                 }
+
+                await entityManager.remove(file);
             }
 
             await entityManager.remove(medium);
