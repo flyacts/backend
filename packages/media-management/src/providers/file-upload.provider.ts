@@ -161,18 +161,18 @@ export class FileUploadProvider {
         }
         try {
             for (const file of medium.files) {
-                // remove the entity from the database
-                await entityManager.remove(file);
-
-                // check if there is another file using the same hash
-                const fileEntity = await entityManager.findOne(FileEntity, {
+                // count the file entities with identical hash
+                const filesWithHashCount = await entityManager.count(FileEntity, {
                     where: {
                         hash: file.hash,
                     },
                 });
-
+                             
+                // remove the entity from the database
+                await entityManager.remove(file);
+                
                 // we can unlink the file if NO other file is using it
-                if (typeof fileEntity === 'undefined') {
+                if (filesWithHashCount === 1 && this.fileStorageProvider.fileExists(file.hash)) {
                     await this.fileStorageProvider.deleteFile(file.hash);
                 }
             }
