@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.4](https://github.com/flyacts/backend/compare/v1.5.3...v1.5.4) (2020-11-30)
+
+
+### Bug Fixes
+
+* fix missing await ([1446107](https://github.com/flyacts/backend/commit/1446107f271b3a1b46dacf5fed7e46e7ac960977))
+* further improve duplication check ([d0c3288](https://github.com/flyacts/backend/commit/d0c3288393697cdb76e3ae38ea804eabb81f9eeb))
+* only unlink file if no other file is referencing the hash ([6aef414](https://github.com/flyacts/backend/commit/6aef414413f136cd048310a4153de7a8887d2226))
+* remove the white-spaces ([d758ea8](https://github.com/flyacts/backend/commit/d758ea8aa33bdae2aa75d1a159bf4feda51b132c))
+
+
+
+
+
 ## [1.5.3](https://github.com/flyacts/backend/compare/v1.5.1...v1.5.3) (2020-11-26)
 
 
