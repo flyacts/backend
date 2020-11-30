@@ -167,10 +167,10 @@ export class FileUploadProvider {
                         hash: file.hash,
                     },
                 });
-                             
+
                 // remove the entity from the database
                 await entityManager.remove(file);
-                
+
                 // we can unlink the file if NO other file is using it
                 const fileExists = await this.fileStorageProvider.fileExists(file.hash);
                 if (filesWithHashCount === 1 && fileExists) {
