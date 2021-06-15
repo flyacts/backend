@@ -1,6 +1,6 @@
 {
     "name": "@flyacts/backend-logger",
-    "version": "2.0.0-alpha.0",
+    "version": "2.0.1-alpha.0",
     "description": "A logger based on winston with some fancy emojies",
     "author": "Tim Schumacher <tim.schumacher@flyacts.com>",
     "homepage": "https://github.com/flyacts/backend/tree/master/packages/logger#readme",
