@@ -20,7 +20,7 @@ import { CorsOptions } from 'cors';
 import { Application } from 'express';
 import {
     Container,
-} from 'typedi';
+} from 'typeorm-typedi-extensions';
 import {
     Connection,
     ConnectionOptions,
