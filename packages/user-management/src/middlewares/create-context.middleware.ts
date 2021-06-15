@@ -12,7 +12,7 @@ import {
     Request,
     Response,
 } from 'express';
-import { Container } from 'typedi';
+import { Container, Service } from 'typedi';
 import { Connection } from 'typeorm';
 
 import { TokenEntity } from '../entities/token.entity';
@@ -24,6 +24,7 @@ import { UserManagementMetadata } from '../helpers/user-management-medata';
  * Create the RequestContext for the current request
  */
 @Middleware({ type: 'before' })
+@Service()
 export class CreateContextMiddleware implements ExpressMiddlewareInterface {
     /**
      * Express middleware function to create a session
