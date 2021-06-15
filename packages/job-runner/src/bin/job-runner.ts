@@ -26,7 +26,7 @@ type startUpFunction = () => Promise<void>;
 
         const connection = await createConnection({
             ...require(path.resolve(process.cwd(), 'ormconfig.json')),
-            ...config.get<any>('database'),
+            ...config.get<{}>('database'),
         });
         Container.set(Connection, connection);
         Container.set('connection', connection);

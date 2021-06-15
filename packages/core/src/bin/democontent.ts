@@ -16,7 +16,7 @@ require('ts-node/register');
     const logger = new Logger();
     const connection = await createConnection({
         ...require(path.resolve(process.cwd(), 'ormconfig.json')),
-        ...config.get<any>('database'),
+        ...config.get<{}>('database'),
     });
 
     logger.info('Starting democontent');

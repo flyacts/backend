@@ -58,7 +58,7 @@ export class Backend {
             // Parse class-validator classes into JSON Schema:
             // tslint:disable-next-line:no-any
             const schemas = validationMetadatasToSchemas({
-                refPointerPrefix: '#/components/schemas/'
+                refPointerPrefix: '#/components/schemas/',
             });
 
 
