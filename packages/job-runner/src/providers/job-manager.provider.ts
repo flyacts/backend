@@ -7,7 +7,7 @@ import {
     ValidationError,
 } from '@flyacts/backend';
 import { validate } from 'class-validator';
-import serializeError = require('serialize-error');
+import { serializeError } from 'serialize-error';
 import { Service } from 'typedi';
 import { Connection } from 'typeorm';
 

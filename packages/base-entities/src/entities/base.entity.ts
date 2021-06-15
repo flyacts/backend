@@ -17,9 +17,7 @@ export abstract class BaseEntity {
     /**
      * Id of the entity
      */
-    @PrimaryGeneratedColumn({
-        type: 'uuid',
-    })
+    @PrimaryGeneratedColumn('uuid')
     public id!: uuid;
 
     /**

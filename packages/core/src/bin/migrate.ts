@@ -12,7 +12,7 @@ import { createConnection } from 'typeorm';
     const logger = new Logger();
     const connection = await createConnection({
         ...require(path.resolve(process.cwd(), 'ormconfig.json')),
-        ...config.get('database'),
+        ...config.get<any>('database'),
     });
 
     logger.info('Starting migrations');

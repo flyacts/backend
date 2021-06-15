@@ -14,10 +14,6 @@ import {
     useContainer as rcUseContainer,
 } from '@flyacts/routing-controllers';
 import { routingControllersToSpec } from '@flyacts/routing-controllers-openapi';
-import {
-    getFromContainer,
-    MetadataStorage,
-} from 'class-validator';
 import { validationMetadatasToSchemas } from 'class-validator-jsonschema';
 import * as config from 'config';
 import { CorsOptions } from 'cors';
@@ -61,9 +57,8 @@ export class Backend {
         if (config.get('explorer.enabled') === true) {
             // Parse class-validator classes into JSON Schema:
             // tslint:disable-next-line:no-any
-            const metadatas = (getFromContainer(MetadataStorage) as any).validationMetadatas;
-            const schemas = validationMetadatasToSchemas(metadatas, {
-                refPointerPrefix: '#/components/schemas/',
+            const schemas = validationMetadatasToSchemas({
+                refPointerPrefix: '#/components/schemas/'
             });
 
 

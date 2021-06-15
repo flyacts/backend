@@ -86,21 +86,21 @@ export class Logger {
     private format(options: TransformableInfo) {
         let meta;
         const _now = moment().toISOString();
-        let loglevel = chalk.default.reset;
+        let loglevel = chalk.reset;
         let symbol = '☼';
 
         if (options.level === 'debug') {
             symbol = nodeEmoji.get('bug');
-            loglevel = chalk.default.cyan;
+            loglevel = chalk.cyan;
         } else if (options.level === 'info') {
             symbol = nodeEmoji.get('speech_balloon');
-            loglevel = chalk.default.blue;
+            loglevel = chalk.blue;
         } else if (options.level === 'warn') {
             symbol = nodeEmoji.get('warning');
-            loglevel = chalk.default.yellow;
+            loglevel = chalk.yellow;
         } else if (options.level === 'error') {
             symbol = nodeEmoji.get('fire');
-            loglevel = chalk.default.red;
+            loglevel = chalk.red;
         }
 
         if (typeof options['0'] === 'object' && Object.keys(options['0']).length > 0) {

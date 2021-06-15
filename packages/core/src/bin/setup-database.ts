@@ -9,7 +9,7 @@ import * as fs from 'fs-extra';
 import minimist = require('minimist');
 import * as path from 'path';
 import * as pg from 'pg';
-import serializeError = require('serialize-error');
+import { serializeError } from 'serialize-error';
 import * as shelljs from 'shelljs';
 
 const logger = new Logger();
@@ -95,7 +95,7 @@ async function extractIpFromContainer(docker: Docker, containerId: string) {
  * Pull a docker image and resolve when its finished
  */
 async function pullDockerImage(docker: Docker, name: string) {
-    return (new Promise((resolve, reject) => {
+    return (new Promise<void>((resolve, reject) => {
         docker.pull(name, {}, (err, stream) => {
             if (err) {
                 reject(err);

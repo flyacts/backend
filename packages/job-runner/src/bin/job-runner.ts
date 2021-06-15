@@ -9,7 +9,7 @@ import 'reflect-metadata';
 import { Logger } from '@flyacts/backend';
 import config = require('config');
 import * as path from 'path';
-import serializeError = require('serialize-error');
+import { serializeError } from 'serialize-error';
 import Container from 'typedi';
 import { Connection, createConnection } from 'typeorm';
 
@@ -26,7 +26,7 @@ type startUpFunction = () => Promise<void>;
 
         const connection = await createConnection({
             ...require(path.resolve(process.cwd(), 'ormconfig.json')),
-            ...config.get('database'),
+            ...config.get<any>('database'),
         });
         Container.set(Connection, connection);
         Container.set('connection', connection);

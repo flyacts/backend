@@ -5,7 +5,7 @@
 import { Logger } from '@flyacts/backend-logger';
 import config = require('config');
 import * as path from 'path';
-import * as serializeError from 'serialize-error';
+import { serializeError } from 'serialize-error';
 import { createConnection } from 'typeorm';
 
 // tslint:disable-next-line:no-submodule-imports
@@ -16,7 +16,7 @@ require('ts-node/register');
     const logger = new Logger();
     const connection = await createConnection({
         ...require(path.resolve(process.cwd(), 'ormconfig.json')),
-        ...config.get('database'),
+        ...config.get<any>('database'),
     });
 
     logger.info('Starting democontent');

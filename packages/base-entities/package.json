@@ -17,14 +17,14 @@
   },
   "dependencies": {
     "reflect-metadata": "0.1.13",
-    "typeorm": "0.2.24"
+    "typeorm": "0.2.34"
   },
   "devDependencies": {
     "@flyacts/tslint-config": "1.2.2",
-    "@types/node": "12.6.9",
-    "ts-node": "8.3.0",
-    "tslint": "5.18.0",
-    "typescript": "3.7.5",
-    "typescript-tslint-plugin": "0.5.5"
+    "@types/node": "14.17.3",
+    "ts-node": "10.0.0",
+    "tslint": "6.1.3",
+    "typescript": "4.3.2",
+    "typescript-tslint-plugin": "1.0.1"
   }
 }

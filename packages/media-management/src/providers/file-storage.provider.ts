@@ -3,7 +3,6 @@
  */
 
 import * as fileType from 'file-type';
-import readChunk from 'read-chunk';
 import { Readable } from 'stream';
 import { Service } from 'typedi';
 
@@ -53,8 +52,7 @@ export class FileStorageProvider {
         }));
         const filePath = await this.storage.resolve({ key: hash });
         const size = filePath.stat.size;
-        const fileContents = await readChunk(filePath.path, 0, fileType.minimumBytes);
-        const contentType = fileType(fileContents)?.mime ?? 'application/octet-stream';
+        const contentType = (await fileType.fromStream(fileStream))?.mime ?? 'application/octet-stream';
         return {
             contentType,
             hash,

@@ -6,8 +6,7 @@ import { Logger } from '@flyacts/backend-logger';
 import * as Docker from 'dockerode';
 import * as minimist from 'minimist';
 import * as path from 'path';
-import serializeError = require('serialize-error');
-
+import { serializeError } from 'serialize-error';
 
 import {
     containerSuffix, generateContainerName,
