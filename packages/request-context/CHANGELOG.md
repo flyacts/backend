@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.0](https://github.com/flyacts/backend/compare/v1.5.6...v2.0.0-alpha.0) (2021-06-15)
+
+
+### Features
+
+* replace cls-hooked with async_hooks ([923927e](https://github.com/flyacts/backend/commit/923927eea9fa485cf845f9297087152b29fc99de))
+* update dependencies ([2e86ae2](https://github.com/flyacts/backend/commit/2e86ae2ee9234aa81c73f45d1867926aa123b5b5))
+
+
+
+
+
 ## [1.5.6](https://github.com/flyacts/backend/compare/v1.5.5...v1.5.6) (2020-11-30)
 
 **Note:** Version bump only for package @flyacts/request-context
