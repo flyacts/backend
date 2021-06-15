@@ -53,7 +53,7 @@ export class FileStorageProvider {
         }));
         const filePath = await this.storage.resolve({ key: hash });
         const size = filePath.stat.size;
-        const chunk = await readChunk(filePath, 0, 4100);
+        const chunk = await readChunk(filePath.path, 0, 4100);
         const contentType = (await fileType.fromBuffer(chunk))?.mime ?? 'application/octet-stream';
         return {
             contentType,
