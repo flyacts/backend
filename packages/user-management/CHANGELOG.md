@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.2-alpha.0](https://github.com/flyacts/backend/compare/v2.0.1-alpha.0...v2.0.2-alpha.0) (2021-06-15)
+
+
+### Bug Fixes
+
+* mark the create context middle as a service ([a624f3a](https://github.com/flyacts/backend/commit/a624f3a7c0514b802bb5ace7e9cea8c4f4890ca4))
+
+
+
+
+
 ## [2.0.1-alpha.0](https://github.com/flyacts/backend/compare/v2.0.0-alpha.0...v2.0.1-alpha.0) (2021-06-15)
 
 
