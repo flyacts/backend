@@ -1,6 +1,6 @@
 {
     "name": "@flyacts/backend-user-management",
-    "version": "2.0.4-alpha.0",
+    "version": "2.0.5-alpha.0",
     "description": "User management for our backends",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
@@ -16,9 +16,9 @@
         "url": "https://github.com/flyacts/backend"
     },
     "dependencies": {
-        "@flyacts/backend-core-entities": "2.0.4-alpha.0",
-        "@flyacts/backend-logger": "2.0.4-alpha.0",
-        "@flyacts/request-context": "2.0.4-alpha.0",
+        "@flyacts/backend-core-entities": "2.0.5-alpha.0",
+        "@flyacts/backend-logger": "2.0.5-alpha.0",
+        "@flyacts/request-context": "2.0.5-alpha.0",
         "@flyacts/routing-controllers": "0.10.5",
         "argon2": "0.28.2",
         "class-transformer": "0.4.0",

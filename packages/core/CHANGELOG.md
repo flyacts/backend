@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.5-alpha.0](https://github.com/flyacts/backend/compare/v2.0.4-alpha.0...v2.0.5-alpha.0) (2021-06-15)
+
+
+### Bug Fixes
+
+* install typeorm-typedi-extensions ([85c9bce](https://github.com/flyacts/backend/commit/85c9bce964ac871e9c06a104784328077343b963))
+
+
+
+
+
 ## [2.0.4-alpha.0](https://github.com/flyacts/backend/compare/v2.0.3-alpha.0...v2.0.4-alpha.0) (2021-06-15)
 
 **Note:** Version bump only for package @flyacts/backend
