@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.3-alpha.0](https://github.com/flyacts/backend/compare/v2.0.2-alpha.0...v2.0.3-alpha.0) (2021-06-15)
+
+
+### Bug Fixes
+
+* move back to readchunk ([41e5e1c](https://github.com/flyacts/backend/commit/41e5e1c6ee32767913ca14b154ee06b50640fd48))
+
+
+
+
+
 ## [2.0.2-alpha.0](https://github.com/flyacts/backend/compare/v2.0.1-alpha.0...v2.0.2-alpha.0) (2021-06-15)
 
 

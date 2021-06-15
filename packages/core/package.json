@@ -1,7 +1,7 @@
 {
     "name": "@flyacts/backend",
     "description": "Core backend package for the flyacts backend",
-    "version": "2.0.2-alpha.0",
+    "version": "2.0.3-alpha.0",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
     "author": "FLYACTS Development Team <hallo@flyacts.com>",
@@ -18,9 +18,9 @@
     "dependencies": {
         "@angular-devkit/schematics": "12.0.4",
         "@angular-devkit/schematics-cli": "12.0.4",
-        "@flyacts/backend-logger": "2.0.2-alpha.0",
-        "@flyacts/backend-user-management": "2.0.2-alpha.0",
-        "@flyacts/request-context": "2.0.2-alpha.0",
+        "@flyacts/backend-logger": "2.0.3-alpha.0",
+        "@flyacts/backend-user-management": "2.0.3-alpha.0",
+        "@flyacts/request-context": "2.0.3-alpha.0",
         "@flyacts/routing-controllers": "0.10.5",
         "@flyacts/routing-controllers-openapi": "1.8.2",
         "chalk": "4.1.1",
