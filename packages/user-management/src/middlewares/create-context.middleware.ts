@@ -33,50 +33,48 @@ export class CreateContextMiddleware implements ExpressMiddlewareInterface {
         const token = getTokenFromRequest(request);
         const connection = Container.get<Connection>('connection');
         const namespace = RequestContext.obtainNamespace();
-        namespace.run(async () => {
-            const requestContext = new RequestContext();
-            namespace.set(RequestContext.name, requestContext);
-            if (typeof token !== 'string') {
-                next();
-                return;
-            }
-
-            const tokenEntity = await connection.manager.findOne(TokenEntity, {
-                where: {
-                    token: token,
-                },
-            });
-
-            if (!(tokenEntity instanceof TokenEntity)) {
-                next();
-                return;
-            }
-
-            const user = await connection.manager.findOne(UserEntity, tokenEntity.user.id);
-
-            if (!(user instanceof UserEntity)) {
-                throw new InternalServerError('Internal Server Error');
-            }
-
-            if (UserManagementMetadata.instance.userClass === UserEntity) {
-                this.setUserOnContext(requestContext, user);
-                next();
-                return;
-            }
-
-            const currentUser = await connection.manager.findOne(UserManagementMetadata.instance.userClass, {
-                where: {
-                    user,
-                },
-            });
-
-            if (!(currentUser instanceof UserManagementMetadata.instance.userClass)) {
-                next(new InternalServerError('Internal Server Error'));
-            }
-            this.setUserOnContext(requestContext, currentUser);
-
+        const requestContext = new RequestContext();
+        namespace.enterWith(requestContext);
+        if (typeof token !== 'string') {
             next();
+            return;
+        }
+
+        const tokenEntity = await connection.manager.findOne(TokenEntity, {
+            where: {
+                token: token,
+            },
         });
+
+        if (!(tokenEntity instanceof TokenEntity)) {
+            next();
+            return;
+        }
+
+        const user = await connection.manager.findOne(UserEntity, tokenEntity.user.id);
+
+        if (!(user instanceof UserEntity)) {
+            throw new InternalServerError('Internal Server Error');
+        }
+
+        if (UserManagementMetadata.instance.userClass === UserEntity) {
+            this.setUserOnContext(requestContext, user);
+            next();
+            return;
+        }
+
+        const currentUser = await connection.manager.findOne(UserManagementMetadata.instance.userClass, {
+            where: {
+                user,
+            },
+        });
+
+        if (!(currentUser instanceof UserManagementMetadata.instance.userClass)) {
+            next(new InternalServerError('Internal Server Error'));
+        }
+        this.setUserOnContext(requestContext, currentUser);
+
+        next();
     }
 
     /**
@@ -86,9 +84,9 @@ export class CreateContextMiddleware implements ExpressMiddlewareInterface {
         // tslint:disable-next-line:no-any
         let contextData = context.data as any;
         if (typeof contextData === 'undefined' || contextData === null) {
-                contextData = {};
-            }
-            contextData.user = user;
-            context.data = contextData;
+            contextData = {};
+        }
+        contextData.user = user;
+        context.data = contextData;
     }
 }

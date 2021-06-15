@@ -2,7 +2,9 @@
  * @copyright FLYACTS GmbH 2019
  */
 
-import * as cls from 'cls-hooked';
+import { AsyncLocalStorage } from 'async_hooks';
+
+const store = new AsyncLocalStorage<RequestContext>();
 
 /**
  * An interface for cls-hooked
@@ -28,22 +30,14 @@ export class RequestContext {
     /**
      * Returns the current requestContext
      */
-    public static currentRequestContext(): RequestContext {
-        const namespace = RequestContext.obtainNamespace();
-        return namespace.get(RequestContext.name);
+    public static currentRequestContext() {
+        return store.getStore();
     }
 
     /**
      * Checks if the namespace exists, if not creates it, either way returns it
      */
-    public static obtainNamespace(): cls.Namespace {
-        const ns = cls.getNamespace(RequestContext.nsid);
-
-        // tslint:disable-next-line:strict-type-predicates
-        if (typeof ns === 'undefined') {
-            return cls.createNamespace(RequestContext.nsid);
-        } else {
-            return ns;
-        }
+    public static obtainNamespace() {
+        return store;
     }
 }
