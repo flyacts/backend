@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.4-alpha.0](https://github.com/flyacts/backend/compare/v2.0.3-alpha.0...v2.0.4-alpha.0) (2021-06-15)
+
+
+### Bug Fixes
+
+* use the correct path ([ac65edb](https://github.com/flyacts/backend/commit/ac65edbde3323b69ea35b0195a24fa7beff17b96))
+
+
+
+
+
 ## [2.0.3-alpha.0](https://github.com/flyacts/backend/compare/v2.0.2-alpha.0...v2.0.3-alpha.0) (2021-06-15)
 
 
