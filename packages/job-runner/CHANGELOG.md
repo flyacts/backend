@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.7-alpha.0](https://github.com/flyacts/backend/compare/v2.0.6-alpha.0...v2.0.7-alpha.0) (2021-06-16)
+
+
+### Features
+
+* change created_at & updated_at to timestamp with timezone ([0979d58](https://github.com/flyacts/backend/commit/0979d584e1816cf2c91dc6c593c441034156fa1a))
+
+
+
+
+
 ## [2.0.6-alpha.0](https://github.com/flyacts/backend/compare/v2.0.5-alpha.0...v2.0.6-alpha.0) (2021-06-16)
 
 
