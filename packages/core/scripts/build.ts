@@ -39,5 +39,6 @@ ${content}`);
     } catch (error) {
         logger.error('Failed to execute command.');
         logger.error(error);
+        process.exit(1);
     }
 })();
