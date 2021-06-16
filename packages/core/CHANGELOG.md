@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.6-alpha.0](https://github.com/flyacts/backend/compare/v2.0.5-alpha.0...v2.0.6-alpha.0) (2021-06-16)
+
+
+### Bug Fixes
+
+* linting issues ([167e1cc](https://github.com/flyacts/backend/commit/167e1ccd3e489dc6e124cec5f04c4f344f8bfbed))
+* produce a exit code that interupts the pipeline ([7c0e4a1](https://github.com/flyacts/backend/commit/7c0e4a12bc96ca31c71ff7363bab7c2148f2983f))
+* use typeorm-typedi-extensions correctly ([9e73cb1](https://github.com/flyacts/backend/commit/9e73cb14ce41404519e47c8a5978c3aba3af1db6))
+
+
+
+
+
 ## [2.0.5-alpha.0](https://github.com/flyacts/backend/compare/v2.0.4-alpha.0...v2.0.5-alpha.0) (2021-06-15)
 
 
