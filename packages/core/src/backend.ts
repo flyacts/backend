@@ -19,13 +19,16 @@ import * as config from 'config';
 import { CorsOptions } from 'cors';
 import { Application } from 'express';
 import {
+    Container,
+} from 'typedi';
+import {
     Connection,
     ConnectionOptions,
     createConnection,
     useContainer as ormUseContainer,
 } from 'typeorm';
 import {
-    Container,
+    Container as typeOrmContainer,
 } from 'typeorm-typedi-extensions';
 
 import { VersionInformation } from './interfaces/version-information.interface';
@@ -133,8 +136,8 @@ export class Backend {
         Container.set('connection', be.connection);
         be.logger = Container.get(Logger);
 
-        rcUseContainer(Container);
-        ormUseContainer(Container);
+        rcUseContainer(typeOrmContainer);
+        ormUseContainer(typeOrmContainer);
 
         be.express = createExpressServer({
             authorizationChecker: typeof authorizationChecker === 'undefined' ?
