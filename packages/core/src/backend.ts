@@ -19,14 +19,14 @@ import * as config from 'config';
 import { CorsOptions } from 'cors';
 import { Application } from 'express';
 import {
-    Container,
-} from 'typeorm-typedi-extensions';
-import {
     Connection,
     ConnectionOptions,
     createConnection,
     useContainer as ormUseContainer,
 } from 'typeorm';
+import {
+    Container,
+} from 'typeorm-typedi-extensions';
 
 import { VersionInformation } from './interfaces/version-information.interface';
 import { Logger } from './providers/logger.provider';
